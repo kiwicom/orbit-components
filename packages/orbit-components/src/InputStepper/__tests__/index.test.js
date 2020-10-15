@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 import InputStepper from "../index";
 import defaultTheme from "../../defaultTheme";
 
-describe("InputSteppe", () => {
+describe("InputStepper", () => {
   it("should have expected DOM output", () => {
     const { container } = render(
       <InputStepper
@@ -41,11 +41,15 @@ describe("InputSteppe", () => {
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
   it("should render help message", () => {
-    render(<InputStepper help="help message" />);
+    render(<InputStepper label="Label" help="help message" />);
+    const input = screen.getByRole("spinbutton", { name: /Label/ });
+    fireEvent.focus(input);
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", () => {
-    render(<InputStepper error="error message" />);
+    render(<InputStepper label="Label" error="error message" />);
+    const input = screen.getByRole("spinbutton", { name: /Label/ });
+    fireEvent.focus(input);
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
   it("should not be able to change value by typing", () => {

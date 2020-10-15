@@ -3,13 +3,16 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from "./index";
 
@@ -17,9 +20,9 @@ const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   width: 100%;
+  position: relative;
   height: ${({ fullHeight }) => fullHeight && "100%"};
   flex-direction: column;
-  position: relative;
   // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
   margin-bottom: ${getSpacingToken};
@@ -79,6 +82,7 @@ const StyledTextArea = styled.textarea`
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   min-height: 44px; // TODO: create token
 
+  /* for usage with Stack */
   border-radius: 6px;
   ${mq.tablet(css`
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
@@ -90,7 +94,7 @@ const StyledTextArea = styled.textarea`
   /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
   border: 1px solid transparent;
 
-  // IE 11 bug fix, hide scrollbar by default (shown only when scrollable)
+  /* IE 11 bug fix, hide scrollbar by default (shown only when scrollable) */
   overflow: auto;
 
   &::placeholder {
@@ -116,64 +120,91 @@ StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
-  (
-    {
-      size = SIZE_OPTIONS.NORMAL,
-      disabled,
-      resize = RESIZE_OPTIONS.VERTICAL,
-      dataTest,
-      spaceAfter,
-      fullHeight,
-      label,
-      value,
-      name,
-      rows,
-      readOnly,
-      tabIndex,
-      error,
-      help,
-      placeholder,
-      maxLength,
-      onChange,
-      onFocus,
-      onBlur,
-      required,
-    },
-    ref,
-  ) => {
-    return (
-      <Field fullHeight={fullHeight} spaceAfter={spaceAfter}>
-        {label && (
-          <FormLabel filled={Boolean(value)} disabled={disabled}>
-            {label}
-          </FormLabel>
-        )}
-        <StyledTextArea
-          data-test={dataTest}
-          name={name}
-          value={value}
-          rows={rows}
-          size={size}
-          fullHeight={fullHeight}
+const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
+  Props,
+  HTMLTextAreaElement,
+>((props, ref) => {
+  const {
+    size = SIZE_OPTIONS.NORMAL,
+    disabled,
+    resize = RESIZE_OPTIONS.VERTICAL,
+    dataTest,
+    spaceAfter,
+    fullHeight,
+    value,
+    label,
+    name,
+    error,
+    placeholder,
+    maxLength,
+    onChange,
+    onFocus,
+    onBlur,
+    tabIndex,
+    help,
+    rows,
+    readOnly,
+  }: Props = props;
+
+  const {
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+    handleBlur,
+  } = useErrorTooltip({ onFocus, onBlur });
+
+  const inputRef = React.useRef(null);
+
+  return (
+    <Field fullHeight={fullHeight} spaceAfter={spaceAfter} ref={labelRef}>
+      {label && (
+        <FormLabel
+          filled={!!value}
+          error={!!error}
+          help={!!help}
           disabled={disabled}
-          error={error}
-          placeholder={placeholder}
-          maxLength={maxLength}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          resize={resize}
-          readOnly={readOnly}
-          tabIndex={tabIndex}
-          required={required}
-          ref={ref}
-        />
-        <FormFeedback error={error} help={help} />
-      </Field>
-    );
-  },
-);
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
+          {label}
+        </FormLabel>
+      )}
+
+      <StyledTextArea
+        data-state={getFieldDataState(!!error)}
+        data-test={dataTest}
+        name={name}
+        value={value}
+        size={size}
+        fullHeight={fullHeight}
+        disabled={disabled}
+        error={error}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        onChange={onChange}
+        rows={rows}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        resize={resize}
+        tabIndex={tabIndex}
+        readOnly={readOnly}
+        ref={mergeRefs([ref, inputRef])}
+      />
+      <TooltipForm
+        help={help}
+        error={error}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        onClose={handleBlur}
+        tooltipShown={tooltipShown || tooltipShownHover}
+      />
+    </Field>
+  );
+});
 
 Textarea.displayName = "Textarea";
 

@@ -14,7 +14,6 @@ Then you can use it:
 const Component = (props: Props) => {
   const [dimensions, ref] = useDimensionsRect({ height: null });
 
-  console.log(dimensions);
   /*
     Will return an object with merged initial values before re-render:
     {

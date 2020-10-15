@@ -14,6 +14,7 @@ const resolveContainerPosition = ({
   tooltipHeight,
   contentHeight,
   tooltipWidth,
+  customContainerPos = 0,
   theme,
 }: Props): any | null => {
   if (isPositionTop(position)) {
@@ -25,28 +26,32 @@ const resolveContainerPosition = ({
     const isMultiline = contentHeight > Math.floor(parseFloat(theme.orbit.lineHeightTextNormal));
     return css`
       top: ${Math.floor(
-        containerTop - tooltipHeight - parseFloat(TOOLTIP_ARROW_SIZE) - (isMultiline ? 8 : 0),
+        containerTop -
+          tooltipHeight -
+          customContainerPos -
+          parseFloat(TOOLTIP_ARROW_SIZE) -
+          (isMultiline ? 8 : 0),
       )}px; // TODO: use token
     `;
   }
   if (isPositionBottom(position)) {
     return css`
       top: ${Math.floor(
-        containerTop + containerHeight + parseFloat(TOOLTIP_ARROW_SIZE),
+        containerTop + containerHeight + customContainerPos + parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
   }
   if (isPositionRight(position)) {
     return css`
       left: ${Math.floor(
-        containerLeft + containerWidth + parseFloat(TOOLTIP_ARROW_SIZE),
+        containerLeft + containerWidth + customContainerPos + parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
   }
   if (isPositionLeft(position)) {
     return css`
       left: ${Math.floor(
-        containerLeft - tooltipWidth - parseFloat(TOOLTIP_ARROW_SIZE),
+        containerLeft - tooltipWidth - customContainerPos - parseFloat(TOOLTIP_ARROW_SIZE),
       )}px; // TODO: use token
     `;
   }

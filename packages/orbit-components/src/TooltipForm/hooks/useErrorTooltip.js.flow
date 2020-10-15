@@ -1,0 +1,17 @@
+// @flow
+import type { RefType } from "../../common/common.js.flow";
+
+export type UseErrorTooltip = ({|
+  onFocus?: (ev: SyntheticInputEvent<any>) => void | Promise<any>,
+  onBlur?: (ev: SyntheticInputEvent<any>) => void | Promise<any>,
+|}) => {|
+  tooltipShown: boolean,
+  tooltipShownHover: boolean,
+  setTooltipShownHover: ((boolean => boolean) | boolean) => void,
+  labelRef: RefType,
+  iconRef: RefType,
+  handleFocus: (ev: SyntheticInputEvent<any>) => void | Promise<any>,
+  handleBlur: (ev: SyntheticInputEvent<any>) => void | Promise<any>,
+|};
+
+declare export default UseErrorTooltip;

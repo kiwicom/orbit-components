@@ -1,0 +1,6 @@
+// @flow
+import type { CSSRules } from "styled-components";
+
+export type TooltipArrowStyle = ({| position: "top" | "bottom" |}) => CSSRules;
+
+declare export default TooltipArrowStyle;

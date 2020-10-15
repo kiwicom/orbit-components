@@ -1,14 +1,19 @@
 // @flow
 import type { CSSRules } from "styled-components";
 
-import type { Position } from "../index";
 import type { ThemeProps } from "../../../defaultTheme";
+import type { Position } from "../index";
 
 export type Props = {|
+  error?: boolean,
+  help?: boolean,
   ...Position,
   ...ThemeProps,
 |};
 
 type TooltipArrowStyle = Props => CSSRules;
 
+export type ResolveColor = ({| error?: boolean, help?: boolean, ...ThemeProps |}) => string;
+
+declare export var resolveColor: ResolveColor;
 declare export default TooltipArrowStyle;

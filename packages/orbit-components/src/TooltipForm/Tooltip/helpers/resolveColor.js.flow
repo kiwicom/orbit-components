@@ -1,0 +1,6 @@
+// @flow
+import type { Theme } from "../../../defaultTheme";
+
+export type ResolveColor = ({| isHelp: boolean, theme: Theme |}) => string;
+
+declare export default ResolveColor;

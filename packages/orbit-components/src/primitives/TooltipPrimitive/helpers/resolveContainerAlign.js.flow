@@ -1,9 +1,12 @@
 // @flow
 import type { CSSRules } from "styled-components";
 
+import type { Theme } from "../../../defaultTheme";
 import type { Align, Dimensions, Position } from "../index";
 
 export type Props = {|
+  +customContainerOffset?: number,
+  +theme: Theme,
   ...Dimensions,
   ...Align,
   ...Position,

@@ -151,11 +151,17 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
-  <RenderInRtl>
-    <InputFile label="My label" />
-  </RenderInRtl>
-);
+export const Rtl = (): React.Node => {
+  const label = text("Label", "Label");
+  const error = text("Error", "Error message (explain how to solve it)");
+  const help = text("Help", undefined);
+
+  return (
+    <RenderInRtl>
+      <InputFile label={label} error={error} help={help} />
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

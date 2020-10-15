@@ -6,12 +6,13 @@ import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import { FakeInput, Input, InputContainer } from "../InputField";
 import { SelectContainer } from "../Select";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { right, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
 
 import type { Props } from "./index";
@@ -29,6 +30,11 @@ const getToken = name => ({ theme, size }) => {
   };
 
   return tokens[name][size];
+};
+
+const getFakeGroupMarginTop = ({ label, theme }) => {
+  if (!label) return false;
+  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
 };
 
 const FakeGroup = styled(({ children, className }) => (
@@ -52,6 +58,7 @@ const FakeGroup = styled(({ children, className }) => (
     disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
   font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+  margin-top: ${getFakeGroupMarginTop};
 
   border-radius: 6px;
   ${mq.tablet(css`
@@ -89,11 +96,20 @@ StyledChild.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabelledby }) => (
-  <div className={className} data-test={dataTest} role={role} aria-labelledby={ariaLabelledby}>
-    {children}
-  </div>
-))`
+const StyledInputGroup = styled(
+  ({ children, className, dataTest, role, ariaLabelledby, labelRef, dataState }) => (
+    <div
+      data-state={dataState}
+      ref={labelRef}
+      className={className}
+      data-test={dataTest}
+      role={role}
+      aria-labelledby={ariaLabelledby}
+    >
+      {children}
+    </div>
+  ),
+)`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -156,37 +172,41 @@ StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const findPropInChild = (propToFind, children) => {
-  return React.Children.toArray(children)
-    .map(el => {
-      if (el.props && typeof el.props[propToFind] !== "undefined") return el.props[propToFind];
-      return null;
-    })
-    .filter(el => el !== null && el !== "");
-};
+const findPropInChild = (propToFind, children): any =>
+  React.Children.map(children, el => {
+    if (el.props && el.props[propToFind]) return el.props[propToFind];
+    return null;
+  }).filter(el => el != null);
 
 const InputGroup = ({
   children,
   label,
-  flex = "0 1 auto",
+  flex,
   size = SIZE_OPTIONS.NORMAL,
-  help,
-  error,
   dataTest,
   spaceAfter,
   onFocus,
   onBlur,
   onChange,
+  onBlurGroup,
+  error,
+  help,
 }: Props): React.Node => {
   const [active, setActive] = React.useState(false);
   const [filled, setFilled] = React.useState(false);
-  const inputID = React.useMemo(() => randomID("inputGroupID"), []);
+  const [tooltipShown, setTooltipShown] = React.useState(false);
+  const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
+  const labelRef = React.useRef(null);
+  const iconRef = React.useRef(null);
+  const inputID: string = React.useMemo(() => randomID("inputFieldID"), []);
+  const foundErrors = React.useMemo(() => findPropInChild("error", children), [children]);
+  const foundHelp = React.useMemo(() => findPropInChild("help", children), [children]);
+
+  const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
+  const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
 
   const isFilled = React.useCallback(
-    () =>
-      setFilled(
-        findPropInChild("value", children).length === React.Children.toArray(children).length,
-      ),
+    () => setFilled(findPropInChild("value", children).length > 0),
     [children],
   );
 
@@ -194,67 +214,97 @@ const InputGroup = ({
     isFilled();
   }, [isFilled]);
 
-  const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
     setActive(true);
-    if (onFocus) {
-      onFocus(ev);
-    }
+    setTooltipShown(true);
+    if (onFocus) onFocus(ev);
+    if (callBack) callBack(ev);
   };
 
-  const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
     isFilled();
     setActive(false);
-    if (onBlur) {
-      onBlur(ev);
-    }
+    setTooltipShown(false);
+    if (onBlur) onBlur(ev);
+    if (callBack) callBack(ev);
   };
 
-  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
     isFilled();
-
     if (onChange) {
       onChange(ev);
+    }
+    if (callBack) callBack(ev);
+  };
+
+  const handleBlurGroup = ev => {
+    ev.persist();
+    if (onBlurGroup) {
+      setTimeout(() => {
+        setActive(isActive => {
+          if (!isActive) {
+            onBlurGroup(ev);
+          }
+          return isActive;
+        });
+      }, 50);
     }
   };
 
   return (
     <StyledInputGroup
       label={label}
-      error={error}
+      error={errorReal}
       active={active}
       size={size}
       dataTest={dataTest}
+      dataState={getFieldDataState(!!errorReal)}
       spaceAfter={spaceAfter}
       role="group"
       ariaLabelledby={label && inputID}
+      labelRef={labelRef}
     >
       {label && (
-        <FormLabel filled={filled} id={inputID}>
+        <FormLabel
+          filled={filled}
+          id={inputID}
+          error={!!errorReal}
+          help={!!helpReal}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
           {label}
         </FormLabel>
       )}
-      <StyledChildren>
-        {React.Children.map(children, (item, key) => {
-          // either array, array with one length or string
-          // if it's not defined, use the first or string
+
+      <StyledChildren onBlur={handleBlurGroup}>
+        {React.Children.toArray(children).map((item, key) => {
           const childFlex = Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
           return (
-            <StyledChild flex={childFlex}>
+            <StyledChild flex={childFlex || "0 1 auto"}>
               {React.cloneElement(item, {
                 size,
                 label: undefined,
-                help: undefined,
-                error: undefined,
-                onChange: item.props.onChange != null ? item.props.onChange : handleChange,
-                onBlur: item.props.onBlur != null ? item.props.onChange : handleBlur,
-                onFocus: item.props.onFocus != null ? item.props.onFocus : handleFocus,
+                onChange: ev => handleChange(ev, item.props.onChange),
+                onBlur: ev => handleBlur(ev, item.props.onBlur),
+                onFocus: ev => handleFocus(ev, item.props.onFocus),
+                insideInputGroup: true,
               })}
             </StyledChild>
           );
         })}
-        <FakeGroup label={label} error={error} active={active} size={size} />
       </StyledChildren>
-      <FormFeedback error={error} help={help} />
+      <FakeGroup label={label} error={errorReal} active={active} size={size} />
+      <TooltipForm
+        help={helpReal}
+        error={errorReal}
+        iconRef={iconRef}
+        labelRef={labelRef}
+        onClose={handleBlur}
+        inputSize={size}
+        tooltipShown={tooltipShown || tooltipShownHover}
+      />
     </StyledInputGroup>
   );
 };

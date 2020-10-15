@@ -31,6 +31,7 @@ export type Props = {|
   +name?: string,
   +error?: React.Node,
   +help?: React.Node,
+  +insideInputGroup?: boolean,
   +tabIndex?: string | number,
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
@@ -39,6 +40,7 @@ export type Props = {|
   +options: Option[],
   +prefix?: React.Node,
   +customValueText?: Translation,
+  +insideInputGroup?: boolean,
 |};
 
 declare export var SelectContainer: StyledComponent<any, any, HTMLElement>;

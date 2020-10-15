@@ -14,7 +14,7 @@ import type { Props } from "./index";
 export const StyledTooltipChildren: any = styled.span`
   ${({ block }) =>
     !block &&
-    `
+    css`
       display: inline-flex;
     `};
   &:focus:active {
@@ -39,17 +39,20 @@ export const StyledTooltipChildren: any = styled.span`
 const TooltipPrimitive = ({
   children,
   enabled = true,
+  tooltipShown,
   tabIndex = "0",
   dataTest,
   renderInPortal = true,
   size = SIZE_OPTIONS.SMALL,
   content,
+  error,
+  help,
   preferredPosition,
   preferredAlign,
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props): void | React.Node | React.Node => {
+}: Props): void | React.Node => {
   const [shown, setShown] = React.useState(false);
   const [
     render,
@@ -80,6 +83,13 @@ const TooltipPrimitive = ({
     [stopPropagation],
   );
 
+  React.useEffect(() => {
+    if (tooltipShown) handleIn();
+    else {
+      handleOut();
+    }
+  }, [tooltipShown, handleIn, handleOut]);
+
   const handleOutMobile = React.useCallback(() => {
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
@@ -92,6 +102,8 @@ const TooltipPrimitive = ({
       dataTest={dataTest}
       shown={shown}
       size={size}
+      error={error}
+      help={help}
       tooltipId={tooltipId}
       onClose={handleOut}
       onCloseMobile={handleOutMobile}

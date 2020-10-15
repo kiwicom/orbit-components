@@ -1,0 +1,14 @@
+// @flow
+import type { InterpolationBase } from "styled-components";
+
+import type { Theme } from "../../../defaultTheme";
+
+export type Props = {|
+  help: boolean,
+  error: boolean,
+  theme: Theme,
+|};
+
+export type ResolveBackgroundColor = Props => InterpolationBase;
+
+declare export default ResolveBackgroundColor;

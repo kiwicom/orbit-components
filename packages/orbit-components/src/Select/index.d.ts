@@ -34,6 +34,7 @@ export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Com
   readonly options: Option[];
   readonly prefix?: React.ReactNode;
   readonly readOnly?: boolean;
+  readonly insideInputGroup?: boolean;
   readonly customValueText?: Common.Translation;
 }
 
