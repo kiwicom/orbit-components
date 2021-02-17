@@ -14,7 +14,6 @@ export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly actions?: React.ReactNode;
   readonly onClick?: (
-    // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
     e: React.SyntheticEvent<HTMLDivElement>,
     state: boolean,
   ) => void | Promise<void>;

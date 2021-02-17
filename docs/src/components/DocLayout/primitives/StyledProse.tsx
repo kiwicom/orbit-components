@@ -51,7 +51,7 @@ const StyledProse = styled(Box)`
     }
     ${elevation === "raised" &&
     `
-      box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+      box-shadow: ${theme.boxShadowRaisedSubtle};
     `}
   `}
 `;

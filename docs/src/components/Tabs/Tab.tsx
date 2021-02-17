@@ -38,7 +38,7 @@ export const commonTabStyle = css`
     height: calc(${TAB_HEIGHT} - ${SHADOW_PADDING_TOP});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    box-shadow: ${theme.boxShadowRaisedSubtle};
     background: ${theme.orbit.paletteWhite};
   `};
 `;

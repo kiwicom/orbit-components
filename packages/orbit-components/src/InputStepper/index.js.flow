@@ -36,3 +36,4 @@ export type Props = {|
 |};
 
 declare export default React.AbstractComponent<Props, HTMLElement>;
+export { default as InputStepperStateless } from "./InputStepperStateless";

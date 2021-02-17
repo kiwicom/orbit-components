@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "esModuleInterop": true,
+    "jsx": "react",
+    "strict": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false
+  },
+}

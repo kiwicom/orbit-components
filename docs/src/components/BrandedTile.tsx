@@ -29,7 +29,7 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
     border-radius: 1rem;
     background: ${primary};
     color: ${theme.orbit.colorTextWhite};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    box-shadow: ${theme.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: 100%;

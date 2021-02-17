@@ -9,7 +9,7 @@
 
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /\.js?$/,
+    test: [/\.jsx?$/, /\.tsx?$/],
     use: [
       {
         options: { envName: "esm" },
