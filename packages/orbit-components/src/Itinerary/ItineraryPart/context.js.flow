@@ -1,0 +1,32 @@
+// @flow
+import * as React from "react";
+
+type SetStateAction<S> = S | ((prevState: S) => S);
+
+type Dispatch<A> = (value: A) => void;
+
+export type Context = {|
+  +setExpanded: Dispatch<SetStateAction<boolean>>,
+  +expanded: boolean,
+  +isNextHidden: boolean,
+  +isHidden: boolean,
+  +hasStatus: boolean,
+  +index: number,
+  +last: boolean,
+  +count: number,
+  +calculatedWidth: number,
+|};
+
+export type ProviderProps = {|
+  +children: React.Node,
+  +isNextHidden: boolean,
+  +isHidden: boolean,
+  +hasStatus: boolean,
+  +index: number,
+  +last: boolean,
+  +count: number,
+  +calculatedWidth: number,
+|};
+
+declare export var ItineraryPartProvider: React.ComponentType<ProviderProps>;
+declare export function usePart(): Context;

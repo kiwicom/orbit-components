@@ -1,0 +1,14 @@
+// @flow
+import * as React from "react";
+
+export type Props = {|
+  +date: string,
+  +time: string,
+  +city: string,
+  +place: string,
+  +hidden?: boolean,
+  +warning?: boolean,
+  +minWidth?: number,
+|};
+
+declare export default React.ComponentType<Props>;

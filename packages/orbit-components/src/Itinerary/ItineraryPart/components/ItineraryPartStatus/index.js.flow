@@ -1,0 +1,13 @@
+// @flow
+import * as React from "react";
+
+import type { Statuses } from "../..";
+
+export type Props = {|
+  +type: Statuses,
+  +label?: React.Node,
+  +offset?: number,
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;

@@ -1,0 +1,11 @@
+// @flow
+import * as React from "react";
+
+export type Props = {|
+  +summary: React.Node,
+  +duration: string,
+  +children: React.Node,
+  +icon?: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;
