@@ -2,17 +2,18 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import ChevronUp from "../../../../icons/ChevronUp";
-import ChevronDown from "../../../../icons/ChevronDown";
-import themeDefault from "../../../../defaultTheme";
-import Stack from "../../../../Stack";
-import Text from "../../../../Text";
-import Slide from "../../../../utils/Slide";
-import useBoundingRect from "../../../../hooks/useBoundingRect";
-import randomID from "../../../../utils/randomID";
-import { usePart } from "../../context";
-import { right } from "../../../../utils/rtl";
-import ItineraryIcon from "../../ItineraryIcon";
+import ChevronUp from "../../../icons/ChevronUp";
+import ChevronDown from "../../../icons/ChevronDown";
+import themeDefault from "../../../defaultTheme";
+import Stack from "../../../Stack";
+import Text from "../../../Text";
+import Slide from "../../../utils/Slide";
+import useBoundingRect from "../../../hooks/useBoundingRect";
+import randomID from "../../../utils/randomID";
+import { usePart } from "../context";
+import { right } from "../../../utils/rtl";
+import { useWidth } from "../../context";
+import ItineraryIcon from "../ItineraryIcon";
 
 import type { Props } from ".";
 
@@ -62,7 +63,8 @@ StyledChevronWrapper.defaultProps = {
 const StyledExpandable = styled.div``;
 
 const ItineraryPartDetail = ({ duration, summary, children }: Props) => {
-  const { expanded, setExpanded, hasStatus, calculatedWidth } = usePart();
+  const { expanded, setExpanded, hasStatus } = usePart();
+  const { calculatedWidth } = useWidth();
   const [{ height }, ref] = useBoundingRect({ height: 0 });
 
   const slideID = React.useMemo(() => randomID("slideID"), []);

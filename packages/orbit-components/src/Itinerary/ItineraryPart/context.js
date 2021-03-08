@@ -11,7 +11,6 @@ export const ItineraryPartContext: React.Context<Context> = React.createContext(
   hasStatus: false,
   index: 0,
   count: 0,
-  calculatedWidth: 0,
   last: false,
 });
 
@@ -20,7 +19,6 @@ export const ItineraryPartProvider = ({
   index,
   last,
   count,
-  calculatedWidth,
   isNextHidden,
   isHidden,
   hasStatus,
@@ -32,7 +30,6 @@ export const ItineraryPartProvider = ({
       value={{
         setExpanded,
         expanded: isExpanded,
-        calculatedWidth,
         index,
         last,
         isNextHidden,

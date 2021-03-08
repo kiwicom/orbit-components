@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Statuses } from "../..";
+import { Statuses } from "..";
 
 export interface Props {
   readonly interface: Statuses;

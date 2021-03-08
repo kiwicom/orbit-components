@@ -8,8 +8,6 @@ import * as React from "react";
 
 import type { Globals } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken";
-import typeof ItineraryPartDetailType from "./components/ItineraryPartDetail";
-import typeof ItineraryPartPlaceType from "./components/ItineraryPartPlace";
 
 export type Statuses = "warning" | "critical";
 export type Props = {|
@@ -25,5 +23,3 @@ export type PartLinedContentProps = {|
 |};
 
 declare export default React.ComponentType<Props>;
-declare export var ItineraryPartDetail: ItineraryPartDetailType;
-declare export var ItineraryPartPlace: ItineraryPartPlaceType;

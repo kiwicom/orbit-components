@@ -1,0 +1,18 @@
+// @flow
+import * as React from "react";
+
+type SetStateAction<S> = S | ((prevState: S) => S);
+
+type Dispatch<A> = (value: A) => void;
+
+export type Context = {|
+  +setWidths: Dispatch<SetStateAction<number[]>>,
+  +calculatedWidth: number,
+|};
+
+export type ProviderProps = {|
+  +children: React.Node,
+|};
+
+declare export var ItineraryProvider: React.ComponentType<ProviderProps>;
+declare export function useWidth(): Context;

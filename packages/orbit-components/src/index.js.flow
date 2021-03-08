@@ -54,8 +54,8 @@ import typeof InputStepperStatelessType from "./InputStepper/InputStepperStatele
 import typeof InputStepperType from "./InputStepper";
 import typeof ItineraryPartType from "./Itinerary/ItineraryPart";
 import typeof ItineraryType from "./Itinerary";
-import typeof ItineraryPartPlaceType from "./Itinerary/ItineraryPart/components/ItineraryPartPlace";
-import typeof ItineraryPartDetailType from "./Itinerary/ItineraryPart/components/ItineraryPartDetail";
+import typeof ItineraryPartPlaceType from "./Itinerary/ItineraryPart/ItineraryPartPlace";
+import typeof ItineraryPartDetailType from "./Itinerary/ItineraryPart/ItineraryPartDetail";
 import typeof LayoutColumnType from "./Layout/LayoutColumn";
 import typeof LayoutType from "./Layout";
 import typeof LinkListType from "./LinkList";

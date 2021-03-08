@@ -2,15 +2,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { left } from "../../../../utils/rtl";
-import Alert from "../../../../icons/Alert";
-import Warning from "../../../../icons/AlertCircle";
-import Text from "../../../../Text";
-import Stack from "../../../../Stack";
-import defaultTheme from "../../../../defaultTheme";
-import type { ThemeProps } from "../../../../defaultTheme";
+import { left } from "../../../utils/rtl";
+import Alert from "../../../icons/Alert";
+import Warning from "../../../icons/AlertCircle";
+import Text from "../../../Text";
+import Stack from "../../../Stack";
+import defaultTheme from "../../../defaultTheme";
+import type { ThemeProps } from "../../../defaultTheme";
 import { STATUSES } from "./consts";
-import type { Statuses } from "../..";
+import type { Statuses } from "..";
 
 import type { Props } from ".";
 

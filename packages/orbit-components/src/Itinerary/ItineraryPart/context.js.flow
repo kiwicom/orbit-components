@@ -14,7 +14,6 @@ export type Context = {|
   +index: number,
   +last: boolean,
   +count: number,
-  +calculatedWidth: number,
 |};
 
 export type ProviderProps = {|
@@ -25,7 +24,6 @@ export type ProviderProps = {|
   +index: number,
   +last: boolean,
   +count: number,
-  +calculatedWidth: number,
 |};
 
 declare export var ItineraryPartProvider: React.ComponentType<ProviderProps>;

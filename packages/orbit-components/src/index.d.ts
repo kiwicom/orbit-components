@@ -43,8 +43,12 @@ export { List } from "./List/index";
 export { ListItem } from "./List/ListItem/index";
 export { ListChoice } from "./ListChoice/index";
 export { InputFile } from "./InputFile/index";
-export { default as Itinerary, ItineraryPart } from "./Itinerary";
-export { ItineraryPartPlace, ItineraryPartDetail } from "./Itinerary/ItineraryPart";
+export {
+  default as Itinerary,
+  ItineraryPart,
+  ItineraryPartDetail,
+  ItineraryPartPlace,
+} from "./Itinerary/index";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading/index";
 export { Popover } from "./Popover/index";

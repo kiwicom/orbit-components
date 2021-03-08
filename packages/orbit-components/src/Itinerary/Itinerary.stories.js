@@ -6,10 +6,9 @@ import Airplane from "../icons/AirplaneUp";
 import Stack from "../Stack";
 import CarrierLogo from "../CarrierLogo";
 import Badge from "../Badge";
-import ItineraryPart, { ItineraryPartDetail, ItineraryPartPlace } from "./ItineraryPart";
 import Text from "../Text";
 
-import Itinerary from ".";
+import Itinerary, { ItineraryPart, ItineraryPartDetail, ItineraryPartPlace } from ".";
 
 const BadgeGroup = () => {
   const carrier = [{ code: "FR", name: "Ryanair" }];

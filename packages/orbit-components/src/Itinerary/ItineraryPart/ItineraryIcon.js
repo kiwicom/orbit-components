@@ -4,11 +4,13 @@ import styled, { css } from "styled-components";
 
 import { usePart } from "./context";
 import ArrowDown from "../../icons/ArrowDown";
+import AlertCircle from "../../icons/AlertCircle";
 import Circle from "../../icons/Circle";
 import defaultTheme from "../../defaultTheme";
 
 type Props = {|
   isDetails?: boolean,
+  warning?: boolean,
 |};
 
 const lineMixin = css`
@@ -62,7 +64,14 @@ IconStyled.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItineraryIcon = ({ isDetails }: Props) => {
+const Icon = ({ warning, isDetails }) => {
+  if (warning) return <AlertCircle size="small" color="warning" />;
+  if (isDetails) return <ArrowDown />;
+
+  return <Circle size="small" color="secondary" />;
+};
+
+const ItineraryIcon = ({ isDetails, warning }: Props) => {
   const { index, last, isNextHidden, isHidden, count, hasStatus } = usePart();
 
   return (
@@ -75,7 +84,7 @@ const ItineraryIcon = ({ isDetails }: Props) => {
       isStatus={hasStatus && index === 0}
       count={count}
     >
-      {isDetails ? <ArrowDown /> : <Circle size="small" color="secondary" />}
+      <Icon warning={warning} isDetails={isDetails} />
     </IconStyled>
   );
 };

@@ -3,8 +3,11 @@ import * as React from "react";
 import styled from "styled-components";
 
 import ItineraryPart from "./ItineraryPart";
+import ItineraryPartPlace from "./ItineraryPart/ItineraryPartPlace";
+import ItineraryPartDetail from "./ItineraryPart/ItineraryPartDetail";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
+import { ItineraryProvider } from "./context";
 
 import type { Props } from ".";
 
@@ -17,19 +20,12 @@ StyledItineraryWrapper.defaultProps = {
 };
 
 const Itinerary = ({ children, dataTest, spaceAfter }: Props) => {
-  const content = React.Children.toArray(children);
-
   return (
     <StyledItineraryWrapper data-test={dataTest} spaceAfter={spaceAfter}>
-      {content &&
-        content.length > 0 &&
-        React.Children.map(content, el => {
-          if (!React.isValidElement(el)) return null;
-          return el;
-        })}
+      <ItineraryProvider>{children}</ItineraryProvider>
     </StyledItineraryWrapper>
   );
 };
 
-export { ItineraryPart };
+export { ItineraryPart, ItineraryPartDetail, ItineraryPartPlace };
 export default Itinerary;
