@@ -92,9 +92,9 @@ export { default as InputStepper } from "./InputStepper";
 export { default as InputStepperStateless } from "./InputStepper/InputStepperStateless";
 export {
   default as Itinerary,
-  ItineraryPart,
-  ItineraryPartPlace,
-  ItineraryPartDetail,
+  ItinerarySegment,
+  ItinerarySegmentStop,
+  ItinerarySegmentDetail,
 } from "./Itinerary";
 export { default as List } from "./List";
 export { default as ListChoice } from "./ListChoice";

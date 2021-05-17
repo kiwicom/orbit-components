@@ -31,7 +31,7 @@ const ItineraryPartPlace = ({
   date,
   time,
   city,
-  place,
+  station,
   hidden,
   minWidth = 60,
   warning,
@@ -58,7 +58,7 @@ const ItineraryPartPlace = ({
         <Stack spacing="XSmall">
           <Text weight="bold">{city}</Text>
           <Text type="secondary" size="small">
-            {place}
+            {station}
           </Text>
         </Stack>
       </Stack>

@@ -45,9 +45,9 @@ export { ListChoice } from "./ListChoice/index";
 export { InputFile } from "./InputFile/index";
 export {
   default as Itinerary,
-  ItineraryPart,
-  ItineraryPartDetail,
-  ItineraryPartPlace,
+  ItinerarySegment,
+  ItinerarySegmentDetail,
+  ItinerarySegmentStop,
 } from "./Itinerary/index";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading/index";

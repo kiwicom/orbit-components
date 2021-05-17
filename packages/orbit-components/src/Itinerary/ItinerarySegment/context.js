@@ -3,7 +3,7 @@ import * as React from "react";
 
 import type { Context, ProviderProps } from "./context";
 
-export const ItineraryPartContext: React.Context<Context> = React.createContext({
+export const ItinerarySegmentContext: React.Context<Context> = React.createContext({
   setExpanded: () => {},
   expanded: false,
   isNextHidden: false,
@@ -14,7 +14,7 @@ export const ItineraryPartContext: React.Context<Context> = React.createContext(
   last: false,
 });
 
-export const ItineraryPartProvider = ({
+export const ItinerarySegmentProvider = ({
   children,
   index,
   last,
@@ -26,7 +26,7 @@ export const ItineraryPartProvider = ({
   const [isExpanded, setExpanded] = React.useState(false);
 
   return (
-    <ItineraryPartContext.Provider
+    <ItinerarySegmentContext.Provider
       value={{
         setExpanded,
         expanded: isExpanded,
@@ -39,8 +39,8 @@ export const ItineraryPartProvider = ({
       }}
     >
       {children}
-    </ItineraryPartContext.Provider>
+    </ItinerarySegmentContext.Provider>
   );
 };
 
-export const usePart = (): Context => React.useContext(ItineraryPartContext);
+export const usePart = (): Context => React.useContext(ItinerarySegmentContext);

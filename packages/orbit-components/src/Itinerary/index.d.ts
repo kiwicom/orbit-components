@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import ItineraryPart from "./ItineraryPart";
-import ItineraryPartPlace from "./ItineraryPart/ItineraryPartPlace";
-import ItineraryPartDetail from "./ItineraryPart/ItineraryPartDetail";
+import ItinerarySegment from "./ItinerarySegment";
+import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
+import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
 import { Global, SpaceAfter } from "../common/common";
 
 /** DOCS:
@@ -10,32 +10,32 @@ import { Global, SpaceAfter } from "../common/common";
 
   ```jsx
   import Itinerary, {
-    ItineraryPart,
-    ItineraryPartPlace,
-    ItineraryPartDetail,
+    ItinerarySegment,
+    ItinerarySegmentStop,
+    ItinerarySegmentDetail,
   } from "@kiwicom/orbit-components";
   ```
 
   After adding import into your project you can use it simply like:
   ```jsx
   <Itinerary>
-    <ItineraryPart spaceAfter="large">
-      <ItineraryPartPlace
+    <ItinerarySegment spaceAfter="large">
+      <ItinerarySegmentStop
         city="Moscow"
-        place="Sheremetyevo International Airport (SVO)"
+        station="Sheremetyevo International Airport (SVO)"
         date="Fri, 19.10"
         time="14:05"
       />
-      <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+      <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
         <CollapsedContent />
-      </ItineraryPartDetail>
-      <ItineraryPartPlace
+      </ItinerarySegmentDetail>
+      <ItinerarySegmentStop
         city="Prague"
-        place="Václav Havel Airport Prague (PRG)"
+        station="Václav Havel Airport Prague (PRG)"
         date="Fri, 19.10"
         time="16:35"
       />
-    </ItineraryPart>
+    </ItinerarySegment>
   </Itinerary>
   ```
 */
@@ -45,7 +45,7 @@ export interface Props extends Global, SpaceAfter {
   readonly children: React.ReactNode;
 }
 
-export { ItineraryPart, ItineraryPartPlace, ItineraryPartDetail };
+export { ItinerarySegment, ItinerarySegmentStop, ItinerarySegmentDetail };
 
 declare const Itinerary: React.FunctionComponent<Props>;
 export default Itinerary;

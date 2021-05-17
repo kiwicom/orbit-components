@@ -5,7 +5,6 @@ import * as React from "react";
   has warning property which changes the icon to `<AlertCircle color="warning" />`
   to attract user attention about some important information about journey.
 */
-
 export interface Props {
   /** The date of ItineraryPartPlace */
   readonly date: string;
@@ -14,7 +13,7 @@ export interface Props {
   /** The city of ItineraryPartPlace */
   readonly city: string;
   /** The place of ItineraryPartPlace */
-  readonly place: string;
+  readonly station: string;
   /** ItineraryPartPlace which status is HiddenCity */
   readonly hidden?: boolean;
   /** Changes the icon of current ItineraryPartPlace, if there is some important information for user */

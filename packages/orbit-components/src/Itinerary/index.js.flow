@@ -6,9 +6,9 @@
 
 import * as React from "react";
 
-import typeof ItineraryPartComponent from "./ItineraryPart";
-import typeof ItineraryPartPlaceComponent from "./ItineraryPart/ItineraryPartPlace";
-import typeof ItineraryPartDetailComponent from "./ItineraryPart/ItineraryPartDetail";
+import typeof ItinerarySegmentComponent from "./ItinerarySegment";
+import typeof ItinerarySegmentPlaceComponent from "./ItinerarySegment/ItinerarySegmentStop";
+import typeof ItinerarySegmentDetailComponent from "./ItinerarySegment/ItinerarySegmentDetail";
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken";
 
@@ -18,7 +18,7 @@ export type Props = {|
   +children: React.Node,
 |};
 
-declare export var ItineraryPart: ItineraryPartComponent;
-declare export var ItineraryPartPlace: ItineraryPartPlaceComponent;
-declare export var ItineraryPartDetail: ItineraryPartDetailComponent;
+declare export var ItinerarySegment: ItinerarySegmentComponent;
+declare export var ItinerarySegmentStop: ItinerarySegmentPlaceComponent;
+declare export var ItinerarySegmentDetail: ItinerarySegmentDetailComponent;
 declare export default React.ComponentType<Props>;

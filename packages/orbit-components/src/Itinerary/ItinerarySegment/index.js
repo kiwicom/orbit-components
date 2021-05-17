@@ -2,9 +2,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { ItineraryPartProvider } from "./context";
+import { ItinerarySegmentProvider } from "./context";
 import Stack from "../../Stack";
-import ItineraryPartStatus from "./ItineraryPartStatus";
+import ItinerarySegmentStatus from "./ItinerarySegmentStatus";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 
@@ -27,7 +27,7 @@ const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props)
     <Stack direction="column">
       {React.Children.map(content, (el, i) => {
         return (
-          <ItineraryPartProvider
+          <ItinerarySegmentProvider
             index={i}
             last={i === content.length - 1}
             isNextHidden={content[i + 1] && content[i + 1].props.hidden}
@@ -36,7 +36,7 @@ const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props)
             hasStatus={!!status}
           >
             {el}
-          </ItineraryPartProvider>
+          </ItinerarySegmentProvider>
         );
       })}
     </Stack>
@@ -45,9 +45,9 @@ const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props)
   return (
     <StyledWrapper spaceAfter={spaceAfter} data-test={dataTest}>
       {status ? (
-        <ItineraryPartStatus type={status} label={label}>
+        <ItinerarySegmentStatus type={status} label={label}>
           {parts}
-        </ItineraryPartStatus>
+        </ItinerarySegmentStatus>
       ) : (
         parts
       )}

@@ -2,9 +2,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import ItineraryPart from "./ItineraryPart";
-import ItineraryPartPlace from "./ItineraryPart/ItineraryPartPlace";
-import ItineraryPartDetail from "./ItineraryPart/ItineraryPartDetail";
+import ItinerarySegment from "./ItinerarySegment";
+import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
+import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { ItineraryProvider } from "./context";
@@ -28,5 +28,5 @@ const Itinerary = ({ children, dataTest, spaceAfter }: Props): React.Node => {
   );
 };
 
-export { ItineraryPart, ItineraryPartDetail, ItineraryPartPlace };
+export { ItinerarySegment, ItinerarySegmentDetail, ItinerarySegmentStop };
 export default Itinerary;

@@ -4,9 +4,9 @@ To implement the Itinerary component into your project you'll need to add the im
 
 ```jsx
 import Itinerary, {
-  ItineraryPart,
-  ItineraryPartPlace,
-  ItineraryPartDetail,
+  ItinerarySegment,
+  ItinerarySegmentStop,
+  ItinerarySegmentDetail,
 } from "@kiwicom/orbit-components";
 ```
 
@@ -14,23 +14,23 @@ After adding import into your project you can use it simply like:
 
 ```jsx
 <Itinerary>
-  <ItineraryPart spaceAfter="large">
-    <ItineraryPartPlace
+  <ItinerarySegment spaceAfter="large">
+    <ItinerarySegmentStop
       city="Moscow"
-      place="Sheremetyevo International Airport (SVO)"
+      station="Sheremetyevo International Airport (SVO)"
       date="Fri, 19.10"
       time="14:05"
     />
-    <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+    <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
       <CollapsedContent />
-    </ItineraryPartDetail>
-    <ItineraryPartPlace
+    </ItinerarySegmentDetail>
+    <ItinerarySegmentStop
       city="Prague"
-      place="Václav Havel Airport Prague (PRG)"
+      station="Václav Havel Airport Prague (PRG)"
       date="Fri, 19.10"
       time="16:35"
     />
-  </ItineraryPart>
+  </ItinerarySegment>
 </Itinerary>
 ```
 
@@ -42,46 +42,46 @@ After adding import into your project you can use it simply like:
 | dataTest   | `string`          |                    |         | Optional prop for testing purposes.                                                                                                                            |
 | spaceAfter | `enum`            |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
-## ItineraryPart
+## ItinerarySegment
 
-ItineraryPart component serves as a wrapper of atomic units `ItineraryPartPlace` and `ItineraryPartDetail, has status prop for showing important information about the connection between two segments of journey.
+ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegmentStop` and `ItinerarySegmentDetail, has status prop for showing important information about the connection between two segments of journey.
 
 ### Props
 
 | Name       | Type                    | Required           | Default | Description                                                                                                                                                    |
 | ---------- | ----------------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| status     | [`Statuses`](#statuses) |                    |         | The status of ItineraryPart                                                                                                                                    |
-| label      | `React.ReactNode`       |                    |         | Status message of ItineraryPart                                                                                                                                |
-| children   | `React.ReactNode`       | :heavy_check_mark: |         | The content of ItineraryPart                                                                                                                                   |
+| status     | [`Statuses`](#statuses) |                    |         | The status of ItinerarySegment                                                                                                                                 |
+| label      | `React.ReactNode`       |                    |         | Status message of ItinerarySegment                                                                                                                             |
+| children   | `React.ReactNode`       | :heavy_check_mark: |         | The content of ItinerarySegment                                                                                                                                |
 | dataTest   | `string`                |                    |         | Optional prop for testing purposes.                                                                                                                            |
 | spaceAfter | `enum`                  |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
-## ItineraryPartPlace
+## ItinerarySegmentStop
 
-ItineraryPartPlace is an atomic unit of the Itinerary component, shows two locations, date and time, has warning property which changes the icon to `<AlertCircle color="warning" />` to attract user attention about some important information about journey.
+ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time, has warning property which changes the icon to `<AlertCircle color="warning" />` to attract user attention about some important information about journey.
 
 ### Props
 
-| Name     | Type      | Required           | Default | Description                                                                                     |
-| -------- | --------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------- |
-| date     | `string`  | :heavy_check_mark: |         | The date of ItineraryPartPlace                                                                  |
-| time     | `string`  | :heavy_check_mark: |         | The time of ItineraryPartPlace                                                                  |
-| city     | `string`  | :heavy_check_mark: |         | The city of ItineraryPartPlace                                                                  |
-| place    | `string`  | :heavy_check_mark: |         | The place of ItineraryPartPlace                                                                 |
-| hidden   | `boolean` |                    |         | ItineraryPartPlace which status is hidden                                                       |
-| warning  | `boolean` |                    |         | Changes the icon of current ItineraryPartPlace, if there is some important information for user |
-| minWidth | `number`  |                    |         | sets min-width for first column with date and time                                              |
+| Name     | Type      | Required           | Default | Description                                                                                       |
+| -------- | --------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------- |
+| date     | `string`  | :heavy_check_mark: |         | The date of ItinerarySegmentStop                                                                  |
+| time     | `string`  | :heavy_check_mark: |         | The time of ItinerarySegmentStop                                                                  |
+| city     | `string`  | :heavy_check_mark: |         | The city of ItinerarySegmentStop                                                                  |
+| station  | `string`  | :heavy_check_mark: |         | The station of ItinerarySegmentStop                                                               |
+| hidden   | `boolean` |                    |         | ItinerarySegmentStop which status is hidden                                                       |
+| warning  | `boolean` |                    |         | Changes the icon of current ItinerarySegmentStop, if there is some important information for user |
+| minWidth | `number`  |                    |         | sets min-width for first column with date and time                                                |
 
-## ItineraryPartDetail
+## ItinerarySegmentDetail
 
-ItineraryPartDetail serves as connection between two ItineraryPartPlace components (segments)
+ItinerarySegmentDetail serves as connection between two ItinerarySegmentStop components (segments)
 
 ### Props
 
 | Name     | Type              | Required           | Default      | Description                                                        |
 | -------- | ----------------- | ------------------ | ------------ | ------------------------------------------------------------------ |
 | summary  | `React.ReactNode` | :heavy_check_mark: |              | The content of ItineraryDetail component, when it's not expanded   |
-| duration | `string`          | :heavy_check_mark: |              | The duration between two ItineraryPartPlace components             |
+| duration | `string`          | :heavy_check_mark: |              | The duration between two ItinerarySegmentStop components           |
 | children | `React.ReactNode` | :heavy_check_mark: |              | The content of ItineraryDetail component, shown when it's expanded |
 | icon     | `React.ReactNode` |                    | <Airplane /> | The icon of ItineraryDetail component                              |
 

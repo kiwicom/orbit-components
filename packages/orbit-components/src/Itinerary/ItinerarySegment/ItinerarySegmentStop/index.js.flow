@@ -5,7 +5,7 @@ export type Props = {|
   +date: string,
   +time: string,
   +city: string,
-  +place: string,
+  +station: string,
   +hidden?: boolean,
   +warning?: boolean,
   +minWidth?: number,

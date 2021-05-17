@@ -8,7 +8,7 @@ import CarrierLogo from "../CarrierLogo";
 import Badge from "../Badge";
 import Text from "../Text";
 
-import Itinerary, { ItineraryPart, ItineraryPartDetail, ItineraryPartPlace } from ".";
+import Itinerary, { ItinerarySegment, ItinerarySegmentDetail, ItinerarySegmentStop } from ".";
 
 const BadgeGroup = () => {
   const carrier = [{ code: "FR", name: "Ryanair" }];
@@ -37,23 +37,23 @@ const CollapsedContent = (): React.Node => {
 export const Part = (): React.Node => {
   return (
     <Itinerary>
-      <ItineraryPart>
-        <ItineraryPartPlace
+      <ItinerarySegment>
+        <ItinerarySegmentStop
           city="Prague"
-          place="Václav Havel Airport Prague (PRG)"
+          station="Václav Havel Airport Prague (PRG)"
           date="Fri, 19.10"
           time="14:05"
         />
-        <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+        <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
           <CollapsedContent />
-        </ItineraryPartDetail>
-        <ItineraryPartPlace
+        </ItinerarySegmentDetail>
+        <ItinerarySegmentStop
           city="Milan"
-          place="Milan Bergamo International Airport (BGY)"
+          station="Milan Bergamo International Airport (BGY)"
           date="Fri, 19.10"
           time="16:35"
         />
-      </ItineraryPart>
+      </ItinerarySegment>
     </Itinerary>
   );
 };
@@ -64,91 +64,93 @@ export const Status = (): React.Node => {
 
   return (
     <Itinerary>
-      <ItineraryPart status={type} label={label}>
-        <ItineraryPartPlace
+      <ItinerarySegment status={type} label={label}>
+        <ItinerarySegmentStop
           city="Prague"
-          place="Václav Havel Airport Prague (PRG)"
+          station="Václav Havel Airport Prague (PRG)"
           date="Fri, 19.10"
           time="14:05"
         />
-        <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+        <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
           <CollapsedContent />
-        </ItineraryPartDetail>
-        <ItineraryPartPlace
+        </ItinerarySegmentDetail>
+        <ItinerarySegmentStop
           city="Milan"
-          place="Milan Bergamo International Airport (BGY)"
+          station="Milan Bergamo International Airport (BGY)"
           date="Fri, 19.10"
           time="16:35"
         />
-        <ItineraryPartPlace
+        <ItinerarySegmentStop
           city="Moscow"
-          place="Moscow Sheremetyevo International Airport (SVO)"
+          station="Moscow Sheremetyevo International Airport (SVO)"
           date="Mon, 22.10"
           time="10:15"
           hidden
         />
-      </ItineraryPart>
+      </ItinerarySegment>
     </Itinerary>
   );
 };
 
-export const Place = (): React.Node => {
+export const Stop = (): React.Node => {
   const date = text("date", "Fr, 19.10");
   const time = text("time", "14:05");
-  const place = text("place", "Václav Havel Airport Prague (PRG)");
+  const station = text("place", "Václav Havel Airport Prague (PRG)");
   const city = text("city", "Prague");
   const warning = boolean("warning", false);
 
-  return <ItineraryPartPlace city={city} place={place} date={date} time={time} warning={warning} />;
+  return (
+    <ItinerarySegmentStop city={city} station={station} date={date} time={time} warning={warning} />
+  );
 };
 
 export const Detail = (): React.Node => {
   return (
-    <ItineraryPart>
-      <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+    <ItinerarySegment>
+      <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
         <CollapsedContent />
-      </ItineraryPartDetail>
-    </ItineraryPart>
+      </ItinerarySegmentDetail>
+    </ItinerarySegment>
   );
 };
 
 export const Default = (): React.Node => {
   return (
     <Itinerary>
-      <ItineraryPart spaceAfter="large">
-        <ItineraryPartPlace
+      <ItinerarySegment spaceAfter="large">
+        <ItinerarySegmentStop
           city="Moscow"
-          place="Sheremetyevo International Airport (SVO)"
+          station="Sheremetyevo International Airport (SVO)"
           date="Fri, 19.10"
           time="14:05"
         />
-        <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+        <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
           <CollapsedContent />
-        </ItineraryPartDetail>
-        <ItineraryPartPlace
+        </ItinerarySegmentDetail>
+        <ItinerarySegmentStop
           city="Prague"
-          place="Václav Havel Airport Prague (PRG)"
+          station="Václav Havel Airport Prague (PRG)"
           date="Fri, 19.10"
           time="16:35"
         />
-      </ItineraryPart>
-      <ItineraryPart spaceAfter="large">
-        <ItineraryPartPlace
+      </ItinerarySegment>
+      <ItinerarySegment spaceAfter="large">
+        <ItinerarySegmentStop
           city="Prague"
-          place="Václav Havel Airport Prague (PRG)"
+          station="Václav Havel Airport Prague (PRG)"
           date="Sat, 20.10"
           time="11:05"
         />
-        <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+        <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />}>
           <CollapsedContent />
-        </ItineraryPartDetail>
-        <ItineraryPartPlace
+        </ItinerarySegmentDetail>
+        <ItinerarySegmentStop
           city="Milan"
-          place="Milan Bergamo International Airport (BGY)"
+          station="Milan Bergamo International Airport (BGY)"
           date="Fri, 20.10"
           time="16:35"
         />
-      </ItineraryPart>
+      </ItinerarySegment>
     </Itinerary>
   );
 };

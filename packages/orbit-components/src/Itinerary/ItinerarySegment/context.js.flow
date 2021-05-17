@@ -26,5 +26,5 @@ export type ProviderProps = {|
   +count: number,
 |};
 
-declare export var ItineraryPartProvider: React.ComponentType<ProviderProps>;
+declare export var ItinerarySegmentProvider: React.ComponentType<ProviderProps>;
 declare export function usePart(): Context;
