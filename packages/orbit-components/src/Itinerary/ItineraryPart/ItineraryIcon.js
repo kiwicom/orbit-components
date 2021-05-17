@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { usePart } from "./context";
@@ -30,7 +30,7 @@ const IconStyled = styled.div`
   ${({ index, isHidden, last, count, isNextHidden, isStatus, theme }) => css`
     ${index === 0 &&
     isStatus &&
-    `
+    css`
       &:before {
         top: -27px;
         border: 1px dashed #ccc;
@@ -41,37 +41,41 @@ const IconStyled = styled.div`
 
     ${index > 0 &&
     count > 0 &&
-    `&:before {
-      top: -9px;
-      border: 1px ${isHidden || isStatus ? `dashed` : `solid`} ${
-      theme.orbit.paletteCloudNormalHover
-    };
-      ${lineMixin};
-    }`};
+    css`
+      &:before {
+        top: -9px;
+        border: 1px ${isHidden || isStatus ? `dashed` : `solid`}
+          ${theme.orbit.paletteCloudNormalHover};
+        ${lineMixin};
+      }
+    `};
 
     ${!last &&
     count > 0 &&
-    `&:after {
+    css`
+      &:after {
         bottom: -7px;
         opacity: ${isNextHidden ? `0.5` : `1`};
         border: 1px ${isNextHidden ? `dashed` : `solid`} ${theme.orbit.paletteCloudNormalHover};
         ${lineMixin};
-      }`};
+      }
+    `};
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconStyled.defaultProps = {
   theme: defaultTheme,
 };
 
 const Icon = ({ warning, isDetails }) => {
   if (warning) return <AlertCircle size="small" color="warning" />;
-  if (isDetails) return <ArrowDown />;
+  if (isDetails) return <ArrowDown size="small" />;
 
   return <Circle size="small" color="secondary" />;
 };
 
-const ItineraryIcon = ({ isDetails, warning }: Props) => {
+const ItineraryIcon = ({ isDetails, warning }: Props): React.Node => {
   const { index, last, isNextHidden, isHidden, count, hasStatus } = usePart();
 
   return (

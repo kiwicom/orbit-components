@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import ChevronUp from "../../../icons/ChevronUp";
@@ -31,6 +31,7 @@ const StyledWrapper = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: themeDefault,
 };
@@ -56,13 +57,14 @@ const StyledChevronWrapper = styled.div`
   `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChevronWrapper.defaultProps = {
   theme: themeDefault,
 };
 
 const StyledExpandable = styled.div``;
 
-const ItineraryPartDetail = ({ duration, summary, children }: Props) => {
+const ItineraryPartDetail = ({ duration, summary, children }: Props): React.Node => {
   const { expanded, setExpanded, hasStatus } = usePart();
   const { calculatedWidth } = useWidth();
   const [{ height }, ref] = useBoundingRect({ height: 0 });
@@ -72,18 +74,12 @@ const ItineraryPartDetail = ({ duration, summary, children }: Props) => {
 
   return (
     <StyledWrapper expanded={expanded} hasStatus={hasStatus} onClick={() => setExpanded(!expanded)}>
-      <Stack align="center" spacing="XSmall">
-        <StyledDuration minWidth={calculatedWidth}>
+      <Stack align="center" spacing="small">
+        <StyledDuration minWidth={calculatedWidth || 60}>
           <Text weight="bold">{duration}</Text>
         </StyledDuration>
         <ItineraryIcon isDetails />
-        <Stack
-          inline
-          justify="center"
-          shrink
-          direction="column"
-          spacing={expanded ? "medium" : "none"}
-        >
+        <Stack justify="center" shrink direction="column" spacing={expanded ? "medium" : "none"}>
           <StyledSummary>{summary}</StyledSummary>
           <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
             <StyledExpandable ref={ref} onClick={() => setExpanded(!expanded)}>

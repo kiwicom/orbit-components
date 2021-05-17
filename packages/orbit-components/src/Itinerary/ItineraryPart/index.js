@@ -15,11 +15,12 @@ const StyledWrapper = styled.div`
   margin-bottom: ${getSpacingToken};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props) => {
+const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props): React.Node => {
   const content = React.Children.toArray(children);
 
   const parts = content && content.length > 0 && (

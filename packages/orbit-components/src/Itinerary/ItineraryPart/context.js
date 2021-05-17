@@ -22,7 +22,7 @@ export const ItineraryPartProvider = ({
   isNextHidden,
   isHidden,
   hasStatus,
-}: ProviderProps) => {
+}: ProviderProps): React.Node => {
   const [isExpanded, setExpanded] = React.useState(false);
 
   return (
@@ -43,4 +43,4 @@ export const ItineraryPartProvider = ({
   );
 };
 
-export const usePart = () => React.useContext(ItineraryPartContext);
+export const usePart = (): Context => React.useContext(ItineraryPartContext);

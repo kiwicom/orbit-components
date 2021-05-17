@@ -18,6 +18,7 @@ const StyledWrapper = styled.div`
   padding: 0 ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -26,7 +27,15 @@ const StyledDate = styled.div`
   min-width: ${({ minWidth }) => minWidth}px;
 `;
 
-const ItineraryPartPlace = ({ date, time, city, place, hidden, minWidth = 60, warning }: Props) => {
+const ItineraryPartPlace = ({
+  date,
+  time,
+  city,
+  place,
+  hidden,
+  minWidth = 60,
+  warning,
+}: Props): React.Node => {
   const { calculatedWidth, setWidths } = useWidth();
   const ref: {| current: any | HTMLDivElement |} = React.useRef(null);
 

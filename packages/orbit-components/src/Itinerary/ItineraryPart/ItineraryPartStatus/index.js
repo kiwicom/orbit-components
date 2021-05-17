@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { left } from "../../../utils/rtl";
@@ -42,6 +42,7 @@ const StyledWrapper = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,6 +58,7 @@ const StyledStatusHeader = styled.div`
   `}
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStatusHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,6 +67,7 @@ const StyledChildrenWrapper = styled.div`
   padding: ${({ theme }) => theme.orbit.spaceMedium} 0;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChildrenWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -73,14 +76,15 @@ StyledChildrenWrapper.defaultProps = {
 const StyledStatusText = styled.div`
   z-index: 2;
   margin-${left}: ${({ offset, theme }) =>
-  offset ? offset + parseInt(theme.orbit.spaceXSmall, 10) * 2 : "70.5"}px;
+  offset ? offset + parseInt(theme.orbit.spaceXSmall, 10) * 2 : "76"}px;
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStatusText.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItineraryPartStatus = ({ type, label, children, offset }: Props) => {
+const ItineraryPartStatus = ({ type, label, children, offset }: Props): React.Node => {
   return (
     <StyledWrapper type={type}>
       <StyledStatusHeader type={type}>

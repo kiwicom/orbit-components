@@ -8,7 +8,7 @@ export const ItineraryContext: React.Context<Context> = React.createContext({
   calculatedWidth: 0,
 });
 
-export const ItineraryProvider = ({ children }: ProviderProps) => {
+export const ItineraryProvider = ({ children }: ProviderProps): React.Node => {
   const [widths, setWidths] = React.useState([]);
   const [calculatedWidth, setCalculatedWidth] = React.useState(0);
 
@@ -27,4 +27,4 @@ export const ItineraryProvider = ({ children }: ProviderProps) => {
     </ItineraryContext.Provider>
   );
 };
-export const useWidth = () => React.useContext(ItineraryContext);
+export const useWidth = (): Context => React.useContext(ItineraryContext);

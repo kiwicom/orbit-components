@@ -22,7 +22,7 @@ const BadgeGroup = () => {
   );
 };
 
-const CollapsedContent = () => {
+const CollapsedContent = (): React.Node => {
   return (
     <Stack direction="column">
       <Text weight="bold">Connection info</Text>
@@ -34,7 +34,7 @@ const CollapsedContent = () => {
   );
 };
 
-export const Part = () => {
+export const Part = (): React.Node => {
   return (
     <Itinerary>
       <ItineraryPart>
@@ -58,39 +58,41 @@ export const Part = () => {
   );
 };
 
-export const Status = () => {
+export const Status = (): React.Node => {
   const label = text("label", "Canceled");
   const type = select("type", ["critical", "warning"], "critical");
 
   return (
-    <ItineraryPart status={type} label={label}>
-      <ItineraryPartPlace
-        city="Prague"
-        place="Václav Havel Airport Prague (PRG)"
-        date="Fri, 19.10"
-        time="14:05"
-      />
-      <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
-        <CollapsedContent />
-      </ItineraryPartDetail>
-      <ItineraryPartPlace
-        city="Milan"
-        place="Milan Bergamo International Airport (BGY)"
-        date="Fri, 19.10"
-        time="16:35"
-      />
-      <ItineraryPartPlace
-        city="Moscow"
-        place="Moscow Sheremetyevo International Airport (SVO)"
-        date="Mon, 22.10"
-        time="10:15"
-        hidden
-      />
-    </ItineraryPart>
+    <Itinerary>
+      <ItineraryPart status={type} label={label}>
+        <ItineraryPartPlace
+          city="Prague"
+          place="Václav Havel Airport Prague (PRG)"
+          date="Fri, 19.10"
+          time="14:05"
+        />
+        <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
+          <CollapsedContent />
+        </ItineraryPartDetail>
+        <ItineraryPartPlace
+          city="Milan"
+          place="Milan Bergamo International Airport (BGY)"
+          date="Fri, 19.10"
+          time="16:35"
+        />
+        <ItineraryPartPlace
+          city="Moscow"
+          place="Moscow Sheremetyevo International Airport (SVO)"
+          date="Mon, 22.10"
+          time="10:15"
+          hidden
+        />
+      </ItineraryPart>
+    </Itinerary>
   );
 };
 
-export const Place = () => {
+export const Place = (): React.Node => {
   const date = text("date", "Fr, 19.10");
   const time = text("time", "14:05");
   const place = text("place", "Václav Havel Airport Prague (PRG)");
@@ -100,7 +102,7 @@ export const Place = () => {
   return <ItineraryPartPlace city={city} place={place} date={date} time={time} warning={warning} />;
 };
 
-export const Detail = () => {
+export const Detail = (): React.Node => {
   return (
     <ItineraryPart>
       <ItineraryPartDetail duration="2h 30m" summary={<BadgeGroup />}>
@@ -110,7 +112,7 @@ export const Detail = () => {
   );
 };
 
-export const Default = () => {
+export const Default = (): React.Node => {
   return (
     <Itinerary>
       <ItineraryPart spaceAfter="large">
