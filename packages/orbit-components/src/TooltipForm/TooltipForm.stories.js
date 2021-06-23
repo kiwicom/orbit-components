@@ -3,6 +3,7 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
+import { css } from "styled-components";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
 import Stack from "../Stack";
@@ -406,6 +407,195 @@ export const withModal = (): React.Node => {
         <Button fullWidth>Proceed to Payment (23.98€)</Button>
       </ModalFooter>
     </Modal>
+  );
+};
+
+export const AdvancedExample = (): React.Node => {
+  const defaultValues = {
+    name: "",
+    surname: "",
+    nationality: "",
+    gender: "",
+    dd: "",
+    month: "",
+    year: "",
+  };
+
+  const [values, setValues] = React.useState(defaultValues);
+  const [errors, setErrors] = React.useState(defaultValues);
+  const [focused, setFocused] = React.useState({});
+
+  const validate = (value: string) => {
+    return value.length === 0 ? "This field is required" : "";
+  };
+
+  const handleChange = ev => {
+    const { name, value } = ev.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    });
+
+    setFocused({
+      ...focused,
+      [name]: true,
+    });
+  };
+
+  const handleSubmit = ev => {
+    ev.preventDefault();
+
+    const formValidation = Object.entries(values).reduce(
+      (acc, [key, value]) => {
+        // $FlowFixMe: mixed
+        const newError = validate(value);
+        const newFocused = { [key.toString()]: true };
+        return {
+          errors: {
+            ...acc.errors,
+            ...(newError && { [key.toString()]: newError }),
+          },
+          focused: {
+            ...acc.focused,
+            ...newFocused,
+          },
+        };
+      },
+      {
+        errors: { ...errors },
+        focused: { ...focused },
+      },
+    );
+
+    setErrors(formValidation.errors);
+    setFocused(formValidation.focused);
+  };
+
+  const handleBlur = evt => {
+    const { name, value } = evt.target;
+    const { [name]: removedError, ...rest } = errors;
+    const error = validate(value);
+
+    setErrors({
+      ...rest,
+      ...(error && { [name]: focused[name] && error }),
+    });
+  };
+
+  return (
+    <>
+      <form
+        onSubmit={handleSubmit}
+        css={css`
+          max-width: 600px;
+          padding: 20px 0;
+        `}
+      >
+        <Stack flex justify="between" spaceAfter="large">
+          <InputField
+            required
+            name="name"
+            value={values.name}
+            error={errors.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="Given names"
+            placeholder="e.g. Harry James"
+          />
+          <InputField
+            required
+            name="surname"
+            value={values.surname}
+            error={errors.surname}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="Surname"
+            placeholder="e.g. Brown"
+          />
+        </Stack>
+        <Stack flex justify="between" spaceAfter="large">
+          <Select
+            required
+            name="nationality"
+            label="Nationality"
+            value={values.nationality}
+            error={errors.nationality}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="Select"
+            options={[
+              { value: "ru", label: "Russia" },
+              { value: "cz", label: "Czech Republic" },
+              { value: "sk", label: "Slovakia" },
+              { value: "cr", label: "Croatia" },
+            ]}
+          />
+          <Select
+            required
+            name="gender"
+            label="Gender"
+            value={values.gender}
+            error={errors.gender}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            options={[
+              { value: "male", label: "male" },
+              { value: "female", label: "female" },
+            ]}
+            placeholder="Select"
+          />
+          <InputGroup label="Date of birth">
+            <InputField
+              required
+              name="dd"
+              type="number"
+              error={errors.dd}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.dd}
+              placeholder="DD"
+            />
+            <Select
+              required
+              name="month"
+              error={errors.month}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.month}
+              placeholder="Month"
+              options={[
+                { value: 1, label: "January" },
+                { value: 2, label: "February" },
+                { value: 3, label: "March" },
+                { value: 4, label: "April" },
+                { value: 5, label: "May" },
+                { value: 6, label: "June" },
+                { value: 7, label: "July" },
+                { value: 8, label: "August" },
+                { value: 9, label: "September" },
+                { value: 10, label: "October" },
+                { value: 11, label: "November" },
+                { value: 12, label: "December" },
+              ]}
+            />
+            <InputField
+              value={values.year}
+              name="year"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.year}
+              required
+              type="number"
+              placeholder="YYYY"
+            />
+          </InputGroup>
+        </Stack>
+        <Button type="primary" submit>
+          Continue
+        </Button>
+      </form>
+    </>
   );
 };
 

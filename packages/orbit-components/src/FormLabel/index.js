@@ -61,7 +61,7 @@ const FormLabel: any = styled(
         </StyledInputErrorIcWrapper>
       )}
 
-      {required && (
+      {required && !error && (
         <StyledAsterisk aria-hidden="true" filled={filled}>
           *
         </StyledAsterisk>
