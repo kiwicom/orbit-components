@@ -2,12 +2,12 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import handleKeyDown from "../../utils/handleKeyDown";
+// import handleKeyDown from "../../utils/handleKeyDown";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledText } from "../../Text";
 import { Item } from "../../List/ListItem";
-import CloseIc from "../../icons/Close";
+// import CloseIc from "../../icons/Close";
 import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
 import tooltipArrowStyle from "./helpers/tooltipArrowStyle";
@@ -141,8 +141,8 @@ const FormFeedbackTooltip = ({
   children,
   isHelp = false,
   inlineLabel,
-  onClick,
-}: Props): React.Node => {
+}: // onClick,
+Props): React.Node => {
   const contentRef = React.useRef(null);
   const dimensions = useDimensions(
     { boundingRef, contentRef, iconBoundingRef },
@@ -172,21 +172,19 @@ const FormFeedbackTooltip = ({
       aria-live="polite"
     >
       <StyledTooltipContent>{children}</StyledTooltipContent>
-      {isHelp && (
+      {/* {isHelp && (
         <StyledCloseButton
           tabIndex={0}
           // $FlowFixMe: TODO
           onKeyDown={handleKeyDown(onClick)}
           onClick={ev => {
             ev.preventDefault();
-            if (onClick) {
-              onClick(ev);
-            }
+            if (onClick) onClick(ev);
           }}
         >
           <CloseIc size="small" />
         </StyledCloseButton>
-      )}
+      )} */}
     </StyledFormFeedbackTooltip>
   );
 };

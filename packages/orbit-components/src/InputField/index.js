@@ -432,7 +432,7 @@ const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwa
             }
             onChange={onChange}
             onFocus={handleFocus}
-            onBlur={help ? undefined : handleBlur}
+            onBlur={handleBlur}
             onKeyUp={onKeyUp}
             onKeyDown={onKeyDown}
             onSelect={onSelect}
