@@ -1,8 +1,9 @@
-import React from "react";
+import * as React from "react";
 import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import useMediaQuery from "@kiwicom/orbit-components/lib/hooks/useMediaQuery";
 import { Grid, Stack } from "@kiwicom/orbit-components";
 
+// eslint-disable-next-line import/no-cycle
 import ColorContainer from "./ColorContainer";
 import Switch from "../Switch";
 import findTokenAttributes from "../DesignTokens/findTokenAttributes";
@@ -24,7 +25,7 @@ interface PaletteProps {
   allowAdditional: boolean;
 }
 
-const normalizeName = (name: string[]) => name.map(v => upperFirst(String(v))).join(" ");
+const normalizeName = (name: Array<string>) => name.map(v => upperFirst(String(v))).join(" ");
 
 const getAdditionalColor = (name, additionalName) => {
   const tokenName = `${name}${upperFirst(additionalName)}`;

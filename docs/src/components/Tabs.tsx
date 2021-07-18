@@ -16,7 +16,7 @@ interface SizeCheck {
 const Container = styled.div`
   ${({ theme }) => `
     padding-top: 16px;
-    padding-left: ${theme.orbit.spaceMedium};
+    padding-left: ${theme.orbit.spaceFourX};
     overflow: hidden;
   `};
 `;
@@ -31,7 +31,7 @@ const StyledTab = styled.div`
     border-top-right-radius: 12px;
     color: ${theme.orbit.paletteInkNormal};
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
-    background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhite} 27%);
+    background: linear-gradient(180deg, transparent, ${theme.orbit.paletteWhiteNormal} 27%);
     display: inline-block;
     position: relative;
   `}
@@ -42,9 +42,9 @@ const StyledTabWrapper = styled.div<SizeCheck>`
     display: inline-block;
     z-index: ${theme.orbit.zIndexSticky};
     ${StyledTab}, ${StyledTabLink} {
-      padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
-        ${theme.orbit.spaceMedium};
-      margin: 0 ${theme.orbit.spaceXSmall};
+      padding: ${theme.orbit.spaceThreeX} ${theme.orbit.spaceFourX} ${theme.orbit.spaceTwoX}
+        ${theme.orbit.spaceFourX};
+      margin: 0 ${theme.orbit.spaceTwoX};
     }
   `}
 `;

@@ -6,11 +6,11 @@ import { DoDontHeader, GuidelineType } from ".";
 
 const GuidelineContainer = styled.div`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceEightX};
     width: 100%;
     padding-top: 0;
     background-color: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.spaceMedium};
+    border-radius: ${theme.orbit.spaceFourX};
   `}
 `;
 
@@ -22,9 +22,9 @@ const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
     max-width: 360px;
-    background-color: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.spaceMedium};
-    padding: ${theme.orbit.spaceXLarge};
+    background-color: ${theme.orbit.paletteWhiteNormal};
+    border-radius: ${theme.orbit.spaceFourX};
+    padding: ${theme.orbit.spaceEightX};
   `}
 `;
 
@@ -32,7 +32,7 @@ const Border = styled.div<GuidelineType>`
   ${({ theme, type }) => css`
     border-top: 4px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding-top: ${theme.orbit.spaceXLarge};
+    padding-top: ${theme.orbit.spaceEightX};
     height: 100%;
   `}
 `;

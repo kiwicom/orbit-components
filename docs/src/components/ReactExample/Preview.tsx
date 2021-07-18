@@ -21,9 +21,9 @@ const getBackground = (type: BgType) => ({ theme }) => {
       linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
       linear-gradient(-90deg, rgba(0, 0, 0, .06) 1px, transparent 1px),
       linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
-      linear-gradient(transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
+      linear-gradient(transparent 3px, ${theme.orbit.paletteWhiteNormal} 3px, ${theme.orbit.paletteWhiteNormal} 78px, transparent 78px),
       linear-gradient(-90deg, ${theme.orbit.paletteInkNormal} 1px, transparent 1px),
-      linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
+      linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhiteNormal} 3px, ${theme.orbit.paletteWhiteNormal} 78px, transparent 78px),
       linear-gradient(${theme.orbit.paletteInkNormal} 1px, transparent 1px),
       #f2f2f2;
 
@@ -41,7 +41,7 @@ const getBackground = (type: BgType) => ({ theme }) => {
 
   if (type === "dark") return `background: ${theme.orbit.paletteInkNormal}`;
 
-  return `background: ${theme.orbit.paletteWhite}`;
+  return `background: ${theme.orbit.paletteWhiteNormal}`;
 };
 
 const StyledFrame = styled(Frame)`
@@ -59,7 +59,7 @@ const StyledPreviewWrapper = styled.div<{ width: number }>`
     max-width: ${width}px;
     width: 100%;
     overflow: scroll;
-    padding-top: ${theme.orbit.spaceXLarge};
+    padding-top: ${theme.orbit.spaceEightX};
   `};
 `;
 

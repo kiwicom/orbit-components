@@ -3,23 +3,23 @@ import styled from "styled-components";
 
 const StyledWrapper = styled.div`
   ${({ theme }) => `
-    padding: ${theme.orbit.spaceMedium} 0;
+    padding: ${theme.orbit.spaceFourX} 0;
     background-color: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.spaceMedium};
+    border-radius: ${theme.orbit.spaceFourX};
   `};
 `;
 
 const StyledContent = styled.div`
   ${({ theme }) => `
-    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceXSmall}
-      ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceTwoX} ${theme.orbit.spaceSixX} ${theme.orbit.spaceTwoX}
+      ${theme.orbit.spaceFourX};
     border-left: 4px solid ${theme.orbit.paletteInkLight};
     font-style: italic;
     font-weight: 500;
 
     blockquote > * + *,
     figcaption {
-      margin-top: ${theme.orbit.spaceXSmall};
+      margin-top: ${theme.orbit.spaceTwoX};
     }
   `};
 `;

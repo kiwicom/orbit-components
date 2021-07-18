@@ -15,7 +15,7 @@ const StyledMiddle = styled.div`
     ${mediaQueries.largeDesktop(css`
       flex-direction: row;
       > * + * {
-        margin-left: ${theme.orbit.spaceLarge};
+        margin-left: ${theme.orbit.spaceSixX};
       }
     `)};
   `}

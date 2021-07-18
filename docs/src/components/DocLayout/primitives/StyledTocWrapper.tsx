@@ -6,7 +6,7 @@ const StyledTocWrapper = styled.div`
     order: 2;
   `)}
 
-  padding-left: ${({ theme }) => theme.orbit.spaceSmall};
+  padding-left: ${({ theme }) => theme.orbit.spaceThreeX};
   > * {
     position: sticky;
     top: 0;

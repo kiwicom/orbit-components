@@ -14,13 +14,13 @@ const Wrapper = styled.div<GuidelineType>`
   ${({ theme, type }) => css`
     border-top: 4px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX};
   `}
 `;
 
 const StyledContainer = styled.div`
   ${({ theme }) => css`
-    padding: 0 ${theme.orbit.spaceLarge};
+    padding: 0 ${theme.orbit.spaceSixX};
     background-color: ${theme.orbit.paletteCloudLight};
     border-radius: 16px;
     width: 100%;

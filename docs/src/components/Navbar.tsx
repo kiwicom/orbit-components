@@ -84,7 +84,7 @@ const StyledTab = styled.button`
     height: 100%;
     &[aria-selected=true] {
       border-radius: 22px;
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       box-shadow: 0px 4px 8px 0px #252A311F, 0px 1px 4px 0px #252A3129;
     }
   `};

@@ -5,9 +5,9 @@ import { StyledAnchorWrapper } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
   ${({ theme, elevation }) => css`
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeNormal};
     ${mediaQueries.tablet(css`
-      border-radius: ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium} 0 0;
+      border-radius: ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX} 0 0;
     `)};
     > * + * {
       margin-top: 16px;
@@ -35,7 +35,7 @@ const StyledProse = styled(Box)`
       margin-top: 12px;
     }
     > ${StyledAnchorWrapper} {
-      margin-top: ${theme.orbit.spaceLarge};
+      margin-top: ${theme.orbit.spaceSixX};
 
       /* Handle spacing after headings through the heading,
         rather than the generic margin-top for all elements in the layout */

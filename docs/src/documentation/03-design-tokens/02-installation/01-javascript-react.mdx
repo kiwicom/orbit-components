@@ -1,0 +1,99 @@
+---
+title: JavaScript or React
+---
+
+If you're already using `@kiwicom/orbit-components`,
+you don't need to install the tokens because they're included as a dependency to ensure compatibility, see []()
+
+If not, you can install the package on its own.
+
+```shell
+# Using npm
+npm install --save @kiwicom/orbit-design-tokens
+
+# Using yarn
+yarn add @kiwicom/orbit-design-tokens
+```
+
+## Usage without @kiwicom/orbit-components
+
+Once installed in your codebase, you can use our design tokens in JavaScript environment with simply importing them.
+
+```js
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
+```
+
+The `defaultTheme` object contains all design tokens that are available for every usage.
+
+```js
+/*
+  The content of defaultTheme object
+*/
+{
+  ...,
+  fontFamily: "Roboto",
+  fontSizeSmall: "12px",
+  fontSizeNormal: "14px",
+  fontSizeLarge: "16px",
+  ...
+}
+```
+
+We recommend this specified usage only for cases when you don't need to work also with `@kiwicom/orbit-components`.
+
+## Usage with @kiwicom/orbit-components
+
+To be able to use our design tokens together with Orbit React components, we highly recommend using import from them, instead of from design tokens.
+
+```js
+import { defaultTheme } from "@kiwicom/orbit-components";
+```
+
+There is only small minor change. The `defaultTheme` contains more various data that we use for creating more advanced and scale-able user interfaces.
+
+```js
+/*
+  The content of defaultTheme object
+*/
+{
+  rtl: true,
+  transitions: true,
+  orbit: {
+    ...,
+    fontFamily: "Roboto",
+    fontSizeSmall: "12px",
+    fontSizeNormal: "14px",
+    ...
+  }
+}
+```
+
+> You can read more the support of right-to-left languages [here](/development/utilities/rtl-languages).
+
+Since `@kiwicom/orbit-components` is build upon `styled-components` CSS-in-JS library, it's necessary to work with a theming (styling) context across the whole application.
+
+To be able to use the same `theme` context object with same value across the whole application we encourage users to wrap the whole application into Orbits' `ThemeProvider`.
+
+```js
+import * as React from "react";
+import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+
+const App = ({ children }) => {
+  return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>;
+};
+```
+
+And, most importantly consuming the `theme` by accessing the context object directly inside `styled-components`.
+
+```jsx
+import * as React from "react";
+import styled from "styled-components";
+
+export const CustomStyled = styled.div`
+  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+`;
+```
+
+This approach enables easier consistency how to work and consume the Orbit's foundation, tokenized by `@kiwicom/orbit-design-tokens`.
+Lastly, it also provides a better and easier way how to enable custom theming for your application. To read more about theming possibilities and implementation,
+please check the [theming](/design-tokens/theming) page.

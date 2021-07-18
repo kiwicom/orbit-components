@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledInputContainer = styled.div`
   display: flex;
   position: relative;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
   padding: 10px 1.5em;
   border-radius: 100px;
   flex-direction: row;

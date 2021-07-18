@@ -11,11 +11,11 @@ import LoveItTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/love
 import SpellingCheckIcon from "@streamlinehq/streamlinehq/img/streamline-light/spelling-check-9ULReF.svg";
 import ArrangeLetterIcon from "@streamlinehq/streamlinehq/img/streamline-light/arrange-letter-4pQIv2.svg";
 import ComputerBugIcon from "@streamlinehq/streamlinehq/img/streamline-light/computer-bug-rjtzBu.svg";
-import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/conversation-chat-text-jUAzcc.svg";
 import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
 import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
+import ReadArt from "@streamlinehq/streamlinehq/img/streamline-light/read-art-DeGKsX.svg";
 
-import TypograhpyIcon from "../components/icons/Typography";
+import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
 import GitHubIcon from "../components/icons/GitHub";
@@ -26,7 +26,7 @@ import RocketImage from "../components/RocketImage";
 import Tile from "../components/Tile";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
-import SpectrumLogo from "../images/spectrum.svg";
+import FigmaLogo from "../images/figma-logo.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
@@ -155,7 +155,7 @@ export default function Home({ location, path }: Props) {
             >
               Color is used to signal structure on a page, to highlight or emphasize...
             </Tile>
-            <Tile title="Typography" linkContent="Learn more" icon={<TypograhpyIcon />}>
+            <Tile title="Typography" linkContent="Learn more" icon={<TypographyIcon />}>
               Typography is critical for communicating the hierarchy of a page.
             </Tile>
             <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
@@ -247,19 +247,18 @@ export default function Home({ location, path }: Props) {
                 asap. It’s the highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
-                title="Engage with us"
-                icon={<ConversationChatTextIcon />}
-                href="https://spectrum.chat/orbit"
-                linkContent="Go to Spectrum chat"
-                logo={<SpectrumLogo />}
+                title="Get the Figma library"
+                icon={<ReadArt />}
+                href="https://www.figma.com/@orbitbykiwi"
+                linkContent="Go to Figma profile"
+                logo={<FigmaLogo />}
                 color={{
-                  primary: "#330B94",
-                  secondary: "#7441F1",
+                  primary: "#F24E1E",
+                  secondary: "#F86D5F",
                 }}
               >
-                We aim to provide the best possible support for all designers and developers using
-                Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform to
-                get feedback from you.
+                Visit our community profile and download all of our libraries and resources for
+                free.
               </BrandedTile>
             </Stack>
             <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">

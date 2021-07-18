@@ -89,7 +89,10 @@ export default function SearchModal({ onClose }: Props) {
   const documents = React.useMemo<SearchResult[]>(
     () =>
       data.allMdx.nodes.map(node => {
-        const breadcrumbs = node.fields.trail.map(({ name }) => name);
+        console.log(node.fields);
+        const breadcrumbs = Array.isArray(node.fields.trail)
+          ? node.fields.trail.map(({ name }) => name)
+          : [];
         return {
           name: breadcrumbs.join(" "),
           breadcrumbs,

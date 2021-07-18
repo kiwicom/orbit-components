@@ -21,7 +21,7 @@ import useCopyToClipboard from "../hooks/useCopyToClipboard";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
+  grid-gap: ${({ theme }) => theme.orbit.spaceTwoX};
 `;
 
 interface StyledRatioContainerProps {

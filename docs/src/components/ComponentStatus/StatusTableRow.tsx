@@ -35,10 +35,10 @@ const StatusTableRow = ({ component, group }: StatusTableRowProps) => {
                 .toLowerCase()
                 .replace(" ", "-")}/${component.component.toLowerCase()}/`}
               css={css`
-                color: ${theme.orbit.colorTextLinkPrimary};
+                color: ${theme.orbit.textLinkPrimaryForeground};
                 text-decoration: underline;
                 &:hover {
-                  color: ${theme.orbit.colorTextLinkPrimaryHover};
+                  color: ${theme.orbit.textLinkForegroundHover};
                   text-decoration: none;
                 }
               `}

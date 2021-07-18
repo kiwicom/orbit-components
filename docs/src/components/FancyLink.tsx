@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Figma, Github, ReactJs, Spectrum, Storybook } from "@icons-pack/react-simple-icons";
+import { Figma, Github, ReactJs, Storybook } from "@icons-pack/react-simple-icons";
 import { ColorPicker, Download, FlightDirect, Google, Tips } from "@kiwicom/orbit-components/icons";
 import { Tile } from "@kiwicom/orbit-components";
 
@@ -14,7 +14,6 @@ type IconNames =
   | "google"
   | "lightbulb"
   | "react"
-  | "spectrum"
   | "storybook";
 
 interface Props {
@@ -48,8 +47,6 @@ const FancyLink = ({ download, href, icon, title }: Props) => {
             return <Google />;
           case "react":
             return <ReactJs />;
-          case "spectrum":
-            return <Spectrum />;
           case "storybook":
             return <Storybook />;
           case "lightbulb":

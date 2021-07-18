@@ -19,8 +19,8 @@ interface GuidelineProps extends GuidelineType {
 const StyledComponent = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.spaceMedium};
-    padding: ${theme.orbit.spaceMedium} 0;
+    border-radius: ${theme.orbit.spaceFourX};
+    padding: ${theme.orbit.spaceFourX} 0;
   `}
 `;
 
@@ -34,15 +34,15 @@ const Wrapper = styled.div<WrapperProps>`
     `border-left: 4px solid ${
       type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal
     }`};
-    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceXSmall}
-      ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceTwoX} ${theme.orbit.spaceSixX} ${theme.orbit.spaceTwoX}
+      ${theme.orbit.spaceFourX};
     display: flex;
   `}
 `;
 
 const ContentContainer = styled.div`
   ${({ theme }) => css`
-    padding-left: ${theme.orbit.spaceXSmall};
+    padding-left: ${theme.orbit.spaceTwoX};
   `}
 `;
 
@@ -53,12 +53,12 @@ interface ImageContainerProps {
 
 const ImageContainer = styled.div<ImageContainerProps>`
   ${({ noLeftPadding, theme }) => css`
-    padding: ${noLeftPadding ? theme.orbit.spaceMedium : theme.orbit.spaceLarge};
+    padding: ${noLeftPadding ? theme.orbit.spaceFourX : theme.orbit.spaceSixX};
     ${noLeftPadding && "padding-left: 0;"}
     width: 100%;
     max-width: 360px;
-    background-color: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.spaceMedium};
+    background-color: ${theme.orbit.paletteWhiteNormal};
+    border-radius: ${theme.orbit.spaceFourX};
   `}
 `;
 
@@ -66,14 +66,14 @@ const ImageBorder = styled.div<GuidelineType>`
   ${({ theme, type }) => css`
     border-left: 4px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
-    padding: ${theme.orbit.spaceMedium};
-    padding-left: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceFourX};
+    padding-left: ${theme.orbit.spaceEightX};
     height: 100%;
   `}
 `;
 
 const DoDontHeaderWrapper = styled.div`
-  padding-left: ${({ theme }) => theme.orbit.spaceLarge};
+  padding-left: ${({ theme }) => theme.orbit.spaceSixX};
 `;
 
 export const DoDontHeader = ({ type }: GuidelineType) => (

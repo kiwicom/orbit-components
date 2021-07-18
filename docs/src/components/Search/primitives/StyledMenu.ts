@@ -30,7 +30,7 @@ export const StyledMenuItem = styled.li`
     &:hover {
       background: ${theme.orbit.paletteCloudLight};
       ${StyledMenuItemTitle} {
-        color: ${theme.orbit.paletteProductDarkHover};
+        color: ${theme.orbit.paletteProductDarkSecondary};
       }
     }
 

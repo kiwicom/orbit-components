@@ -8,9 +8,9 @@ import { useBookmarks } from "../../services/bookmarks";
 
 const StyledLink = styled(Link)`
   cursor: pointer;
-  color: ${({ theme }) => theme.orbit.colorTextSecondary};
+  color: ${({ theme }) => theme.orbit.textSecondaryForeground};
   &:hover {
-    color: ${({ theme }) => theme.orbit.colorTextLinkPrimary};
+    color: ${({ theme }) => theme.orbit.textLinkPrimaryForeground};
   }
 `;
 

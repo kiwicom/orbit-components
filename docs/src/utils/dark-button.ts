@@ -16,7 +16,7 @@ export function getBgColor({
 }: { theme: ThemeShape } & Pick<Params, "type" | "color">): string {
   switch (type) {
     case "primary":
-      return theme.orbit.backgroundButtonPrimary;
+      return theme.orbit.buttonPrimaryBackground;
     case "secondary":
       return theme.orbit.paletteProductLight;
     default:

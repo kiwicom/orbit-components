@@ -12,7 +12,7 @@ import { Navigation } from "./types";
 type Trail = Array<{
   name: string;
   url: string;
-  hasReactTab: boolean;
+  hasReactTab?: boolean;
 }>;
 
 interface QueryData {
@@ -84,21 +84,25 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
 
   const trails = data.allMdx.nodes
     .filter(node => !node.fields.tabCollection || node.parent.name.startsWith("01-"))
-    .map(node =>
-      node.fields.trail.map((t, i) => {
-        if (i === node.fields.trail.length - 1) {
-          return {
-            ...t,
-            hasReactTab: data.allMdx.nodes.some(
-              n =>
-                n.fields.tabCollection === node.fields.tabCollection &&
-                n.fields.trail[n.fields.trail.length - 1].url.endsWith("/react/"),
-            ),
-          };
-        }
-        return t;
-      }),
-    );
+    .map(node => {
+      if (Array.isArray(node.fields.trail)) {
+        return node.fields.trail.map((t, i) => {
+          if (i === node.fields.trail.length - 1) {
+            return {
+              ...t,
+              hasReactTab: data.allMdx.nodes.some(
+                n =>
+                  n.fields.tabCollection === node.fields.tabCollection &&
+                  Array.isArray(n.fields.trail) &&
+                  n.fields.trail[n.fields.trail.length - 1].url.endsWith("/react/"),
+              ),
+            };
+          }
+          return t;
+        });
+      }
+      return node;
+    });
 
   const navigation = (
     <>

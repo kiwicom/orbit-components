@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 
 import theme from "../theme";
@@ -26,36 +26,36 @@ interface ElevationLevelProps {
 }
 
 export default ({ level }: ElevationLevelProps) => {
-  let backgroundColor = theme.orbit.paletteWhite;
+  let backgroundColor = theme.orbit.elevationFlatBackground;
   let border = "none";
   let boxShadow = "none";
   switch (level) {
     case 1:
-      backgroundColor = theme.orbit.paletteCloudLight;
+      backgroundColor = theme.orbit.elevationSuppressedBackground;
       break;
     case 2:
-      border = `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
+      border = `${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.elevationFlatBorderColor}`;
       break;
     case 3:
-      boxShadow = theme.orbit.boxShadowAction;
+      boxShadow = theme.orbit.elevationActionBoxShadow;
       break;
     case 3.5:
-      boxShadow = theme.orbit.boxShadowActionActive;
+      boxShadow = theme.orbit.elevationActionActiveBoxShadow;
       break;
     case 4:
-      boxShadow = theme.orbit.boxShadowFixed;
+      boxShadow = theme.orbit.elevationFixedBoxShadow;
       break;
     case 4.5:
-      boxShadow = theme.orbit.boxShadowFixedReverse;
+      boxShadow = theme.orbit.elevationFixedReverseBoxShadow;
       break;
     case 5:
-      boxShadow = theme.orbit.boxShadowRaised;
+      boxShadow = theme.orbit.elevationRaisedBoxShadow;
       break;
     case 5.5:
-      boxShadow = theme.orbit.boxShadowRaisedReverse;
+      boxShadow = theme.orbit.elevationRaisedReverseBoxShadow;
       break;
     case 6:
-      boxShadow = theme.orbit.boxShadowOverlay;
+      boxShadow = theme.orbit.elevationOverlayBoxShadow;
       break;
     default:
       break;

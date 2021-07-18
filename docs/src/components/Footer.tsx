@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 
 import Switch from "./Switch";
 import GitHub from "../images/logos/github-circle.svg";
-import Spectrum from "../images/logos/spectrum-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";
 import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
@@ -42,7 +41,7 @@ const StyledInner = styled.div<{ thick?: boolean }>`
     box-sizing: content-box;
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
-    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceSmall} ${CONTENT_PADDING}`};
+    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceThreeX} ${CONTENT_PADDING}`};
   `}
 `;
 
@@ -52,18 +51,18 @@ const StyledIconLink = styled.a.attrs(() => ({
 }))`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceXSmall};
-    margin-right: -${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
+    margin-right: -${theme.orbit.spaceTwoX};
     border-radius: ${theme.orbit.borderRadiusCircle};
     color: ${theme.orbit.paletteInkNormal};
     &:hover,
     &:focus {
-      color: ${theme.orbit.paletteProductNormalHover};
+      color: ${theme.orbit.paletteProductNormalSecondary};
     }
     ${mediaQueries.tablet(css`
       margin-right: 0;
       &:last-child {
-        margin-right: -${theme.orbit.spaceXSmall};
+        margin-right: -${theme.orbit.spaceTwoX};
       }
     `)}
   `}
@@ -72,10 +71,10 @@ const StyledIconLink = styled.a.attrs(() => ({
 const StyledFooterLink = styled(Link)`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceMedium} 0;
+    padding: ${theme.orbit.spaceFourX} 0;
     &:hover,
     &:focus {
-      color: ${theme.orbit.paletteProductNormalHover};
+      color: ${theme.orbit.paletteProductNormalSecondary};
     }
   `}
 `;
@@ -116,9 +115,6 @@ export default function Footer({ hasGradient }: Props) {
             >
               <StyledIconLink href="https://github.com/kiwicom/orbit" aria-label="GitHub">
                 <GitHub />
-              </StyledIconLink>
-              <StyledIconLink href="https://spectrum.chat/orbit" aria-label="Spectrum">
-                <Spectrum />
               </StyledIconLink>
               <StyledIconLink href="https://twitter.com/OrbitKiwi" aria-label="Twitter">
                 <Twitter />

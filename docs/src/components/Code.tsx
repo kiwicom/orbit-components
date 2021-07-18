@@ -37,11 +37,15 @@ export const CodeBlock = ({ children, className }: CodeBlockProps) => {
             border-radius: 0.5em;
             /* monospace typefaces appear a bit larger */
             font-size: calc(1em - 2px);
+            overflow-x: auto;
           `}
           style={style}
         >
           {tokens
-            .filter(line => line.some(token => !token.empty)) // remove mysterious empty lines
+            // remove mysterious empty lines at the end
+            .filter((line, index, array) => {
+              return !(array.length === index + 1 && line.some(token => token.empty));
+            })
             .map((line, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <div key={i} {...getLineProps({ line, key: i })}>

@@ -9,7 +9,7 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 const StyledBoard = styled.div`
   ${({ theme }) => `
     margin-top: 0;
-    padding: ${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
     background: ${theme.orbit.paletteCloudLight};
   `};
 `;

@@ -5,15 +5,15 @@ import { Link } from "gatsby";
 const StyledList = styled.ul`
   display: flex;
   font-size: 14px;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceFourX};
 `;
 
 const StyledListItem = styled.li<{ current: boolean }>`
   a,
   span {
     color: ${({ theme, current }) =>
-      current ? theme.orbit.colorTextLinkPrimary : theme.orbit.colorTextSecondary};
-    margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
+      current ? theme.orbit.textLinkPrimaryForeground : theme.orbit.textSecondaryForeground};
+    margin-right: ${({ theme }) => theme.orbit.spaceTwoX};
   }
 `;
 

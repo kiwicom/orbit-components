@@ -30,9 +30,9 @@ const StyledAnchor = styled.a<StyledAnchorProps>`
     color: ${getColor(active, level, theme)};
     font-size: ${level === 0 ? "14px" : "12px"};
     font-weight: ${level <= 1 && "500"};
-    text-indent: -${theme.orbit.spaceXLarge};
+    text-indent: -${theme.orbit.spaceEightX};
     margin-bottom: ${level === 0 && "8px"};
-    padding-left: ${theme.orbit.spaceXLarge};
+    padding-left: ${theme.orbit.spaceEightX};
     display: inline-block;
 
     ::before {

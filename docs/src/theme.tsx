@@ -1,17 +1,7 @@
 import { createTheme } from "@kiwicom/orbit-design-tokens";
-import { Tokens } from "@kiwicom/orbit-design-tokens/lib/js/createTokens";
+import type { ThemeShape } from "@kiwicom/orbit-components/lib/defaultTheme";
 
-interface DocsTokens extends Tokens {
-  readonly boxShadowRaisedSubtle: string;
-}
-
-interface DocsThemeShape {
-  readonly orbit: DocsTokens;
-  readonly transitions?: boolean;
-  readonly rtl?: boolean;
-}
-
-const customTheme: DocsThemeShape = {
+const customTheme: ThemeShape = {
   orbit: {
     ...createTheme(),
     widthBreakpointDesktop: 1024,

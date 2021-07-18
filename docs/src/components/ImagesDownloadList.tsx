@@ -13,14 +13,14 @@ const StyledAnchor = styled.a`
   ${({ theme }) => css`
   background-color: ${theme.orbit.paletteProductLight};
   color: ${theme.orbit.paletteProductNormal};
-  padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
-  padding-top: ${theme.orbit.spaceXXSmall};
-  height: ${theme.orbit.heightButtonSmall};
+  padding: ${theme.orbit.buttonSmallLeftIconPadding};
+  padding-top: ${theme.orbit.spaceOneX};
+  height: ${theme.orbit.formBoxSmallHeight};
   border-radius: ${theme.orbit.borderRadiusNormal}
   transition: all ${theme.orbit.durationFast} ease-in;
 
   &:hover,&:active,&:focus {
-    background-color: ${theme.orbit.paletteProductLightHover};
+    background-color: ${theme.orbit.paletteProductLightSecondary};
     color: ${theme.orbit.paletteProductDark};
   }
 `}
@@ -38,10 +38,10 @@ interface ImageWrapProps {
 
 const ImageWrap = styled.div<ImageWrapProps>`
   ${({ theme, width }) => css`
-    padding: ${theme.orbit.spaceSmall};
-    border: 1px solid ${theme.orbit.borderColorCard};
+    padding: ${theme.orbit.spaceThreeX};
+    border: 1px solid ${theme.orbit.elevationFlatBorderColor};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    margin-top: ${theme.orbit.spaceMedium};
+    margin-top: ${theme.orbit.spaceFourX};
     width: ${width};
     margin-right: 2%;
   `}

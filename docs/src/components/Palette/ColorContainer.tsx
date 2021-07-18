@@ -1,10 +1,12 @@
-import React from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
 import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
 import { Stack } from "@kiwicom/orbit-components";
 
+// eslint-disable-next-line import/no-cycle
 import CopyButton from "./CopyButton";
 
+// eslint-disable-next-line import/no-cycle
 import { isLight } from ".";
 
 interface BorderingProps {

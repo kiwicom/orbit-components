@@ -28,14 +28,14 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
     padding: 2rem;
     border-radius: 1rem;
     background: ${primary};
-    color: ${theme.orbit.colorTextWhite};
+    color: ${theme.orbit.textWhiteForeground};
     box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: 100%;
     flex-direction: column;
     &:hover {
-      box-shadow: ${theme.orbit.boxShadowRaised};
+      box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
     }
 
     ${StyledButtonPrimitive} {
