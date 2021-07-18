@@ -15,16 +15,16 @@ import type { Props } from "./index";
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
   if (disabled) return theme.orbit.paletteInkLighter;
   if (checked) return theme.orbit.paletteBlueNormal;
-  if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
+  if (hasError && !disabled && !checked) return theme.orbit.formElementBorderColorError;
 
-  return theme.orbit.borderColorCheckboxRadio;
+  return theme.orbit.formElementBorderColor;
 };
 
 const getBackground = () => ({ theme, disabled, checked }) => {
   if (disabled && checked) return theme.orbit.paletteInkLighter;
   if (disabled && !checked) return theme.orbit.paletteCloudNormal;
 
-  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.formElementBackground;
 };
 
 const Glyph = styled.span`
@@ -32,7 +32,7 @@ const Glyph = styled.span`
   width: 8px;
   height: 8px;
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhite};
+    disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhiteNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
   flex-shrink: 0;
 `;
@@ -51,8 +51,8 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: ${getBackground};
-    height: ${theme.orbit.heightCheckbox};
-    width: ${theme.orbit.widthCheckbox};
+    height: ${theme.orbit.iconSmallSize};
+    width: ${theme.orbit.iconSmallSize};
     border-radius: ${theme.orbit.borderRadiusCircle};
     transform: scale(1);
     transition: all ${theme.orbit.durationFast} ease-in-out;
@@ -67,7 +67,7 @@ IconContainer.defaultProps = {
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceTwoX}`)};
   flex: 1; // IE wrapping fix
 `;
 
@@ -77,9 +77,9 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
-  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  font-size: ${({ theme }) => theme.orbit.fontSizeSmall};
+  color: ${({ theme }) => theme.orbit.textSecondaryForeground};
+  line-height: ${({ theme }) => theme.orbit.lineHeightSmall};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -90,15 +90,15 @@ Info.defaultProps = {
 const LabelText = styled.span`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightNormal};
-    font-size: ${theme.orbit.fontSizeFormLabel};
-    color: ${theme.orbit.colorFormLabel};
-    line-height: ${theme.orbit.heightCheckbox};
+    font-size: ${theme.orbit.fontSizeNormal};
+    color: ${theme.orbit.formElementLabelForeground};
+    line-height: ${theme.orbit.iconSmallSize};
 
     ${StyledText} {
       font-weight: ${theme.orbit.fontWeightNormal};
-      font-size: ${theme.orbit.fontSizeFormLabel};
-      color: ${theme.orbit.colorFormLabel};
-      line-height: ${theme.orbit.heightCheckbox};
+      font-size: ${theme.orbit.fontSizeNormal};
+      color: ${theme.orbit.formElementLabelForeground};
+      line-height: ${theme.orbit.iconSmallSize};
     }
   `}
 `;
@@ -126,13 +126,13 @@ const Input = styled.input`
   &:focus + ${IconContainer} {
     outline: 0;
     border: ${({ theme, hasError }) =>
-      `2px ${theme.orbit.borderStyleInput} ${
-        hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+      `2px solid ${
+        hasError ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus
       }`};
     box-shadow: 0 0 0 3px
       ${({ theme, hasError }) =>
         transparentColor(
-          hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+          hasError ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus,
           15,
         )};
 
@@ -156,7 +156,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     width: 100%;
     flex-direction: row;
     align-items: self-start;
-    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
+    opacity: ${disabled ? theme.orbit.formElementDisabledOpacity : "1"};
     cursor: ${disabled ? "default" : "pointer"};
     position: relative;
 
@@ -165,13 +165,11 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     }
 
     &:hover ${IconContainer} {
-      border-color: ${!disabled && theme.orbit.paletteBlueLightActive};
+      border-color: ${!disabled && theme.orbit.paletteBlueLightTertiary};
     }
 
     &:active ${IconContainer} {
       border-color: ${disabled ? getBorderColor : theme.orbit.paletteBlueNormal};
-      // TODO: we can get rid of it completely, there won't be token replacement
-      transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
     }
 
     ${media.largeMobile(css`

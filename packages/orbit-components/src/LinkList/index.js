@@ -18,9 +18,9 @@ const StyledLinkList = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
-  padding-${left}: ${({ indent, theme }) => indent && theme.orbit.spaceXXSmall};
+  padding-${left}: ${({ indent, theme }) => indent && theme.orbit.spaceOneX};
   list-style: none;
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

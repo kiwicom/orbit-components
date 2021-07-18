@@ -34,7 +34,7 @@ const StyledSliderContent = styled.div`
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceTwoX};
 
   ${mq.tablet(css`
     width: calc(100% + 48px);
@@ -54,8 +54,8 @@ const StyledSliderContent = styled.div`
       css`
         visibility: visible;
         opacity: 1;
-        background: ${theme.orbit.paletteWhite};
-        box-shadow: ${theme.orbit.boxShadowRaised};
+        background: ${theme.orbit.paletteWhiteNormal};
+        box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
       `};
   `)};
 `;

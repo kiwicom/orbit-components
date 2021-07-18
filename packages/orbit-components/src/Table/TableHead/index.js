@@ -12,11 +12,11 @@ const StyledTableHead = styled(({ children, className, dataTest }) => (
     {children}
   </thead>
 ))`
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTableHead};
+  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteInkLighter};
   width: 100%;
   white-space: nowrap;
   ${StyledTableCell} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightTableHead};
+    font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   }
 `;
 

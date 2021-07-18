@@ -9,9 +9,9 @@ import type { GetSize, FactoryProps } from "./index";
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {
-    [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
-    [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
-    [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
+    [ICON_SIZES.SMALL]: theme.orbit.iconExtraSmallSize,
+    [ICON_SIZES.MEDIUM]: theme.orbit.iconMediumSize,
+    [ICON_SIZES.LARGE]: theme.orbit.iconLargeSize,
   };
   return tokens[size] || tokens[ICON_SIZES.MEDIUM];
 };

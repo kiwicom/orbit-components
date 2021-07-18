@@ -14,14 +14,14 @@ import type { Props } from "./index";
 const StyledTripDate = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceTwoX};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceOneX};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   z-index: 1;
 
   ${StyledText} {
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    height: ${({ theme }) => theme.orbit.heightIconSmall};
+    height: ${({ theme }) => theme.orbit.iconExtraSmallSize};
   }
 `;
 

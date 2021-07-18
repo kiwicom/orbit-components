@@ -185,9 +185,9 @@ describe("#Box", () => {
 
     const trimSpaces = val => val.replace(/, /g, ",");
 
-    expect(testEl(0)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowAction) });
-    expect(testEl(1)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowFixed) });
-    expect(testEl(2)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowRaised) });
-    expect(testEl(3)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.boxShadowOverlay) });
+    expect(testEl(0)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.elevationActionBoxShadow) });
+    expect(testEl(1)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.elevationFixedBoxShadow) });
+    expect(testEl(2)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.elevationRaisedBoxShadow) });
+    expect(testEl(3)).toHaveStyle({ boxShadow: trimSpaces(theme.orbit.elevationOverlayBoxShadow) });
   });
 });

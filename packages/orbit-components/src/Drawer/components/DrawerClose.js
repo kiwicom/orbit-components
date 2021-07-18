@@ -10,7 +10,7 @@ import { left } from "../../utils/rtl";
 import useTranslate from "../../hooks/useTranslate";
 
 const StyledDrawerClose = styled.div`
-  margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
+  margin-${left}: ${({ theme }) => theme.orbit.spaceFourX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

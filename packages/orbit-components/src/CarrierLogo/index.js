@@ -9,9 +9,9 @@ import type { Props } from "./index";
 
 const getRenderSize = ({ theme, size }) => {
   const renderSizes = {
-    [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.heightIconSmall, 10),
-    [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.heightIconMedium, 10),
-    [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.heightIconLarge, 10),
+    [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.iconExtraSmallSize, 10),
+    [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.iconMediumSize, 10),
+    [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.iconLargeSize, 10),
   };
   return renderSizes[size];
 };
@@ -52,7 +52,7 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
     srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
   };
 })`
-  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
+  background-color: transparent;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   height: ${getCarrierLogoSize};
   width: ${getCarrierLogoSize};
@@ -67,11 +67,11 @@ StyledImage.defaultProps = {
 };
 
 export const StyledCarrierLogo: any = styled.div`
-  background-color: ${({ theme }) => theme.orbit.backgroundCarrierLogo};
+  background-color: transparent;
   height: ${({ theme, carriers, size }) =>
-    carriers.length > 1 ? theme.orbit.heightIconLarge : `${getRenderSize({ theme, size })}px`};
+    carriers.length > 1 ? theme.orbit.iconLargeSize : `${getRenderSize({ theme, size })}px`};
   width: ${({ theme, carriers, size }) =>
-    carriers.length > 1 ? theme.orbit.widthIconLarge : `${getRenderSize({ theme, size })}px`};
+    carriers.length > 1 ? theme.orbit.iconLargeSize : `${getRenderSize({ theme, size })}px`};
   display: flex;
   flex-direction: ${({ carriers }) => (carriers.length > 1 ? "column" : "row")};
   flex-wrap: ${({ carriers }) => carriers.length > 2 && "wrap"};

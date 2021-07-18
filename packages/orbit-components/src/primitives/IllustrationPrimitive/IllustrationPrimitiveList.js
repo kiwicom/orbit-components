@@ -27,12 +27,12 @@ const Container = styled.div`
   align-content: center;
   width: 100%;
   min-height: 80px;
-  background-color: white;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
+  background-color: ${({ theme }) => theme.orbit.elevationFlatBackground};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceSixX};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
-  border: ${({ theme }) => theme.orbit.borderWidthCard}
-    ${({ theme }) => theme.orbit.borderStyleCard} ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
+  border: ${({ theme }) => `${theme.orbit.elevationFlatBorderSize} solid
+    ${theme.orbit.elevationFlatBorderColor}`};
+  padding: ${({ theme }) => theme.orbit.spaceSixX};
   ${mq.largeMobile(css`
     flex-direction: row;
   `)};
@@ -46,13 +46,13 @@ Container.defaultProps = {
 const IllustrationJSX = styled.div`
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  line-height: ${({ theme }) => theme.orbit.lineHeightSmall};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
-  border: ${({ theme }) => theme.orbit.borderWidthCard}
-    ${({ theme }) => theme.orbit.borderStyleCard} ${({ theme }) => theme.orbit.paletteCloudNormal};
-  margin-top: ${({ theme }) => theme.orbit.spaceMedium};
-  padding: ${({ theme }) => theme.orbit.spaceXXSmall} ${({ theme }) => theme.orbit.spaceXSmall};
+  border: ${({ theme }) => `${theme.orbit.elevationFlatBorderSize} solid
+    ${theme.orbit.elevationFlatBorderColor}`};
+  margin-top: ${({ theme }) => theme.orbit.spaceFourX};
+  padding: ${({ theme }) => theme.orbit.spaceOneX} ${({ theme }) => theme.orbit.spaceTwoX};
   ${mq.largeMobile(css`
     margin: 0;
   `)};

@@ -155,11 +155,11 @@ describe("Stack with every media query", () => {
     );
 
     const expected = {
-      mediumMobile: `${theme.orbit.spaceXXSmall}!important`,
-      largeMobile: `${theme.orbit.spaceXSmall}!important`,
-      tablet: `${theme.orbit.spaceSmall}!important`,
-      desktop: `${theme.orbit.spaceMedium}!important`,
-      largeDesktop: `${theme.orbit.spaceLarge}!important`,
+      mediumMobile: `${theme.orbit.spaceOneX}!important`,
+      largeMobile: `${theme.orbit.spaceTwoX}!important`,
+      tablet: `${theme.orbit.spaceThreeX}!important`,
+      desktop: `${theme.orbit.spaceFourX}!important`,
+      largeDesktop: `${theme.orbit.spaceSixX}!important`,
     };
 
     expect(screen.getByTestId(dataTest)).toHaveStyle({ marginRight: expected[query] });

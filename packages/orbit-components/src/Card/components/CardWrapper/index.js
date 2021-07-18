@@ -41,7 +41,7 @@ bottomBorderRadius.defaultProps = {
 };
 
 const StyledCardWrapper = styled.div`
-  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceMedium};
+  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceFourX};
   cursor: ${({ onClick }) => onClick && `pointer`};
   ${CardElement};
   ${({ bottomBorder }) => bottomBorder && bottomBorderRadius};
@@ -54,7 +54,7 @@ const StyledCardWrapper = styled.div`
   ${({ expanded }) =>
     expanded &&
     css`
-      margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
+      margin: ${({ theme }) => theme.orbit.spaceTwoX} 0;
       border: 1px solid transparent;
     `};
 
@@ -78,16 +78,16 @@ const StyledCardWrapper = styled.div`
       ${bottomBorderRadius};
     }
 
-    padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
+    padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceSixX};
   `)}
 
   &:focus {
     outline: 0;
-    background: ${({ theme }) => theme.orbit.paletteWhiteHover};
+    background: ${({ theme }) => theme.orbit.paletteWhiteNormalSecondary};
   }
 
   &:hover {
-    background: ${({ theme, onClick }) => onClick && theme.orbit.paletteWhiteHover};
+    background: ${({ theme, onClick }) => onClick && theme.orbit.paletteWhiteNormalSecondary};
   }
 `;
 

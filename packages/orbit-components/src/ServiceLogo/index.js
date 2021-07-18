@@ -10,9 +10,9 @@ import type { Props } from "./index";
 const getHeight = (theme, size) => {
   const tokens = {
     height: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightServiceLogoSmall,
-      [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightServiceLogoMedium,
-      [SIZE_OPTIONS.LARGE]: theme.orbit.heightServiceLogoLarge,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.iconExtraExtraSmallSize,
+      [SIZE_OPTIONS.MEDIUM]: theme.orbit.iconMediumSize,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.iconExtraLargeSize,
     },
   };
   return tokens.height[size];

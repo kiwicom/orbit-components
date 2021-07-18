@@ -27,7 +27,7 @@ const StyledChoiceGroup = styled.div`
 
   ${StyledFormFeedback} {
     position: relative;
-    margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+    margin-top: ${({ theme }) => theme.orbit.spaceTwoX};
     top: initial;
   }
 `;

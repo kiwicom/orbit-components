@@ -15,7 +15,7 @@ import type { Props } from "./index";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  font-size: ${({ theme }) => theme.orbit.fontSizeSmall};
   margin-bottom: ${getSpacingToken};
 `;
 
@@ -33,7 +33,7 @@ const StyledBreadcrumbsList = styled.ol`
 `;
 
 const StyledBackButtonWrapper = styled.span`
-  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-${right}: ${({ theme }) => theme.orbit.spaceThreeX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

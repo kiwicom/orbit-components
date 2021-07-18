@@ -20,10 +20,10 @@ const StyledLayout = styled(Grid)`
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
-  padding: 0 ${({ theme }) => theme.orbit.spaceMedium};
+  padding: 0 ${({ theme }) => theme.orbit.spaceFourX};
 
   ${mq.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
   `)};
 `;
 

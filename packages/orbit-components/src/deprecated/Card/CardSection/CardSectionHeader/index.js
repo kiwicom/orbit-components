@@ -30,27 +30,27 @@ export const StyledCardSectionHeader: any = styled.div`
   cursor: ${({ expandable }) => expandable && "pointer"};
   position: relative;
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
-  margin: ${({ theme }) => `-${theme.orbit.spaceMedium}`};
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  margin: ${({ theme }) => `-${theme.orbit.spaceFourX}`};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   margin-bottom: ${({ expanded }) => expanded && 0};
 
   ${media.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-    margin: ${({ theme }) => `-${theme.orbit.spaceLarge}`};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
+    margin: ${({ theme }) => `-${theme.orbit.spaceSixX}`};
     margin-bottom: ${({ expanded }) => expanded && 0};
   `)}
 
 
   &:hover {
-    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteNormalSecondary};
   }
 
   ${StyledCardSectionIconRight} {
     transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
-    margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};
+    margin-${left}: ${({ theme }) => theme.orbit.spaceFourX};
   }
   &:focus {
-    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteNormalSecondary};
     outline: none;
   }
 
@@ -63,7 +63,7 @@ StyledCardSectionHeader.defaultProps = {
 };
 
 const StyledCardSectionButtons = styled.div`
-  margin-${left}: ${({ theme }) => theme.orbit.spaceLarge};
+  margin-${left}: ${({ theme }) => theme.orbit.spaceSixX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

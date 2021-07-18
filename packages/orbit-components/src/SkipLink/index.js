@@ -19,8 +19,8 @@ const StyledLink = styled.a`
   position: absolute;
   width: 1px;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  text-decoration: ${({ theme }) => theme.orbit.textDecorationTextLinkPrimary};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextLarge}; /* TODO: ADD TOKEN */
+  text-decoration: ${({ theme }) => theme.orbit.textLinkTextDecoration};
+  font-size: ${({ theme }) => theme.orbit.fontSizeLarge}; /* TODO: ADD TOKEN */
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal}; /* TODO: ADD TOKEN */
   color: ${({ theme }) => theme.orbit.paletteInkNormal}; /* TODO: ADD TOKEN */
 
@@ -32,8 +32,8 @@ const StyledLink = styled.a`
     width: auto;
     margin: 0;
     overflow: visible;
-    padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: ADD TOKEN */
-    background-color: ${({ theme }) => theme.orbit.paletteWhite}; /* TODO: ADD TOKEN */
+    padding: ${({ theme }) => theme.orbit.spaceFourX}; /* TODO: ADD TOKEN */
+    background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal}; /* TODO: ADD TOKEN */
     z-index: ${({ theme }) => theme.orbit.zIndexOnTheTop}; /* TODO: ADD TOKEN */
   }
 `;

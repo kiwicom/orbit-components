@@ -10,11 +10,11 @@ import type { Props } from "./index";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.illustrationSizeExtraSmall,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.illustrationSizeSmall,
-    [SIZE_OPTIONS.MEDIUM]: theme.orbit.illustrationHeightMedium,
-    [SIZE_OPTIONS.LARGE]: theme.orbit.illustrationSizeLarge,
-    [SIZE_OPTIONS.DISPLAY]: theme.orbit.illustrationSizeDisplay,
+    [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.illustrationExtraSmallHeight,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.illustrationSmallHeight,
+    [SIZE_OPTIONS.MEDIUM]: theme.orbit.illustrationMediumHeight,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.illustrationLargeHeight,
+    [SIZE_OPTIONS.DISPLAY]: theme.orbit.illustrationDisplayHeight,
   };
   return tokens[size];
 };
@@ -33,7 +33,7 @@ export const StyledImage: any = styled.img.attrs(({ theme, size, illustrationNam
   margin: auto 0;
   max-height: ${getHeightToken};
   max-width: 100%;
-  background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
+  background-color: transparent;
   margin-bottom: ${getSpacingToken};
   flex-shrink: 0;
 `;

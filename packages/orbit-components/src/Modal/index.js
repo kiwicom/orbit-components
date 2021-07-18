@@ -52,7 +52,7 @@ const ModalBody = styled.div`
   -webkit-overflow-scrolling: auto;
   ${media.largeMobile(css`
     overflow-y: auto;
-    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
+    padding: ${({ theme }) => theme.orbit.spaceTenX};
   `)};
   ${onlyIE(css`
     position: -ms-page;
@@ -133,8 +133,8 @@ const CloseContainer = styled.div`
   height: 52px;
   width: 100%;
   max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
-  box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.boxShadowFixed};
-  background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhite};
+  box-shadow: ${({ scrolled, theme }) => scrolled && theme.orbit.elevationFixedBoxShadow};
+  background-color: ${({ theme, scrolled }) => scrolled && theme.orbit.paletteWhiteNormal};
   border-top-left-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
@@ -157,18 +157,18 @@ const CloseContainer = styled.div`
 
   ${StyledButtonPrimitive} {
     pointer-events: auto;
-    margin-${right}: ${({ theme }) => theme.orbit.spaceXXSmall};
+    margin-${right}: ${({ theme }) => theme.orbit.spaceOneX};
 
     & svg {
       transition: ${transition(["color"], "fast", "ease-in-out")};
       color: ${({ theme }) => theme.orbit.paletteInkLight};
     }
     &:hover svg {
-      color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+      color: ${({ theme }) => theme.orbit.paletteInkLightSecondary};
     }
 
     &:active svg {
-      color: ${({ theme }) => theme.orbit.paletteInkLightActive};
+      color: ${({ theme }) => theme.orbit.paletteInkLightTertiary};
     }
   }
 `;
@@ -185,7 +185,7 @@ const ModalWrapperContent = styled.div`
     !isMobileFullPage && "12px"}; // TODO: create token
   border-top-right-radius: ${({ isMobileFullPage }) =>
     !isMobileFullPage && "12px"}; // TODO: create token
-  background-color: ${({ theme }) => theme.orbit.backgroundModal};
+  background-color: ${({ theme }) => theme.orbit.elevationFlatBackground};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   width: 100%;
   ${({ theme, fixedFooter, footerHeight, isMobileFullPage }) =>
@@ -196,16 +196,16 @@ const ModalWrapperContent = styled.div`
         `
       : css`
           max-height: calc(
-            100% - ${theme.orbit.spaceXLarge} -
+            100% - ${theme.orbit.spaceEightX} -
               ${`${fixedFooter && Boolean(footerHeight) ? footerHeight : 0}px`}
           );
         `};
   bottom: ${({ fixedFooter, footerHeight, isMobileFullPage, theme }) =>
     `${
-      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (!isMobileFullPage ? parseInt(theme.orbit.spaceEightX, 10) : 0) +
       (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
     }px`};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
+  box-shadow: ${({ theme }) => theme.orbit.elevationOverlayBoxShadow};
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -215,22 +215,22 @@ const ModalWrapperContent = styled.div`
     css`
       ${StyledModalFooter} {
         bottom: 0;
-        padding: ${theme.orbit.spaceMedium};
+        padding: ${theme.orbit.spaceFourX};
         box-shadow: ${fullyScrolled
-          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.boxShadowFixedReverse}`
-          : `inset 0 0 0 transparent, ${theme.orbit.boxShadowFixedReverse}`};
+          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.elevationFixedReverseBoxShadow}`
+          : `inset 0 0 0 transparent, ${theme.orbit.elevationFixedReverseBoxShadow}`};
         position: fixed;
         transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
       }
       ${StyledModalSection}:last-of-type {
-        padding-bottom: ${theme.orbit.spaceLarge};
+        padding-bottom: ${theme.orbit.spaceSixX};
         margin-bottom: 0;
       }
     `};
 
   ${MobileHeader} {
     top: ${({ scrolled, theme, isMobileFullPage }) =>
-      !isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
+      !isMobileFullPage && scrolled && theme.orbit.spaceEightX};
     opacity: ${({ scrolled }) => scrolled && "1"};
     visibility: ${({ scrolled }) => scrolled && "visible"};
     transition: ${({ scrolled }) =>
@@ -250,7 +250,7 @@ const ModalWrapperContent = styled.div`
   }
 
   ${StyledModalHeader} {
-    margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceXLarge};
+    margin-bottom: ${({ hasModalSection, theme }) => !hasModalSection && theme.orbit.spaceEightX};
   }
 
   ${media.largeMobile(css`
@@ -262,7 +262,7 @@ const ModalWrapperContent = styled.div`
     overflow: visible;
     max-height: 100%;
     ${StyledModalSection}:last-of-type {
-      padding-bottom: ${({ theme }) => theme.orbit.spaceXXLarge};
+      padding-bottom: ${({ theme }) => theme.orbit.spaceTenX};
       margin-bottom: ${({ fixedFooter, footerHeight }) =>
         fixedFooter ? `${footerHeight}px` : "0"};
       &::after {
@@ -276,16 +276,16 @@ const ModalWrapperContent = styled.div`
     ${StyledModalFooter} {
       padding: ${({ theme, fixedFooter }) =>
         fixedFooter
-          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXXLarge}!important`
-          : theme.orbit.spaceXXLarge};
+          ? `${theme.orbit.spaceEightX} ${theme.orbit.spaceTenX}!important`
+          : theme.orbit.spaceTenX};
       max-width: ${({ modalWidth }) => (modalWidth ? `${modalWidth}px` : getSizeToken)};
       position: ${({ fullyScrolled, fixedFooter }) => fixedFooter && fullyScrolled && "absolute"};
       box-shadow: ${({ fullyScrolled }) => fullyScrolled && "none"};
     }
     ${MobileHeader} {
-      top: ${({ scrolled, theme }) => (scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`)};
+      top: ${({ scrolled, theme }) => (scrolled ? "0" : `-${theme.orbit.spaceTenX}`)};
       width: ${({ modalWidth, theme }) =>
-        `calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
+        `calc(${modalWidth}px - 48px - ${theme.orbit.spaceTenX})`};
     }
   `)};
 
@@ -308,7 +308,7 @@ const ModalWrapperContent = styled.div`
             (fullyScrolled && fixedFooter && "static") || (fixedFooter && "fixed")};
           // for IE there's need to be added inset box-shadow with same background as footer has
           box-shadow: ${({ fixedFooter }) =>
-            !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhite}`};
+            !fixedFooter && `inset 0 0 0 1px ${theme.orbit.paletteWhiteNormal}`};
         }
         // also we need to clear not wanted margins
         ${({ fullyScrolled, fixedFooter }) =>

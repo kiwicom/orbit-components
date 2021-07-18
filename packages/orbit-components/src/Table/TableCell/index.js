@@ -19,7 +19,7 @@ export const StyledTableCell: any = styled(
   ${({ theme, whiteSpace, verticalAlign, align }) => css`
     box-sizing: border-box;
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeNormal};
     color: ${theme.orbit.colorInkNormal};
     text-align: ${textAlign(align)};
     white-space: ${whiteSpace};

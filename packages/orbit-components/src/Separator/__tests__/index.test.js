@@ -12,9 +12,9 @@ describe("Separator", () => {
     render(<Separator spaceAfter={spaceAfter} />);
     expect(screen.getByRole("separator")).toBeInTheDocument();
     expect(screen.getByRole("separator")).toHaveStyle({
-      height: theme.orbit.heightSeparator,
-      background: theme.orbit.backgroundSeparator,
-      marginBottom: theme.orbit.spaceLarge,
+      height: "1px",
+      background: theme.orbit.elevationFlatBorderColor,
+      marginBottom: theme.orbit.spaceSixX,
     });
   });
 });

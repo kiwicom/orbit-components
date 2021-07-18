@@ -8,7 +8,7 @@ const StyledRelative: any = styled.div`
   ${({ inner, theme }) =>
     inner &&
     css`
-      width: calc(100% + ${parseInt(theme.orbit.spaceSmall, 10) * 2}px);
+      width: calc(100% + ${parseInt(theme.orbit.spaceThreeX, 10) * 2}px);
       display: flex;
       align-items: center;
     `};

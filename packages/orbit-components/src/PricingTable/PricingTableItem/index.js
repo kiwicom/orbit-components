@@ -18,14 +18,14 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 const getBoxShadow = state => ({ theme, active, hasError }) => {
   const getActive = shadow => {
-    if (hasError) return `${shadow}, inset 0 0 0 1px ${theme.orbit.borderColorInputError}`;
+    if (hasError) return `${shadow}, inset 0 0 0 1px ${theme.orbit.formElementBorderColorError}`;
     if (active) return `${shadow}, inset 0 0 0 2px ${theme.orbit.paletteBlueNormal}`;
     return shadow;
   };
   if (state === STATES.HOVER) {
-    return getActive(theme.orbit.boxShadowActionActive);
+    return getActive(theme.orbit.elevationActionActiveBoxShadow);
   }
-  return getActive(theme.orbit.boxShadowAction);
+  return getActive(theme.orbit.elevationActionBoxShadow);
 };
 
 const StyledPricingTableItem = styled.div`
@@ -35,11 +35,11 @@ const StyledPricingTableItem = styled.div`
   width: 100%;
   max-width: 33%;
   position: relative;
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   box-shadow: ${getBoxShadow()};
   transition: ${({ theme }) => theme.orbit.durationNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal}; /* TODO: Add token */
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Add token */
+  padding: ${({ theme }) => theme.orbit.spaceFourX}; /* TODO: Add token */
   cursor: pointer;
 
   &:hover {
@@ -56,8 +56,8 @@ const StyledPricingTableItem = styled.div`
     featureIcon &&
     css`
       ${media.desktop(css`
-        padding-top: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
-        padding-bottom: ${({ theme }) => theme.orbit.spaceLarge}; /* TODO: Add token */
+        padding-top: ${({ theme }) => theme.orbit.spaceSixX}; /* TODO: Add token */
+        padding-bottom: ${({ theme }) => theme.orbit.spaceSixX}; /* TODO: Add token */
       `)}
     `}
 `;
@@ -120,7 +120,7 @@ DesktopRadio.defaultProps = {
 };
 
 const Spacer = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-top: ${({ theme }) => theme.orbit.spaceThreeX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -137,7 +137,7 @@ export const StyledListWrapper: any = styled.div`
       width: 100%;
       ${ListItem} {
         border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
-        padding: ${theme.orbit.spaceSmall};
+        padding: ${theme.orbit.spaceThreeX};
         align-items: center;
 
         &,
@@ -150,17 +150,17 @@ export const StyledListWrapper: any = styled.div`
         }
 
         ${media.tablet(css`
-          padding: ${theme.orbit.spaceXSmall};
+          padding: ${theme.orbit.spaceTwoX};
         `)}
       }
 
       ${IconContainer} {
-        margin: ${rtlSpacing(`${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXSmall} 0 0`)};
+        margin: ${rtlSpacing(`${theme.orbit.spaceOneX} ${theme.orbit.spaceTwoX} 0 0`)};
         height: ${theme.heightIconLarge};
 
         svg {
-          height: ${theme.orbit.heightIconMedium};
-          width: ${theme.orbit.widthIconMedium};
+          height: ${theme.orbit.iconMediumSize};
+          width: ${theme.orbit.iconMediumSize};
         }
       }
     `}

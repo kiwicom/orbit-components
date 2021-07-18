@@ -13,7 +13,7 @@ export const StyledTableBody: any = styled(({ children, className, dataTest }) =
 ))`
   width: 100%;
   white-space: nowrap;
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
+  border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

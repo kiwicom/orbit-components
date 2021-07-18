@@ -5,11 +5,11 @@ import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
 const renderStatus = (type, theme) => {
-  if (type === "success") return theme.orbit.colorTextSuccess;
-  if (type === "warning") return theme.orbit.colorTextWarning;
-  if (type === "critical") return theme.orbit.colorTextCritical;
+  if (type === "success") return theme.orbit.textSuccessForeground;
+  if (type === "warning") return theme.orbit.textWarningForeground;
+  if (type === "critical") return theme.orbit.textCriticalForeground;
 
-  return theme.orbit.paletteCloudNormalHover;
+  return theme.orbit.paletteCloudNormalSecondary;
 };
 
 const StyledProgressLine: any = styled.span`

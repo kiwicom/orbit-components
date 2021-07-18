@@ -3,14 +3,14 @@ import { SPACINGS } from "../../utils/layout/consts";
 import type { GetSpacing } from "./getSpacing";
 
 const getSpacing: GetSpacing = ({ theme }) => ({
-  [SPACINGS.XXXSMALL]: theme.orbit.spaceXXXSmall,
-  [SPACINGS.XXSMALL]: theme.orbit.spaceXXSmall,
-  [SPACINGS.XSMALL]: theme.orbit.spaceXSmall,
-  [SPACINGS.SMALL]: theme.orbit.spaceSmall,
-  [SPACINGS.MEDIUM]: theme.orbit.spaceMedium,
-  [SPACINGS.LARGE]: theme.orbit.spaceLarge,
-  [SPACINGS.XLARGE]: theme.orbit.spaceXLarge,
-  [SPACINGS.XXLARGE]: theme.orbit.spaceXXLarge,
+  [SPACINGS.XXXSMALL]: theme.orbit.spaceHalfX,
+  [SPACINGS.XXSMALL]: theme.orbit.spaceOneX,
+  [SPACINGS.XSMALL]: theme.orbit.spaceTwoX,
+  [SPACINGS.SMALL]: theme.orbit.spaceThreeX,
+  [SPACINGS.MEDIUM]: theme.orbit.spaceFourX,
+  [SPACINGS.LARGE]: theme.orbit.spaceSixX,
+  [SPACINGS.XLARGE]: theme.orbit.spaceEightX,
+  [SPACINGS.XXLARGE]: theme.orbit.spaceTenX,
 });
 
 export default getSpacing;

@@ -18,13 +18,13 @@ import type { Props } from "./index";
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
-    [TYPE_OPTIONS.INFO]: theme.orbit.colorTextInfo,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextSuccess,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextWarning,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextCritical,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextWhite,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.textPrimaryForeground,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.textSecondaryForeground,
+    [TYPE_OPTIONS.INFO]: theme.orbit.textInfoForeground,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.textSuccessForeground,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.textWarningForeground,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.textCriticalForeground,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.textWhiteForeground,
   };
   return typeTokens[type];
 };
@@ -39,18 +39,18 @@ const getWeightToken = ({ theme, weight }) => {
 
 const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
-    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeSmall,
   };
   return sizeTokens[size];
 };
 
 const getLineHeightToken = ({ theme, size }) => {
   const lineHeightTokens = {
-    [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextLarge,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightSmall,
   };
   return lineHeightTokens[size];
 };

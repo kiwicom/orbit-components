@@ -23,7 +23,7 @@ export const ModalHeading: any = styled.div`
   font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
   font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
   line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
   ${media.largeMobile(css`
     font-size: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.sizeHeading)};
     font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.weightHeading)};
@@ -38,10 +38,10 @@ ModalHeading.defaultProps = {
 
 const ModalTitle = styled.div`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
-  margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceXSmall};
+  margin-top: ${({ theme, illustration }) => illustration && theme.orbit.spaceTwoX};
 
   ${ModalHeading} {
-    padding-${right}: ${({ theme }) => theme.orbit.spaceXLarge};
+    padding-${right}: ${({ theme }) => theme.orbit.spaceEightX};
   }
   ${media.desktop(css`
     ${ModalHeading} {
@@ -56,7 +56,7 @@ ModalTitle.defaultProps = {
 };
 
 const ModalDescription = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-top: ${({ theme }) => theme.orbit.spaceTwoX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -67,14 +67,14 @@ ModalDescription.defaultProps = {
 const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
   if (desktop) {
     if (suppressed) {
-      return theme.orbit.spaceXXLarge;
+      return theme.orbit.spaceTenX;
     }
-    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceXXLarge}`;
+    return `${theme.orbit.spaceTenX} ${theme.orbit.spaceTenX} 0 ${theme.orbit.spaceTenX}`;
   }
   if (suppressed) {
-    return `${theme.orbit.spaceXXLarge} ${theme.orbit.spaceMedium}`;
+    return `${theme.orbit.spaceTenX} ${theme.orbit.spaceFourX}`;
   }
-  return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
+  return `${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX} 0 ${theme.orbit.spaceFourX}`;
 };
 
 export const StyledModalHeader: any = styled.div`
@@ -85,7 +85,7 @@ export const StyledModalHeader: any = styled.div`
   border-top-right-radius: ${({ isMobileFullPage }) => !isMobileFullPage && "12px"};
   box-sizing: border-box;
   background-color: ${({ suppressed, theme }) =>
-    suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhiteNormal};
 
   & ~ ${StyledModalSection}:first-of-type {
     border-top: ${({ suppressed, theme }) =>
@@ -123,14 +123,14 @@ export const MobileHeader: any = styled.div`
   ${right}: 48px;
   ${left}: 0;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightHeadingDisplay};
+  font-weight: ${({ theme }) => theme.orbit.headingDisplayFontWeight};
   // TODO create token
   font-size: 18px;
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
   // TODO use token for 52px
   line-height: 52px;
   box-sizing: border-box;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSixX}`)};
   opacity: 0;
   transition: ${transition(["top", "opacity", "visibility"], "fast", "ease-in-out")};
   z-index: 800;

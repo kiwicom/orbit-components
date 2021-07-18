@@ -5,24 +5,24 @@ import type { GetSizeToken } from "./getSizeToken";
 const getSizeToken: GetSizeToken = (size, theme) => {
   const tokens = {
     [TOKENS.heightButton]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightButtonNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.formBoxLargeHeight,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
     },
     [TOKENS.fontSizeButton]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeButtonLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeButtonNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.buttonLargeFontSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.buttonNormalFontSize,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.buttonSmallFontSize,
     },
     [TOKENS.spinnerWidth]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.widthIconMedium,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.iconMediumSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.iconMediumSize,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.iconExtraSmallSize,
     },
     [TOKENS.spinnerHeight]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.heightIconMedium,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightIconMedium,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightIconSmall,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.iconMediumSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.iconMediumSize,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.iconExtraSmallSize,
     },
   };
   return {

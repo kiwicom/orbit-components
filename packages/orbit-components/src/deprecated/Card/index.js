@@ -17,13 +17,13 @@ import useTranslate from "../../hooks/useTranslate";
 import type { Props, State } from "./index";
 
 const getBorder = ({ theme }) =>
-  `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
+  `${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.elevationFlatBorderColor}`;
 
 const getBorderRadius = ({ theme }) => theme.orbit.borderRadiusNormal;
 
 // Logic of borders radius
 const StyledChildWrapper = styled.div`
-  margin: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceXSmall} 0`};
+  margin: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceTwoX} 0`};
   transition: margin ${({ theme, initialExpanded }) => !initialExpanded && theme.orbit.durationFast}
     ease-in-out;
 
@@ -34,11 +34,11 @@ const StyledChildWrapper = styled.div`
       roundedBottomBorders && getBorderRadius};
     border-bottom-right-radius: ${({ roundedBottomBorders }) =>
       roundedBottomBorders && getBorderRadius};
-    box-shadow: ${({ expanded, theme }) => expanded && theme.orbit.boxShadowActionActive};
+    box-shadow: ${({ expanded, theme }) => expanded && theme.orbit.elevationActionActiveBoxShadow};
     border-left: ${getBorder};
     border-right: ${getBorder};
     border-bottom: ${getBorder};
-    background: ${({ theme }) => theme.orbit.backgroundCard};
+    background: ${({ theme }) => theme.orbit.elevationFlatBackground};
   }
 
   + div ${StyledCardSection}, ${StyledCardSection} {
@@ -60,7 +60,7 @@ export const StyledCard: any = styled.div`
   margin-bottom: ${getSpacingToken};
 
   ${StyledCardHeader} {
-    padding-${right}: ${({ theme, closable }) => closable && theme.orbit.spaceLarge};
+    padding-${right}: ${({ theme, closable }) => closable && theme.orbit.spaceSixX};
     border-bottom: ${({ hasAdjustedHeader }) => hasAdjustedHeader && 0};
   }
 

@@ -19,8 +19,8 @@ import type { Props } from "./index";
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.height]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
     },
     // TODO: use icon sizes
     [TOKENS.heightLine]: {
@@ -44,14 +44,13 @@ const FakeGroup = styled(({ children, className }) => (
   box-sizing: border-box;
   height: ${getToken(TOKENS.height)};
   box-shadow: ${({ theme }) =>
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
+    `inset 0 0 0 1px ${theme.orbit.formElementBorderColor}`}; // Normal state
   box-shadow: ${({ theme, error }) =>
-    error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
+    error && `inset 0 0 0 1px ${theme.orbit.formElementBorderColorError}`}; // Error state
   ${({ active }) => active && formElementFocus}; // Active state
   background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-  font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
+    disabled ? theme.orbit.formElementDisabledBackground : theme.orbit.formElementBackground};
+  font-size: ${({ theme }) => theme.orbit.formElementNormalFontSize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   border-radius: 6px;
@@ -60,11 +59,7 @@ const FakeGroup = styled(({ children, className }) => (
   `)};
 
   &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-        }`};
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.formElementBorderColorHover};
   }
 `;
 
@@ -80,7 +75,7 @@ const StyledChildren = styled.div`
 
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
   :last-child {
     padding: 0;
   }
@@ -130,7 +125,9 @@ const StyledInputGroup = styled(({ children, className, dataTest, role, ariaLabe
       height: ${getToken(TOKENS.heightLine)};
       width: 1px;
       background-color: ${({ theme, error, active }) =>
-        error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
+        error && !active
+          ? theme.orbit.formElementBorderColorError
+          : theme.orbit.formElementBorderColor};
       transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
       display: block;
       z-index: 2;

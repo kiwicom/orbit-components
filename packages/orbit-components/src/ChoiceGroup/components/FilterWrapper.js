@@ -23,7 +23,7 @@ const StyledContentWrapper = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
-  height: ${({ theme }) => theme.orbit.heightButtonSmall};
+  height: ${({ theme }) => theme.orbit.formBoxSmallHeight};
   ${StyledOnlyButton} {
     visibility: hidden;
     opacity: 0;

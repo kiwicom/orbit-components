@@ -22,16 +22,16 @@ import type { Props } from ".";
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.heightInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
     },
     [TOKENS.fontSizeInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallFontSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalFontSize,
     },
     [TOKENS.iconSize]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.iconExtraSmallSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.iconMediumSize,
     },
   };
 
@@ -40,8 +40,8 @@ const getToken = name => ({ theme, size }) => {
 
 const getPadding = () => ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallPadding,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalPadding,
   };
   return rtlSpacing(tokens[size]);
 };
@@ -88,11 +88,11 @@ export const FakeInput: any = styled(({ children, className }) => (
   height: ${getToken(TOKENS.heightInput)};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      `1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
   background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    disabled ? theme.orbit.formElementDisabledBackground : theme.orbit.formElementBackground};
   font-size: ${getToken(TOKENS.fontSizeInput)};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   border-radius: 6px;
@@ -118,17 +118,13 @@ export const InputContainer: any = styled(({ children, className }) => (
   height: ${getToken(TOKENS.heightInput)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    disabled ? theme.orbit.formElementDisabledForeground : theme.orbit.formElementFilledForeground};
   font-size: ${getToken(TOKENS.fontSizeInput)};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
 
-  // the hover effect is being overwritten, so we could get rid of it anyway
   &:hover > ${FakeInput} {
-    ${({ disabled, theme, error }) =>
-      !disabled &&
-      `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-      }`};
+    ${({ disabled, theme }) =>
+      !disabled && `box-shadow: inset 0 0 0 1px ${theme.orbit.formElementBorderColorHover}`};
   }
 `;
 
@@ -143,7 +139,7 @@ const StyledInlineLabel = styled.div`
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
 
   ${DefaultFormLabel} {
     margin-bottom: 0;
@@ -163,18 +159,18 @@ export const Prefix: any = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   height: 100%;
-  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
+  color: ${({ theme }) => theme.orbit.formElementPrefixForeground};
   display: flex;
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
   z-index: 3;
 
   & > svg {
     width: ${getToken(TOKENS.iconSize)};
     height: ${getToken(TOKENS.iconSize)};
-    color: ${({ theme }) => theme.orbit.colorIconInput};
+    color: ${({ theme }) => theme.orbit.iconTertiaryForeground};
   }
 
   ${StyledButtonPrimitiveIconContainer} {
@@ -189,7 +185,7 @@ Prefix.defaultProps = {
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   height: ${getToken(TOKENS.heightInput)};
-  color: ${({ theme }) => theme.orbit.colorTextInputPrefix};
+  color: ${({ theme }) => theme.orbit.formElementPrefixForeground};
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -203,7 +199,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
 
   ${StyledServiceLogo} {
     height: 16px;
-    padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+    padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceThreeX} 0 0`)};
   }
 `;
 
@@ -259,19 +255,19 @@ export const Input: any = styled(
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.formElementForeground};
     /* Firefox */
     opacity: 1;
   }
 
   /* Internet Explorer 10-11 */
   &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.formElementForeground};
   }
 
   /* Microsoft Edge */
   &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.formElementForeground};
   }
 
   &::-ms-clear,

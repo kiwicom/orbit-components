@@ -19,15 +19,15 @@ const StyledTileHeader = styled.div`
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  padding: ${({ theme }) => theme.orbit.spaceFourX}; //TODO Create token paddingTile
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
   transition: ${transition(["background-color"], "fast", "ease-in-out")};
   :focus {
     outline: none;
   }
   ${mq.largeMobile(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
   `)}
 `;
 
@@ -41,7 +41,7 @@ const StyledTileIcon = styled.div`
   flex-shrink: 0;
   align-items: center;
   align-self: flex-start;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -62,15 +62,15 @@ StyledTileTitle.defaultProps = {
 
 const StyledTileDescription = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
   -webkit-text-size-adjust: 100%;
   width: 100%;
   ${({ hasTitle, theme }) =>
     hasTitle &&
     css`
-      margin-top: ${theme.orbit.spaceXXSmall};
+      margin-top: ${theme.orbit.spaceOneX};
     `};
 `;
 
@@ -88,7 +88,7 @@ const IconRight = ({ external, expandable, className }) => {
 
 export const StyledIconRight: any = styled(IconRight)`
   color: ${({ theme }) => theme.orbit.iconForegroundSecondary};
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceFourX}`)};
   transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
   ${({ expanded }) =>
     expanded &&

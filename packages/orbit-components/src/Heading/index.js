@@ -11,31 +11,31 @@ import type { GetHeadingToken, Props } from "./index";
 export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   const tokens = {
     [TOKENS.weightHeading]: {
-      [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
-      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontWeightHeadingDisplaySubtitle,
-      [TYPE_OPTIONS.TITLE1]: theme.orbit.fontWeightHeadingTitle1,
-      [TYPE_OPTIONS.TITLE2]: theme.orbit.fontWeightHeadingTitle2,
-      [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
-      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightHeadingTitle4,
-      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontWeightHeadingTitle5,
+      [TYPE_OPTIONS.DISPLAY]: theme.orbit.headingDisplayFontWeight,
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.headingDisplaySubtitleFontWeight,
+      [TYPE_OPTIONS.TITLE1]: theme.orbit.headingTitle1FontWeight,
+      [TYPE_OPTIONS.TITLE2]: theme.orbit.headingTitle2FontWeight,
+      [TYPE_OPTIONS.TITLE3]: theme.orbit.headingTitle3FontWeight,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.headingTitle4FontWeight,
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.headingTitle5FontWeight,
     },
     [TOKENS.sizeHeading]: {
-      [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
-      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.fontSizeHeadingDisplaySubtitle,
-      [TYPE_OPTIONS.TITLE1]: theme.orbit.fontSizeHeadingTitle1,
-      [TYPE_OPTIONS.TITLE2]: theme.orbit.fontSizeHeadingTitle2,
-      [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
-      [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeHeadingTitle4,
-      [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeHeadingTitle5,
+      [TYPE_OPTIONS.DISPLAY]: theme.orbit.headingDisplayFontSize,
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.headingDisplaySubtitleFontSize,
+      [TYPE_OPTIONS.TITLE1]: theme.orbit.headingTitle1FontSize,
+      [TYPE_OPTIONS.TITLE2]: theme.orbit.headingTitle2FontSize,
+      [TYPE_OPTIONS.TITLE3]: theme.orbit.headingTitle3FontSize,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.headingTitle4FontSize,
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.headingTitle5FontSize,
     },
     [TOKENS.lineHeight]: {
-      [TYPE_OPTIONS.DISPLAY]: theme.orbit.lineHeightHeadingDisplay,
-      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.lineHeightHeadingDisplaySubtitle,
-      [TYPE_OPTIONS.TITLE1]: theme.orbit.lineHeightHeadingTitle1,
-      [TYPE_OPTIONS.TITLE2]: theme.orbit.lineHeightHeadingTitle2,
-      [TYPE_OPTIONS.TITLE3]: theme.orbit.lineHeightHeadingTitle3,
-      [TYPE_OPTIONS.TITLE4]: theme.orbit.lineHeightHeadingTitle4,
-      [TYPE_OPTIONS.TITLE5]: theme.orbit.lineHeightHeadingTitle5,
+      [TYPE_OPTIONS.DISPLAY]: theme.orbit.headingDisplayLineHeight,
+      [TYPE_OPTIONS.DISPLAYSUBTITLE]: theme.orbit.headingDisplaySubtitleLineHeight,
+      [TYPE_OPTIONS.TITLE1]: theme.orbit.headingTitle1LineHeight,
+      [TYPE_OPTIONS.TITLE2]: theme.orbit.headingTitle2LineHeight,
+      [TYPE_OPTIONS.TITLE3]: theme.orbit.headingTitle3LineHeight,
+      [TYPE_OPTIONS.TITLE4]: theme.orbit.headingTitle4LineHeight,
+      [TYPE_OPTIONS.TITLE5]: theme.orbit.headingTitle5LineHeight,
     },
   };
 
@@ -58,7 +58,7 @@ export const StyledHeading: any = styled(
   font-size: ${getHeadingToken(TOKENS.sizeHeading)};
   font-weight: ${getHeadingToken(TOKENS.weightHeading)};
   color: ${({ theme, inverted }) =>
-    inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
+    inverted ? theme.orbit.headingForegroundInverted : theme.orbit.headingForeground};
   line-height: ${getHeadingToken(TOKENS.lineHeight)};
   text-transform: ${({ type }) => type === TYPE_OPTIONS.TITLE5 && "uppercase"};
   margin: 0;

@@ -30,8 +30,8 @@ const StyledCollapse = styled.div`
   width: 100%;
   display: block;
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding-bottom: ${({ theme }) => theme.orbit.spaceSmall};
-  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceThreeX};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceFourX};
   :last-child,
   :only-child {
     border: 0;
@@ -56,7 +56,7 @@ StyledCollapseLabel.defaultProps = {
 };
 
 const StyledCollapseChildren = styled.div`
-  margin: ${({ theme }) => theme.orbit.spaceSmall} 0;
+  margin: ${({ theme }) => theme.orbit.spaceThreeX} 0;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

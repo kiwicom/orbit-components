@@ -12,8 +12,8 @@ const StyledTileExpandable = styled.div`
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  padding: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium} 0`};
-  margin: 0 ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceFourX} 0`};
+  margin: 0 ${({ theme }) => theme.orbit.spaceFourX};
   ${({ initialExpanded, theme }) =>
     !initialExpanded &&
     css`
@@ -21,9 +21,9 @@ const StyledTileExpandable = styled.div`
         padding ${theme.orbit.durationFast} ease-in-out,
         border-top ${theme.orbit.durationFast} ease-in-out;
     `};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

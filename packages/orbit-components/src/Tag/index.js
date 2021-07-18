@@ -13,8 +13,8 @@ import type { Props } from "./index";
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {
-    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZES.SMALL]: theme.orbit.fontSizeSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeNormal,
   };
 
   return tokens[size];
@@ -28,14 +28,14 @@ const getBackgroundColor = state => () => {
       normal: "paletteCloudDark",
     }),
     [STATES.HOVER]: resolveColor({
-      selected: "paletteBlueNormalHover",
-      removable: "paletteBlueLightHover",
-      normal: "paletteCloudNormalHover",
+      selected: "paletteBlueNormalSecondary",
+      removable: "paletteBlueLightSecondary",
+      normal: "paletteCloudNormalSecondary",
     }),
     [STATES.ACTIVE]: resolveColor({
-      selected: "paletteBlueNormalActive",
-      removable: "paletteBlueLightActive",
-      normal: "paletteCloudNormalHover",
+      selected: "paletteBlueNormalTertiary",
+      removable: "paletteBlueLightTertiary",
+      normal: "paletteCloudNormalSecondary",
     }),
   };
   return states[state];
@@ -55,7 +55,7 @@ const CloseContainer = styled.div`
 
   &:active {
     color: ${({ theme, selected }) =>
-      selected ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
+      selected ? theme.orbit.paletteWhiteNormal : theme.orbit.paletteBlueDarker};
   }
 `;
 
@@ -84,7 +84,7 @@ export const StyledTag: any = styled.div`
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${rtlSpacing(theme.orbit.paddingTag)};
+    padding: ${rtlSpacing(`6px ${theme.orbit.spaceTwoX}`)};
     transition: color ${theme.orbit.durationFast} ease-in-out,
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;
@@ -138,7 +138,7 @@ const StyledClose = styled.div`
     outline: none;
     box-shadow: 0 0 0 2px
       ${({ theme, selected, removable }) =>
-        selected && !removable ? theme.orbit.paletteWhite : theme.orbit.paletteBlueDarker};
+        selected && !removable ? theme.orbit.paletteWhiteNormal : theme.orbit.paletteBlueDarker};
   }
 `;
 

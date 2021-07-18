@@ -16,7 +16,7 @@ const StyledTileHeader = styled.div`
   display: block;
   cursor: pointer;
   position: relative;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
+  padding: ${({ theme }) => theme.orbit.spaceFourX}; //TODO Create token paddingTile
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -36,12 +36,12 @@ StyledTileTitle.defaultProps = {
 };
 
 const StyledTileIcon = styled.div`
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
   display: flex;
   flex-shrink: 0;
   align-items: center;
   align-self: flex-start;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -51,14 +51,14 @@ StyledTileIcon.defaultProps = {
 
 const StyledTileDescription = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
   width: 100%;
   ${({ hasTitle, theme }) =>
     hasTitle &&
     css`
-      margin-top: ${theme.orbit.spaceXXSmall};
+      margin-top: ${theme.orbit.spaceOneX};
     `};
 `;
 
@@ -69,7 +69,7 @@ StyledTileDescription.defaultProps = {
 
 export const StyledIconRight: any = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceFourX}`)};
   transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   svg {

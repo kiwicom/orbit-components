@@ -18,19 +18,20 @@ export const StyledTile: any = styled(({ theme, icon, title, external, ...props 
   box-sizing: border-box;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   text-decoration: none;
-  background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
+  background: ${({ theme }) =>
+    theme.orbit.paletteWhiteNormal}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
   &:hover,
   &:focus {
     outline: 0;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+    box-shadow: ${({ theme }) => theme.orbit.elevationActionActiveBoxShadow};
   }
 
   &:hover ${StyledIconRight} {
-    color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+    color: ${({ theme }) => theme.orbit.paletteInkLightSecondary};
   }
 `;
 

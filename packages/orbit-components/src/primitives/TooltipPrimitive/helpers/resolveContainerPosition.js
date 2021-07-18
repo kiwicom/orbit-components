@@ -22,7 +22,7 @@ const resolveContainerPosition = ({
       It's produced by tooltipPadding.js helper that changes the padding based on the actual height -
       if it's one-line or multi-line.
      */
-    const isMultiline = contentHeight > Math.floor(parseFloat(theme.orbit.lineHeightTextNormal));
+    const isMultiline = contentHeight > Math.floor(parseFloat(theme.orbit.lineHeightNormal));
     return css`
       top: ${Math.floor(
         containerTop - tooltipHeight - parseFloat(TOOLTIP_ARROW_SIZE) - (isMultiline ? 8 : 0),

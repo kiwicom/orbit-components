@@ -8,11 +8,11 @@ import theme from "../src/defaultTheme";
 
 const tokens = {
   smallMobile: 320,
-  [QUERIES.MEDIUMMOBILE]: theme.orbit.widthBreakpointMediumMobile,
-  [QUERIES.LARGEMOBILE]: theme.orbit.widthBreakpointLargeMobile,
-  [QUERIES.TABLET]: theme.orbit.widthBreakpointTablet,
-  [QUERIES.DESKTOP]: theme.orbit.widthBreakpointDesktop,
-  [QUERIES.LARGEDESKTOP]: theme.orbit.widthBreakpointLargeDesktop,
+  [QUERIES.MEDIUMMOBILE]: theme.orbit.breakpointMediumMobile,
+  [QUERIES.LARGEMOBILE]: theme.orbit.breakpointLargeMobile,
+  [QUERIES.TABLET]: theme.orbit.breakpointTablet,
+  [QUERIES.DESKTOP]: theme.orbit.breakpointDesktop,
+  [QUERIES.LARGEDESKTOP]: theme.orbit.breakpointLargeDesktop,
 };
 
 const viewports = Object.entries(tokens).reduce((acc, [viewport, width]) => {

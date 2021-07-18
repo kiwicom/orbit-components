@@ -12,7 +12,7 @@ import type { Props, MappedOptions } from "./index";
 
 const StyledNavigation = styled.div`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Token */
+  padding: ${({ theme }) => theme.orbit.spaceFourX}; /* TODO: Token */
   width: 100%;
   box-sizing: border-box;
 

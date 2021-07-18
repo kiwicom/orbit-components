@@ -13,12 +13,12 @@ import type { Props } from "./index";
 export const StyledCardHeader: any = styled.div`
   position: relative;
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   box-sizing: border-box;
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
 
   ${media.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
   `)}
 `;
 
@@ -38,7 +38,7 @@ const StyledHeadingWrapper = styled.div`
 
 const StyledSubTitle = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin-top: ${({ theme }) => theme.orbit.spaceOneX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -47,10 +47,10 @@ StyledSubTitle.defaultProps = {
 };
 
 const StyledIcon = styled.div`
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceThreeX} 0 0`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

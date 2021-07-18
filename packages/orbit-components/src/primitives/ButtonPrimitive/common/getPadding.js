@@ -5,27 +5,27 @@ import type { GetPadding } from "./getPadding";
 
 const getSpacing: GetPadding = (onlyIcon, iconRight, iconLeft, size, theme) => {
   const wrappedRtl = value => rtlSpacing(value)({ theme });
-  if (onlyIcon) return wrappedRtl(theme.orbit.paddingButtonWithoutText);
+  if (onlyIcon) return wrappedRtl(theme.orbit.buttonWithoutTextPadding);
   const tokens = {
     [TOKENS.paddingButton]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.buttonLargePadding,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.buttonNormalPadding,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.buttonSmallPadding,
     },
     [TOKENS.paddingButtonWithIcons]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcons,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcons,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcons,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.buttonLargeBothIconsPadding,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.buttonNormalBothIconsPadding,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.buttonSmallBothIconsPadding,
     },
     [TOKENS.paddingButtonWithLeftIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithLeftIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithLeftIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithLeftIcon,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.buttonLargeLeftIconPadding,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.buttonNormalLeftIconPadding,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.buttonSmallLeftIconPadding,
     },
     [TOKENS.paddingButtonWithRightIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithRightIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithRightIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithRightIcon,
+      [SIZE_OPTIONS.LARGE]: theme.orbit.buttonLargeRightIconPadding,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.buttonNormalRightIconPadding,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.buttonSmallRightIconPadding,
     },
   };
   if (iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithIcons][size]);

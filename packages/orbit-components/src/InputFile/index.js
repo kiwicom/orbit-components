@@ -34,12 +34,12 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingInputFile)};
-  height: ${({ theme }) => theme.orbit.heightInputNormal};
+  padding: ${rtlSpacing("0 0 0 6px")};
+  height: ${({ theme }) => theme.orbit.formBoxNormalHeight};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      `1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
   background-color: ${({ theme }) => theme.backgroundInput};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
@@ -50,11 +50,7 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   `)};
 
   &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
-        }`};
+    box-shadow: inset 0 0 0 ${({ theme }) => `1px ${theme.orbit.formElementBorderColorHover}`};
   }
 `;
 
@@ -84,7 +80,7 @@ const getFileInputColor = ({ error, fileName }, theme) => {
     return theme.orbit.paletteRedNormal;
   }
   if (fileName) {
-    return theme.orbit.colorTextInput;
+    return theme.orbit.formElementFilledForeground;
   }
   return theme.orbit.paletteInkLight;
 };
@@ -96,7 +92,7 @@ const StyledFileInput = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

@@ -7,12 +7,12 @@ import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
   display: flex;
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  padding: ${({ theme }) => theme.orbit.spaceSixX};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   position: sticky;
   bottom: 0;
   box-sizing: border-box;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionActiveBoxShadow};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

@@ -64,11 +64,11 @@ const StyledDestinationCardContent = styled.div`
   z-index: 2;
   display: flex;
   flex-direction: column;
-  padding: ${({ theme }) => theme.orbit.spaceSmall};
+  padding: ${({ theme }) => theme.orbit.spaceThreeX};
   width: 100%;
   transition: bottom ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   bottom: ${({ hiddenContentHeight, theme }) =>
-    `-${hiddenContentHeight + parseInt(theme.orbit.spaceSmall, 10)}px`};
+    `-${hiddenContentHeight + parseInt(theme.orbit.spaceThreeX, 10)}px`};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -77,7 +77,7 @@ StyledDestinationCardContent.defaultProps = {
 };
 
 const StyledDestinationCardHeader = styled.div`
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceTwoX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -90,7 +90,7 @@ const Shown = styled.div`
   opacity: 0;
   position: relative;
   top: "-50%";
-  margin-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceOneX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -100,7 +100,7 @@ Shown.defaultProps = {
 
 const ArrowUp = styled(ArrowUpIcon)`
   transform: rotate(90deg);
-  margin-left: ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin-left: ${({ theme }) => theme.orbit.spaceOneX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -109,7 +109,7 @@ ArrowUp.defaultProps = {
 };
 
 const StyledDestinationCardHiddenContent = styled.div`
-  padding: ${({ theme }) => theme.orbit.spaceSmall} 0 0;
+  padding: ${({ theme }) => theme.orbit.spaceThreeX} 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
@@ -164,7 +164,7 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.paletteWhiteNormal},
       0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
   }
 `;

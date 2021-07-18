@@ -9,11 +9,11 @@ import type { Props } from ".";
 const StyledCoupon = styled.mark`
   display: inline;
   background: none;
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  font-size: ${({ theme }) => theme.orbit.fontSizeSmall};
   letter-spacing: 0.75px;
   text-transform: uppercase;
   border: 1px dashed ${({ theme }) => theme.orbit.paletteInkLighter};
-  padding: 2px ${({ theme }) => theme.orbit.spaceXXSmall};
+  padding: 2px ${({ theme }) => theme.orbit.spaceOneX};
   line-height: inherit;
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};

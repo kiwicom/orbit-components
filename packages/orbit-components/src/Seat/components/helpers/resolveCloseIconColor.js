@@ -10,9 +10,9 @@ const resolveCloseIconColor = ({ type, theme, hover }: Params): string => {
     return theme.orbit.paletteProductDarker;
   }
 
-  if (type === TYPES.LEGROOM) return theme.orbit.paletteBlueDarkHover;
+  if (type === TYPES.LEGROOM) return theme.orbit.paletteBlueDarkSecondary;
 
-  return theme.orbit.paletteProductDarkHover;
+  return theme.orbit.paletteProductDarkSecondary;
 };
 
 export default resolveCloseIconColor;

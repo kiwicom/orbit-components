@@ -19,7 +19,7 @@ const StyledStepperInput = styled.input`
   height: 32px; // TODO: create token sizeStepper
   padding: 0;
   border: 0;
-  font-size: ${({ theme }) => theme.orbit.fontSizeInputNormal};
+  font-size: ${({ theme }) => theme.orbit.formElementNormalFontSize};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
   text-align: center;

@@ -18,8 +18,8 @@ import type { Props } from "./index";
 
 const getSelectSize = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
   };
   return tokens[size];
 };
@@ -86,25 +86,25 @@ const StyledSelect = styled(
   ),
 )`
   appearance: none;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
+  background: ${({ theme }) => theme.orbit.formElementBackground};
   cursor: pointer;
   color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    filled ? theme.orbit.formElementFilledForeground : theme.orbit.formElementForeground};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
+    size === SIZE_OPTIONS.SMALL
+      ? theme.orbit.formElementSmallFontSize
+      : theme.orbit.formElementNormalFontSize};
   height: ${getSelectSize};
   // TODO: we should adopt inputPadding component-specific tokens here
   padding: ${({ theme, size, prefix }) =>
     rtlSpacing(
       (size === SIZE_OPTIONS.SMALL &&
         !prefix &&
-        `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`) ||
-        (size === SIZE_OPTIONS.SMALL &&
-          prefix &&
-          `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
-        (prefix && `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
-        `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`,
+        `0 ${theme.orbit.spaceEightX} 0 ${theme.orbit.spaceThreeX}`) ||
+        (size === SIZE_OPTIONS.SMALL && prefix && `0 ${theme.orbit.spaceEightX} 0 48px`) ||
+        (prefix && `0 ${theme.orbit.spaceTenX} 0 48px`) ||
+        `0 ${theme.orbit.spaceTenX} 0 ${theme.orbit.spaceThreeX}`,
     )};
   outline: none;
   width: 100%;
@@ -118,7 +118,7 @@ const StyledSelect = styled(
   `)};
 
   > option {
-    color: ${({ theme }) => theme.orbit.colorTextInput};
+    color: ${({ theme }) => theme.orbit.formElementFilledForeground};
   }
 
   &::-ms-expand {
@@ -129,7 +129,7 @@ const StyledSelect = styled(
   &::-ms-value {
     background: transparent;
     color: ${({ theme, filled }) =>
-      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+      filled ? theme.orbit.formElementFilledForeground : theme.orbit.formElementForeground};
     // needs to rgba, transparent is not allow in IE
     color: ${({ customValueText }) => customValueText && "rgba(255, 255, 255, 0)"};
   }
@@ -138,16 +138,12 @@ const StyledSelect = styled(
   border: 0;
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      `1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
 
   &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-        }`};
+    box-shadow: inset 0 0 0 ${({ theme }) => `1px ${theme.orbit.formElementBorderColorHover}`};
   }
 
   &:focus {
@@ -155,12 +151,12 @@ const StyledSelect = styled(
   }
 
   &:disabled {
-    color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
-    background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
+    color: ${({ theme }) => theme.orbit.formElementDisabledForeground};
+    background: ${({ theme }) => theme.orbit.formElementDisabledBackground};
     cursor: not-allowed;
 
     &:hover {
-      box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
+      box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.formElementBorderColor};
     }
   }
 
@@ -190,7 +186,7 @@ export const SelectContainer: any = styled(({ className, children }) => (
   position: relative;
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
+  background: ${({ theme }) => theme.orbit.formElementBackground};
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
@@ -207,7 +203,7 @@ const SelectPrefix = styled(({ className, children }) => (
   display: flex;
   align-items: center;
   position: absolute;
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
+  padding: ${({ theme }) => `0 ${theme.orbit.spaceThreeX}`};
   pointer-events: none;
   z-index: 3;
   top: 0;
@@ -227,17 +223,17 @@ const SelectSuffix = styled(({ children, className }) => (
   justify-content: center;
   align-items: center;
   top: 0;
-  ${right}: ${({ theme }) => theme.orbit.spaceXSmall};
+  ${right}: ${({ theme }) => theme.orbit.spaceTwoX};
   color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    disabled ? theme.orbit.formElementDisabledForeground : theme.orbit.formElementFilledForeground};
   pointer-events: none;
   z-index: 3;
   height: 100%;
 
   & > * {
-    width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
-    height: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
-    margin-bottom: ${({ size, theme }) => size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
+    width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.iconExtraSmallSize};
+    height: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.iconExtraSmallSize};
+    margin-bottom: ${({ size, theme }) => size === SIZE_OPTIONS.SMALL && theme.orbit.spaceHalfX};
   }
 `;
 
@@ -251,17 +247,19 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...pr
 ))`
   color: ${({ theme, filled, disabled }) =>
     (disabled && theme.orbit.paletteInkLighter) ||
-    (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
+    (filled ? theme.orbit.formElementFilledForeground : theme.orbit.formElementForeground)};
 
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
+    size === SIZE_OPTIONS.SMALL
+      ? theme.orbit.formElementSmallFontSize
+      : theme.orbit.formElementNormalFontSize};
   z-index: 3;
   position: absolute;
   height: 100%;
   line-height: ${getSelectSize};
   top: 0;
-  ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceSmall)};
+  ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceThreeX)};
   bottom: 0;
   pointer-events: none;
 `;

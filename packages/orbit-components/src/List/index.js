@@ -12,17 +12,17 @@ import type { Props } from "./index";
 
 const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {
-    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
-    [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
+    [SIZES.SMALL]: theme.orbit.fontSizeSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeNormal,
+    [SIZES.LARGE]: theme.orbit.fontSizeLarge,
   };
   return sizeTokens[size];
 };
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {
-    [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
-    [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
+    [TYPES.PRIMARY]: theme.orbit.textPrimaryForeground,
+    [TYPES.SECONDARY]: theme.orbit.textSecondaryForeground,
   };
 
   return typeTokens[type];

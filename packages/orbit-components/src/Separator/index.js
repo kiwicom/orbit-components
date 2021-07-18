@@ -9,8 +9,8 @@ import type { Props } from "./index";
 
 const StyledSeparator = styled.hr`
   width: 100%;
-  height: ${({ theme }) => theme.orbit.heightSeparator};
-  background: ${({ theme }) => theme.orbit.backgroundSeparator};
+  height: 1px;
+  background: ${({ theme }) => theme.orbit.elevationFlatBorderColor};
   box-sizing: border-box;
   border-style: none;
   margin-top: 0;

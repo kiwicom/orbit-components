@@ -13,21 +13,21 @@ const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible
 
 export const StyledCardSectionContent: any = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
   border-top: ${({ theme, expanded }) =>
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
   padding-top: ${({ theme, expandable, expanded, visible }) =>
-    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceMedium};
+    hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceFourX};
   transition: padding ${({ theme }) => theme.orbit.durationFast} linear,
     border-top ${({ theme }) => theme.orbit.durationFast} linear;
 
   ${media.desktop(css`
     padding-top: ${({ theme, expandable, expanded, visible }) =>
-      hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceLarge};
+      hasPaddingTop({ expandable, expanded, visible }) && theme.orbit.spaceSixX};
   `)}
 
   ${StyledSlide} {

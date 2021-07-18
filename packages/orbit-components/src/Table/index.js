@@ -28,14 +28,14 @@ const StyledTableOuter = styled.div`
 
   &::after {
     opacity: ${({ showRight }) => (showRight ? "1" : "0")};
-    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowRight};
+    background-image: linear-gradient(to right, transparent, rgba(186, 199, 213, 23));
     right: 0;
   }
 
   &::before {
     opacity: ${({ showLeft }) => (showLeft ? "1" : "0")};
     left: 0;
-    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowLeft};
+    background-image: linear-gradient(to left, transparent, rgba(186, 199, 213, 23));
   }
 `;
 
@@ -62,15 +62,15 @@ const StyledTable = styled.table`
   white-space: nowrap;
 
   & ${StyledTableBody} > ${StyledTableRow} {
-    background-color: ${({ theme }) => theme.orbit.backgroundTable};
-    border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
+    background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
+    border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
     transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 
     ${({ striped, theme }) =>
       striped &&
       css`
         &:nth-of-type(even) {
-          background-color: ${theme.orbit.backgroundTableEven};
+          background-color: ${theme.orbit.paletteCloudLight};
         }
       `}
 
@@ -78,17 +78,16 @@ const StyledTable = styled.table`
       border: 0;
     }
     &:hover {
-      background-color: ${({ theme }) => theme.orbit.backgroundTableHover};
+      background-color: ${({ theme }) => theme.orbit.paletteCloudNormal};
     }
   }
   & ${StyledTableCell} {
-    height: ${({ compact, theme }) =>
-      compact ? theme.orbit.spaceXLarge : theme.orbit.spaceXXLarge};
+    height: ${({ compact, theme }) => (compact ? theme.orbit.spaceEightX : theme.orbit.spaceTenX)};
     padding: ${({ theme, compact }) =>
       compact
-        ? `6px ${theme.orbit.spaceSmall}`
-        : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
-    line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+        ? `6px ${theme.orbit.spaceThreeX}`
+        : `10px ${theme.orbit.spaceThreeX}`}; /* TODO: remove 10px and 6px with new tokens */
+    line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
     color: ${({ type, theme }) => type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
   }
 `;

@@ -37,36 +37,36 @@ const getTypeToken = name => ({ theme, type }) => {
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
     },
     [TOKENS.backgroundAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.backgroundAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.backgroundAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.backgroundAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.backgroundAlertCritical,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLight,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLight,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLight,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLight,
     },
     [TOKENS.colorTextAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.colorTextAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.colorTextAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.colorTextAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextAlertCritical,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
     },
     // TODO: create token
     [TOKENS.colorTextLinkAlertHover]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkSecondary,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkSecondary,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkSecondary,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkTertiary,
     },
     // TODO: create token
     [TOKENS.colorTextLinkAlertFocus]: {
-      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueDarkHover, 10),
-      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenDarkHover, 10),
-      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeDarkHover, 10),
-      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedDarkActive, 10),
+      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueDarkSecondary, 10),
+      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenDarkSecondary, 10),
+      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeDarkSecondary, 10),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedDarkTertiary, 10),
     },
     [TOKENS.colorBorderAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLightHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightSecondary,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLightSecondary,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightSecondary,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightSecondary,
     },
   };
   return tokens[name][type];
@@ -119,26 +119,26 @@ const StyledAlert = styled(StyledDiv)`
   background: ${getTypeToken(TOKENS.backgroundAlert)};
   color: ${getTypeToken(TOKENS.colorTextAlert)};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
   box-sizing: border-box;
   margin-bottom: ${getSpacingToken};
 
   padding: ${({ theme, closable }) =>
     closable
       ? rtlSpacing(
-          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
+          `${theme.orbit.spaceThreeX} ${theme.orbit.spaceSixX} ${theme.orbit.spaceThreeX} ${theme.orbit.spaceThreeX}`,
         )
-      : theme.orbit.spaceSmall};
+      : theme.orbit.spaceThreeX};
 
   ${media.tablet(css`
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
     padding: ${({ theme, closable }) =>
       closable
         ? rtlSpacing(
-            `${theme.orbit.paddingAlert} ${theme.orbit.spaceXLarge} ${theme.orbit.paddingAlert} ${theme.orbit.paddingAlert}`,
+            `${theme.orbit.spaceFourX} ${theme.orbit.spaceEightX} ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX}`,
           )
-        : theme.orbit.paddingAlert};
+        : theme.orbit.spaceFourX};
   `)}
 `;
 
@@ -149,17 +149,17 @@ StyledAlert.defaultProps = {
 
 const IconContainer = styled(StyledDiv)`
   flex-shrink: 0;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
   color: ${getTypeToken(TOKENS.colorIconAlert)};
   display: ${({ inlineActions }) => inlineActions && "flex"};
   align-items: ${({ inlineActions }) => inlineActions && "center"};
 
   ${media.tablet(css`
-    margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+    margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceThreeX} 0 0`)};
 
     ${StyledIcon} {
-      width: ${({ theme }) => theme.orbit.widthIconMedium};
-      height: ${({ theme }) => theme.orbit.heightIconMedium};
+      width: ${({ theme }) => theme.orbit.iconMediumSize};
+      height: ${({ theme }) => theme.orbit.iconMediumSize};
     }
   `)}
 `;
@@ -182,10 +182,10 @@ const Title = styled(StyledDiv)`
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme, hasChildren, inlineActions }) =>
-    hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
+    hasChildren && (inlineActions ? "0" : theme.orbit.spaceOneX)};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
-  line-height: ${({ theme }) => theme.orbit.lineHeightHeading};
-  min-height: ${({ theme }) => theme.orbit.heightIconMedium};
+  line-height: 1.2;
+  min-height: ${({ theme }) => theme.orbit.iconMediumSize};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -221,9 +221,9 @@ Content.defaultProps = {
 const CloseContainer = styled(StyledDiv)`
   position: absolute;
   top: ${({ hasChildren }) => (hasChildren ? 0 : "50%")};
-  margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.widthIconSmall}`};
+  margin-top: ${({ hasChildren, theme }) => !hasChildren && `-${theme.orbit.iconExtraSmallSize}`};
   ${right}: 0;
-  margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceXSmall};
+  margin-${right}: ${({ hasChildren, theme }) => !hasChildren && theme.orbit.spaceTwoX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

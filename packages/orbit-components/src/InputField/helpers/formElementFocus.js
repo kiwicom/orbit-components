@@ -10,8 +10,8 @@ const formElementFocus = (): any => css`
           theme.orbit.paletteRedNormal,
           15,
         )};`
-      : `inset 0 0 0 1px ${theme.orbit.borderColorInputFocus}, 0 0 0 3px ${transparentColor(
-          theme.orbit.borderColorInputFocus,
+      : `inset 0 0 0 1px ${theme.orbit.formElementBorderColorFocus}, 0 0 0 3px ${transparentColor(
+          theme.orbit.formElementBorderColorFocus,
           15,
         )};`};
 `;

@@ -14,7 +14,7 @@ import StyledText from "../primitives/StyledText";
 import type { Props as StepProps, Type } from "../index";
 
 const StyledIndent = styled.div`
-  padding-left: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding-left: ${({ theme }) => theme.orbit.spaceTwoX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

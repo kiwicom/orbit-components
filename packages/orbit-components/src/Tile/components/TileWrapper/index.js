@@ -15,17 +15,18 @@ export const StyledTileWrapper: any = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ theme }) => theme.orbit.paletteInkNormal};
   text-decoration: none;
-  background: ${({ theme }) => theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
+  background: ${({ theme }) =>
+    theme.orbit.paletteWhiteNormal}; //TODO Create token backgroundColorTile
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
 
   :hover,
   :focus {
     outline: none;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+    box-shadow: ${({ theme }) => theme.orbit.elevationActionActiveBoxShadow};
     ${StyledIconRight} {
-      color: ${({ theme }) => theme.orbit.paletteInkLightHover};
+      color: ${({ theme }) => theme.orbit.paletteInkLightSecondary};
     }
   }
 `;

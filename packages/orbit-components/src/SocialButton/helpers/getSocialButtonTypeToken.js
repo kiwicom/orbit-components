@@ -13,16 +13,16 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudDark,
     },
     [TOKENS.backgroundButtonHover]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalHover,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalHover,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalHover,
-      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalHover,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalSecondary,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalSecondary,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalSecondary,
+      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalSecondary,
     },
     [TOKENS.backgroundButtonActive]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalActive,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalActive,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalActive,
-      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalActive,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormalTertiary,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormalTertiary,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormalTertiary,
+      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormalTertiary,
     },
     // TODO: remove, not used in render
     [TOKENS.backgroundButtonFocus]: {
@@ -32,25 +32,25 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudDark,
     },
     [TOKENS.colorTextButton]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.colorTextButtonHover]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.colorTextButtonActive]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkNormal,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkNormal,
     },
     [TOKENS.iconColor]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteSocialFacebook,
       [TYPE_OPTIONS.GOOGLE]: "currentColor",
       [TYPE_OPTIONS.TWITTER]: "#00ACEE", // TODO: add token

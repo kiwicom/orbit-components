@@ -34,7 +34,7 @@ export const StyledTripSegmentMilestone: any = styled.div`
   > svg {
     z-index: 1;
     height: ${getSize(ICON_SIZES.MEDIUM)};
-    background: ${({ theme }) => theme.orbit.paletteWhite};
+    background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
     transition: color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   }
 `;
@@ -66,9 +66,11 @@ const StyledTripSegmentMilestoneArrow = styled.div`
       transparent;
   }
   &:after {
-    border-color: transparent ${({ theme }) => theme.orbit.paletteWhite} transparent transparent;
+    border-color: transparent ${({ theme }) => theme.orbit.paletteWhiteNormal} transparent
+      transparent;
     border-width: 4px 4px 4px 0;
-    border-color: transparent ${({ theme }) => theme.orbit.paletteWhite} transparent transparent;
+    border-color: transparent ${({ theme }) => theme.orbit.paletteWhiteNormal} transparent
+      transparent;
     margin: ${rtlSpacing(`2px 0 0 0`)};
     right: 0;
   }
@@ -84,10 +86,10 @@ const StyledTripSegmentContent = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+  background: ${({ theme }) => theme.orbit.elevationFlatBackground};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   border: ${({ theme }) =>
-    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.paletteCloudNormal}`};
+    `${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.elevationFlatBorderColor}`};
   transition: border-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
 
@@ -98,7 +100,7 @@ StyledTripSegmentContent.defaultProps = {
 
 const StyledChevrons = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   flex-direction: column;
 
   > svg {
@@ -140,7 +142,7 @@ const StyledTripSegmentCarrier = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  ${right}: ${({ theme }) => `-${theme.orbit.spaceXSmall}`};
+  ${right}: ${({ theme }) => `-${theme.orbit.spaceTwoX}`};
   top: 0;
   height: 100%;
 `;
@@ -155,14 +157,14 @@ const StyledTripSegmentOverviewWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding: ${({ theme }) => theme.orbit.spaceTwoX};
   cursor: pointer;
   position: relative;
 
   ${StyledCarrierLogo} {
     margin: ${({ theme }) =>
-      rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0
-      ${theme.orbit.spaceXSmall}`)};
+      rtlSpacing(`0 ${theme.orbit.spaceOneX} 0
+      ${theme.orbit.spaceTwoX}`)};
   }
 `;
 
@@ -183,7 +185,7 @@ const StyledTripSegmentOverviewColumn = styled.div`
 `;
 
 const StyledTripSegmentOverviewTime = styled.div`
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceThreeX} 0 0`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -192,8 +194,8 @@ StyledTripSegmentOverviewTime.defaultProps = {
 };
 
 const StyledTripSegmentChildren = styled.div`
-  padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceXSmall} 0` : "0")};
-  margin: ${({ theme }) => `0 ${theme.orbit.spaceXSmall}`};
+  padding: ${({ theme, expanded }) => (expanded ? `${theme.orbit.spaceTwoX} 0` : "0")};
+  margin: ${({ theme }) => `0 ${theme.orbit.spaceTwoX}`};
   border-top: ${({ theme, expanded }) =>
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
@@ -215,7 +217,7 @@ export const StyledTripSegment: any = styled.div`
     outline: 0;
 
     ${StyledTripSegmentContent} {
-      border-color: ${({ theme }) => theme.orbit.borderColorInputFocus};
+      border-color: ${({ theme }) => theme.orbit.formElementBorderColorFocus};
     }
 
     ${StyledTripSegmentMilestone}, ${StyledChevrons} {
@@ -225,15 +227,15 @@ export const StyledTripSegment: any = styled.div`
     }
     ${StyledTripSegmentMilestoneArrow} {
       &:before {
-        border-color: transparent ${({ theme }) => theme.orbit.borderColorInputFocus} transparent
-          transparent;
+        border-color: transparent ${({ theme }) => theme.orbit.formElementBorderColorFocus}
+          transparent transparent;
       }
     }
   }
 
   &:hover {
     ${StyledTripSegmentContent} {
-      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalHover};
+      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalSecondary};
     }
     ${StyledTripSegmentMilestone}, ${StyledChevrons} {
       svg {
@@ -242,8 +244,8 @@ export const StyledTripSegment: any = styled.div`
     }
     ${StyledTripSegmentMilestoneArrow} {
       &:before {
-        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalHover} transparent
-          transparent;
+        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalSecondary}
+          transparent transparent;
       }
     }
   }

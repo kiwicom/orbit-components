@@ -56,8 +56,7 @@ export const StyledLoading: any = styled(({ children, className, dataTest }) => 
   ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
   width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
   ${getHeight};
-  padding: ${({ theme, type }) =>
-    type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
+  padding: ${({ theme, type }) => type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.spaceThreeX};
   display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
   flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
   justify-content: ${getAlign};
@@ -73,12 +72,12 @@ StyledLoading.defaultProps = {
 
 const StyledLoadingText = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextLoading};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  color: ${({ theme }) => theme.orbit.paletteInkLighter};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceFourX};
   margin-${left}: ${({ theme, type }) =>
-  type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
+  type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceThreeX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

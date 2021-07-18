@@ -35,10 +35,10 @@ const StyledBreadcrumbsItemAnchor = styled(
         text-decoration: none;
       }
       &:hover {
-        color: ${({ theme }) => theme.orbit.paletteProductNormalHover};
+        color: ${({ theme }) => theme.orbit.paletteProductNormalSecondary};
       }
       :focus {
-        color: ${({ theme }) => theme.orbit.paletteProductNormalActive};
+        color: ${({ theme }) => theme.orbit.paletteProductNormalTertiary};
       }
     `};
 `;
@@ -49,7 +49,7 @@ StyledBreadcrumbsItemAnchor.defaultProps = {
 };
 
 const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
-  margin: 0 ${({ theme }) => theme.orbit.spaceXXSmall};
+  margin: 0 ${({ theme }) => theme.orbit.spaceOneX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

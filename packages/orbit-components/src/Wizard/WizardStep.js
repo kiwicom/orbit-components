@@ -66,13 +66,13 @@ const StyledProgressBar = styled.div`
     &:before {
       ${left}: 0;
       background: ${status === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
+        ? theme.orbit.paletteCloudNormalSecondary
         : theme.orbit.paletteProductNormal};
     }
     &:after {
       ${right}: 0;
       background: ${status === "disabled" || nextStepStatus === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
+        ? theme.orbit.paletteCloudNormalSecondary
         : theme.orbit.paletteProductNormal};
     }
   `}
@@ -99,12 +99,12 @@ const StyledLink = styled.a`
         css`
           cursor: pointer;
           span {
-            color: ${theme.orbit.colorTextSecondary};
+            color: ${theme.orbit.textSecondaryForeground};
           }
           &:hover,
           &:focus {
             span {
-              color: ${theme.orbit.colorTextPrimary};
+              color: ${theme.orbit.textPrimaryForeground};
               text-decoration: underline;
             }
           }
@@ -127,8 +127,8 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
     if (onChangeStep) onChangeStep(index);
   };
 
-  const iconWidth = parseFloat(theme.orbit.widthIconSmall) + 3.2;
-  const iconHeight = parseFloat(theme.orbit.heightIconSmall) + 3.2;
+  const iconWidth = parseFloat(theme.orbit.iconExtraSmallSize) + 3.2;
+  const iconHeight = parseFloat(theme.orbit.iconExtraSmallSize) + 3.2;
 
   if (isCompact) {
     return (
@@ -161,7 +161,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
         <WizardStepIcon width={iconWidth} height={iconHeight} />
         <div
           css={css`
-            padding: ${theme.orbit.paddingBadge};
+            padding: 0 ${theme.orbit.spaceTwoX};
           `}
         >
           {status === "disabled" ? (

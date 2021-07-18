@@ -9,8 +9,8 @@ import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
   display: flex;
-  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceLarge};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  padding: ${({ theme, noPadding }) => !noPadding && theme.orbit.spaceSixX};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   align-items: center;
   min-height: ${({ expanded }) => (expanded ? "19px" : "44px")};
   transition: ${transition(["min-height"], "fast", "ease-in-out")};
@@ -24,7 +24,7 @@ const HeaderContent = styled.div`
 
 const HeaderActions = styled.div`
   display: flex;
-  margin-left: ${({ theme }) => theme.orbit.spaceLarge};
+  margin-left: ${({ theme }) => theme.orbit.spaceSixX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

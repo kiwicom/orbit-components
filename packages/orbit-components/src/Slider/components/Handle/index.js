@@ -61,8 +61,8 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   cursor: pointer;
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   -webkit-tap-highlight-color: transparent;
@@ -80,7 +80,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   :focus,
   :active {
     outline: none;
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+    box-shadow: ${({ theme }) => theme.orbit.elevationActionActiveBoxShadow};
   }
 `;
 

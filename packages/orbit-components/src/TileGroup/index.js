@@ -10,10 +10,10 @@ import type { Props } from ".";
 
 const StyledTileGroup = styled.div`
   width: 100%;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
+  box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   ${StyledSlide} {
-    background: ${({ theme }) => theme.orbit.paletteWhite};
+    background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   }
   ${StyledTileWrapper} {
     border-radius: 0;

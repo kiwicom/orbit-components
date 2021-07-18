@@ -10,19 +10,19 @@ import useBoundingRect from "../../../hooks/useBoundingRect";
 
 const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
   width: 100%;
   border-top: ${({ theme, expanded, noSeparator }) =>
     expanded && !noSeparator
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  padding-top: ${({ hasPaddingTop, theme }) => hasPaddingTop && theme.orbit.spaceMedium};
+  padding-top: ${({ hasPaddingTop, theme }) => hasPaddingTop && theme.orbit.spaceFourX};
   transition: ${transition(["padding", "border-top"], "fast", "linear")};
 
   ${mq.largeMobile(css`
-    padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceLarge};
+    padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceSixX};
   `)}
 `;
 

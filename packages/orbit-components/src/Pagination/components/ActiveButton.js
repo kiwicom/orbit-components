@@ -10,8 +10,8 @@ const StyledButton = styled.div`
   &:hover,
   &:active,
   &:focus {
-    background: ${({ theme }) => theme.orbit.backgroundButtonSecondary};
-    color: ${({ theme }) => theme.orbit.colorTextButtonSecondary};
+    background: ${({ theme }) => theme.orbit.buttonSecondaryBackground};
+    color: ${({ theme }) => theme.orbit.buttonSecondaryForeground};
     transform: none;
     cursor: default;
   }

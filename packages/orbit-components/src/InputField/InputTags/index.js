@@ -10,7 +10,7 @@ import type { Props } from "./index";
 
 const StyledInputTags = styled.div`
   position: relative;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
   display: flex;
   align-items: center;
   flex: 0 1 auto;
@@ -38,7 +38,7 @@ const StyledInputTagsInner: any = styled.div`
   }
 
   ${StyledTag} + ${StyledTag} {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceTwoX}`)};
   }
 `;
 

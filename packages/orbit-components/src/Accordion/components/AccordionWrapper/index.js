@@ -14,7 +14,7 @@ const StyledAccordionWrapper = styled.div`
   border: ${getBorder};
   border-radius: ${getBorderRadius};
   transition: ${transition(["margin"], "fast", "ease-in-out")};
-  margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
+  margin: ${({ theme }) => theme.orbit.spaceTwoX} 0;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

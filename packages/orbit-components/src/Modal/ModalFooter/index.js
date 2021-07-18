@@ -16,7 +16,7 @@ import type { Props } from "./index";
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};
   box-sizing: border-box;
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
 
   ${media.largeMobile(css`
     flex: none;
@@ -32,16 +32,16 @@ export const StyledModalFooter: any = styled.div`
   display: flex;
   z-index: 800; // TODO: use z-index framework
   width: 100%;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   // TODO: create token paddingModalFooter
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
+  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX}`)};
   box-sizing: border-box;
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   @media (max-width: ${({ theme }) =>
       +getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
     ${StyledButtonPrimitive} {
-      font-size: ${({ theme }) => theme.orbit.fontSizeButtonNormal};
-      height: ${({ theme }) => theme.orbit.heightButtonNormal};
+      font-size: ${({ theme }) => theme.orbit.buttonNormalFontSize};
+      height: ${({ theme }) => theme.orbit.formBoxNormalHeight};
     }
   }
 

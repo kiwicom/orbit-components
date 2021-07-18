@@ -6,7 +6,7 @@ import defaultTheme from "../../../defaultTheme";
 import type { Globals } from "../../../common/common.js.flow";
 
 const Wrapper = styled.div`
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge}`};
+  padding: ${({ theme }) => `0 ${theme.orbit.spaceSixX} ${theme.orbit.spaceSixX}`};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

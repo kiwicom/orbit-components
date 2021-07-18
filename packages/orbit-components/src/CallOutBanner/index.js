@@ -15,19 +15,19 @@ const StyledCallOutBanner = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   ${({ onClick }) =>
     onClick
       ? css`
-          box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
+          box-shadow: ${({ theme }) => theme.orbit.elevationActionBoxShadow};
           transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
           cursor: pointer;
           :focus,
           :active,
           :hover {
-            box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
+            box-shadow: ${({ theme }) => theme.orbit.elevationActionActiveBoxShadow};
             outline: none;
           }
           border: 1px solid transparent;
@@ -37,7 +37,7 @@ const StyledCallOutBanner = styled.div`
         `};
   ${mq.largeMobile(css`
     flex-direction: row;
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
   `)};
 `;
 
@@ -47,9 +47,9 @@ StyledCallOutBanner.defaultProps = {
 };
 
 const StyledIllustration = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceFourX};
   ${mq.largeMobile(css`
-    padding-right: ${({ theme }) => theme.orbit.spaceLarge};
+    padding-right: ${({ theme }) => theme.orbit.spaceSixX};
     padding-bottom: 0;
   `)};
 `;

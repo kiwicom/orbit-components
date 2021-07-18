@@ -10,14 +10,14 @@ const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
       [TYPES.CRITICAL]: "transparent",
     },
     [TOKENS.backgroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductLightHover,
-      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightHover,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedLightHover,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductLightSecondary,
+      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightSecondary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedLightSecondary,
     },
     [TOKENS.backgroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductLightActive,
-      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightActive,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedLightActive,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductLightTertiary,
+      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightTertiary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedLightTertiary,
     },
     [TOKENS.foreground]: {
       [TYPES.PRIMARY]: theme.orbit.paletteProductNormal,
@@ -25,14 +25,14 @@ const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
       [TYPES.CRITICAL]: theme.orbit.paletteRedNormal,
     },
     [TOKENS.foregroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalHover,
-      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalHover,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalHover,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalSecondary,
+      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalSecondary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalSecondary,
     },
     [TOKENS.foregroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalActive,
-      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalActive,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalActive,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductNormalTertiary,
+      [TYPES.SECONDARY]: theme.orbit.paletteInkNormalTertiary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedNormalTertiary,
     },
   };
   return tokens[name][type];

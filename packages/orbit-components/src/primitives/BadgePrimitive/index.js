@@ -18,14 +18,14 @@ export const StyledBadge: any = styled(({ className, children, dataTest, ariaLab
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  min-height: ${({ theme }) => theme.orbit.heightBadge};
+  min-height: ${({ theme }) => theme.orbit.iconMediumSize};
   line-height: 14px;
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
+  font-size: ${({ theme }) => theme.orbit.fontSizeSmall};
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   background: ${({ background }) => background};
   color: ${({ foregroundColor }) => foregroundColor};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusBadge};
-  padding: ${({ theme }) => theme.orbit.paddingBadge};
+  border-radius: 12px;
+  padding: ${({ theme }) => `0 ${theme.orbit.spaceTwoX}`};
   border: ${({ borderColor }) => borderColor && `1px solid ${borderColor}`};
 `;
 
@@ -39,11 +39,11 @@ const IconContainer = styled(({ className, children }) => (
 ))`
   display: flex;
   flex-shrink: 0;
-  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
+  margin: ${({ theme, hasContent }) => hasContent && rtlSpacing(`0 ${theme.orbit.spaceOneX} 0 0`)};
 
   svg {
-    height: ${({ theme }) => theme.orbit.widthIconSmall};
-    width: ${({ theme }) => theme.orbit.heightIconSmall};
+    height: ${({ theme }) => theme.orbit.iconExtraSmallSize};
+    width: ${({ theme }) => theme.orbit.iconExtraSmallSize};
   }
 `;
 

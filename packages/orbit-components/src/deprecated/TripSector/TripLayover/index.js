@@ -9,8 +9,8 @@ import type { Props } from "./index";
 
 const StyledTripLayover = styled.div`
   margin: ${({ theme }) =>
-    rtlSpacing(`${theme.orbit.spaceSmall} 0 ${theme.orbit.spaceSmall}
-    ${theme.orbit.spaceLarge}`)};
+    rtlSpacing(`${theme.orbit.spaceThreeX} 0 ${theme.orbit.spaceThreeX}
+    ${theme.orbit.spaceSixX}`)};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

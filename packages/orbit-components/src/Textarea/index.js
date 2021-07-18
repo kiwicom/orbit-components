@@ -32,8 +32,8 @@ Field.defaultProps = {
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallFontSize,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalFontSize,
   };
 
   return tokens[size];
@@ -41,16 +41,16 @@ const getFontSize = ({ theme, size }) => {
 
 const getLineHeight = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightNormal,
   };
   return tokens[size];
 };
 
 const getPadding = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
+    [SIZE_OPTIONS.SMALL]: `${theme.orbit.spaceTwoX} ${theme.orbit.spaceThreeX}`,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.spaceThreeX,
   };
   return rtlSpacing(tokens[size]);
 };
@@ -64,13 +64,13 @@ const StyledTextArea = styled.textarea`
   padding: ${getPadding};
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      `1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
   background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
+    disabled ? theme.orbit.formElementDisabledBackground : theme.orbit.formElementBackground};
   color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    disabled ? theme.orbit.formElementDisabledForeground : theme.orbit.formElementFilledForeground};
   font-size: ${getFontSize};
   line-height: ${getLineHeight};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
@@ -94,15 +94,12 @@ const StyledTextArea = styled.textarea`
   overflow: auto;
 
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
+    color: ${({ theme }) => theme.orbit.formElementForeground};
   }
 
   &:hover {
-    box-shadow: ${({ disabled, theme, error }) =>
-      !disabled &&
-      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-      }`};
+    box-shadow: ${({ disabled, theme }) =>
+      !disabled && `inset 0 0 0 1px ${theme.orbit.formElementBorderColorHover}`};
   }
 
   &:focus {

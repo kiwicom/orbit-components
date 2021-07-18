@@ -18,12 +18,12 @@ const StyledDialog = styled.div`
 
 const StyledDialogWrapper = styled.div`
   position: fixed;
-  width: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  width: ${({ theme }) => `calc(100% - ${theme.orbit.spaceEightX})`};
   box-sizing: border-box;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
+  box-shadow: ${({ theme }) => theme.orbit.elevationRaisedReverseBoxShadow};
+  padding: ${({ theme }) => theme.orbit.spaceFourX}; // TODO: create token paddingTooltip
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
   opacity: ${({ shown }) => (shown ? "1" : "0")};
   transition: ${({ theme, shown }) =>
@@ -35,10 +35,10 @@ const StyledDialogWrapper = styled.div`
 
   z-index: 10012; // TODO: use some good value
   transform: ${({ shown }) => (!shown ? "translateY(calc(100% + 16px))" : "translateY(0)")};
-  bottom: ${({ theme }) => theme.orbit.spaceMedium};
-  left: ${({ theme }) => theme.orbit.spaceMedium};
-  right: ${({ theme }) => theme.orbit.spaceMedium};
-  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
+  bottom: ${({ theme }) => theme.orbit.spaceFourX};
+  left: ${({ theme }) => theme.orbit.spaceFourX};
+  right: ${({ theme }) => theme.orbit.spaceFourX};
+  max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceEightX})`};
   overflow-y: scroll;
 
   img {
@@ -53,20 +53,20 @@ StyledDialogWrapper.defaultProps = {
 
 const StyledTooltipContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.paletteWhite};
-  margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
+  margin-bottom: ${({ theme }) => theme.orbit.spaceFourX};
 
   & ${StyledText}, ${Item} {
-    font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+    font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    color: ${({ theme }) => theme.orbit.paletteWhite};
+    color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   }
 
   & ${StyledTextLink} {
-    color: ${({ theme }) => theme.orbit.paletteWhite};
+    color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   }
 `;
 

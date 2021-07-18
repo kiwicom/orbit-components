@@ -22,8 +22,8 @@ import boundingClientRect from "../../utils/boundingClientRect";
 import getScrollableParent from "../helpers/getScrollableParent";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
-const mobileTop = theme => theme.orbit.spaceXLarge;
-const popoverPadding = theme => theme.orbit.spaceMedium;
+const mobileTop = theme => theme.orbit.spaceEightX;
+const popoverPadding = theme => theme.orbit.spaceFourX;
 
 const StyledContentWrapper = styled.div`
   overflow: auto;
@@ -32,7 +32,7 @@ const StyledContentWrapper = styled.div`
   position: absolute;
   left: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   max-height: ${({ windowHeight, actionsHeight }) => `${windowHeight - actionsHeight - 32}px`};
   bottom: ${({ actionsHeight }) => actionsHeight || 0}px;
 
@@ -57,8 +57,8 @@ const StyledActions = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: ${({ theme }) => popoverPadding(theme)};
-  padding-top: ${({ theme }) => theme.orbit.spaceSmall};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  padding-top: ${({ theme }) => theme.orbit.spaceThreeX};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
@@ -87,8 +87,8 @@ const StyledPopoverParent = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  background-color: ${({ theme }) => theme.orbit.backgroundModal}; // TODO: Add token
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
+  background-color: ${({ theme }) => theme.orbit.elevationFlatBackground}; // TODO: Add token
+  box-shadow: ${({ theme }) => theme.orbit.elevationRaisedReverseBoxShadow};
   z-index: 1000;
   transition: ${transition(["opacity", "transform"], "fast", "ease-in-out")};
   transform: translateY(${({ shownMobile }) => (shownMobile ? "0%" : "100%")});
@@ -106,7 +106,7 @@ const StyledPopoverParent = styled.div`
     opacity: ${({ shown }) => (shown ? "1" : "0")};
     transform: none;
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
+    box-shadow: ${({ theme }) => theme.orbit.elevationRaisedBoxShadow};
     max-height: none;
     ${resolvePopoverPosition}
     ${resolvePopoverHorizontal}

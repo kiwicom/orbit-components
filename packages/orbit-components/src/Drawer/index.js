@@ -23,9 +23,9 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
   return (
     !noPadding &&
     css`
-      padding: ${padding(theme.orbit.spaceMedium)};
+      padding: ${padding(theme.orbit.spaceFourX)};
       ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)}};
+        padding: ${padding(theme.orbit.spaceEightX)}};
       `)};
     `
   );
@@ -64,11 +64,11 @@ const StyledDrawerSide = styled(({ theme, width, position, shown, suppressed, ..
   height: 100%;
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   overflow-y: auto;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
+  box-shadow: ${({ theme }) => theme.orbit.elevationRaisedBoxShadow};
   background: ${({ theme, suppressed }) =>
     suppressed
       ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
+      : theme.orbit.paletteWhiteNormal}; // TODO: create token backgroundDrawer
   transition: ${transition(["transform"], "normal", "ease-in-out")};
   width: 100%;
   ${mq.largeMobile(css`
@@ -87,9 +87,9 @@ const StyledDrawerContent = styled(
   ({ theme, type, hasTopPadding, noPadding, hasClose, ...props }) => <div {...props} />,
 )`
   ${getPadding};
-  margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceLarge};
+  margin-bottom: ${({ theme, noPadding }) => noPadding && theme.orbit.spaceSixX};
   margin-top: ${({ hasClose, theme, noPadding }) =>
-    !hasClose && noPadding && theme.orbit.spaceLarge};
+    !hasClose && noPadding && theme.orbit.spaceSixX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -102,7 +102,7 @@ const StyledDrawerHeader = styled.div`
   justify-content: ${({ onlyIcon }) => (onlyIcon ? "flex-end" : "space-between")};
   align-items: center;
   background: ${({ suppressed, bordered, theme }) =>
-    suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    suppressed && !bordered ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhiteNormal};
   height: 64px;
   box-sizing: border-box;
   ${({ bordered, theme }) =>
@@ -113,9 +113,9 @@ const StyledDrawerHeader = styled.div`
   ${({ noPadding, theme }) =>
     !noPadding &&
     css`
-      padding: 0 ${theme.orbit.spaceMedium};
+      padding: 0 ${theme.orbit.spaceFourX};
       ${mq.largeMobile(css`
-        padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
+        padding: ${rtlSpacing(`0 ${theme.orbit.spaceSixX} 0 ${theme.orbit.spaceEightX}`)};
       `)};
     `};
 `;

@@ -25,11 +25,11 @@ const StyledCircle = styled.div`
     border-radius: 50%;
     ${status === "completed" &&
     css`
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
     `}
     ${status === "disabled" &&
     css`
-      background: ${theme.orbit.paletteCloudNormalHover};
+      background: ${theme.orbit.paletteCloudNormalSecondary};
     `}
     ${active &&
     hasGlow &&

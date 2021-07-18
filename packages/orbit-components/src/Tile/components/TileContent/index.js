@@ -12,27 +12,27 @@ const getPadding = ({ noPadding, useMargins, theme }) => {
 
   if (!useMargins) {
     return css`
-      padding: ${theme.orbit.spaceMedium};
+      padding: ${theme.orbit.spaceFourX};
 
       ${mq.largeMobile(css`
-        padding: ${theme.orbit.spaceLarge};
+        padding: ${theme.orbit.spaceSixX};
       `)}
     `;
   }
 
   return css`
-    padding: ${theme.orbit.spaceMedium} 0;
-    margin: 0 ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceFourX} 0;
+    margin: 0 ${theme.orbit.spaceFourX};
 
     ${mq.largeMobile(css`
-      padding: ${theme.orbit.spaceLarge} 0;
-      margin: 0 ${theme.orbit.spaceLarge};
+      padding: ${theme.orbit.spaceSixX} 0;
+      margin: 0 ${theme.orbit.spaceSixX};
     `)}
   `;
 };
 const StyledTileContent = styled.div`
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
   ${({ withPointer }) =>
     withPointer &&
     css`

@@ -9,24 +9,28 @@ import type { Props } from "./index";
 
 export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextSecondary};
+    type === TYPE_OPTIONS.ERROR
+      ? theme.orbit.textCriticalForeground
+      : theme.orbit.textSecondaryForeground};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
+  font-size: ${({ theme }) => theme.orbit.fontSizeSmall};
   font-weight: ${({ theme, type }) =>
     type === TYPE_OPTIONS.ERROR ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  line-height: ${({ theme }) => theme.orbit.lineHeightSmall};
   width: 100%;
   margin-top: 2px;
   position: absolute;
   top: 100%;
-  max-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  max-height: ${({ theme }) => theme.orbit.lineHeightSmall};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 
   & a {
     color: ${({ theme, type }) =>
-      type === TYPE_OPTIONS.ERROR ? theme.orbit.colorTextError : theme.orbit.colorTextPrimary};
+      type === TYPE_OPTIONS.ERROR
+        ? theme.orbit.textCriticalForeground
+        : theme.orbit.textPrimaryForeground};
     font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
     text-decoration: underline;
     cursor: pointer;

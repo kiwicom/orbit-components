@@ -11,9 +11,9 @@ import type { Props } from "./index";
 const StyledArrow = styled.svg`
   vertical-align: middle;
   fill: currentColor;
-  color: ${({ theme }) => theme.orbit.colorStopoverArrow};
-  width: ${({ theme }) => theme.orbit.widthStopoverArrow};
-  height: ${({ theme }) => theme.orbit.heightStopoverArrow};
+  color: ${({ theme }) => theme.orbit.iconSecondaryForeground};
+  width: 36px;
+  height: 7px;
   ${({ theme }) =>
     theme.rtl &&
     css`

@@ -5,11 +5,11 @@ import type { Params } from "./index";
 
 const resolveAccentColor = ({ type, theme, selected }: Params): string => {
   if (type === TYPES.LEGROOM)
-    return selected ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLightActive;
+    return selected ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLightTertiary;
 
-  if (type === TYPES.UNAVAILABLE) return theme.orbit.paletteCloudLightActive;
+  if (type === TYPES.UNAVAILABLE) return theme.orbit.paletteCloudLightTertiary;
 
-  return selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLightActive;
+  return selected ? theme.orbit.paletteProductNormal : theme.orbit.paletteProductLightTertiary;
 };
 
 export default resolveAccentColor;

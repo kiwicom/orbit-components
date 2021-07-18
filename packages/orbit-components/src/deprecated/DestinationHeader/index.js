@@ -64,12 +64,12 @@ const StyledContent = styled.div`
 
   ${mq.largeMobile(css`
     ${StyledButtonPrimitive} {
-      width: ${({ theme }) => theme.orbit.heightButtonNormal};
-      height: ${({ theme }) => theme.orbit.heightButtonNormal};
+      width: ${({ theme }) => theme.orbit.formBoxNormalHeight};
+      height: ${({ theme }) => theme.orbit.formBoxNormalHeight};
 
       svg {
-        width: ${({ theme }) => theme.orbit.widthIconMedium};
-        height: ${({ theme }) => theme.orbit.heightIconMedium};
+        width: ${({ theme }) => theme.orbit.iconMediumSize};
+        height: ${({ theme }) => theme.orbit.iconMediumSize};
       }
     }
   `)};
@@ -82,10 +82,10 @@ StyledContent.defaultProps = {
 
 const StyledHeader = styled.div`
   box-sizing: border-box;
-  padding: ${({ theme }) => `${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall}`};
+  padding: ${({ theme }) => `${theme.orbit.spaceTwoX} ${theme.orbit.spaceThreeX}`};
 
   ${mq.largeMobile(css`
-    padding: ${({ theme }) => `${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
+    padding: ${({ theme }) => `${theme.orbit.spaceThreeX} ${theme.orbit.spaceFourX}`};
     ${StyledHeading} {
       font-size: ${({ theme }) =>
         getHeadingToken(TOKENS.sizeHeading)({ theme, type: TYPE_OPTIONS.TITLE1 })};

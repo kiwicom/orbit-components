@@ -79,7 +79,11 @@ const SeatType = ({ type }) => {
       );
     default:
       return (
-        <g fill={theme.orbit.paletteWhite} fillRule="nonzero" stroke={theme.orbit.paletteInkLight}>
+        <g
+          fill={theme.orbit.paletteWhiteNormal}
+          fillRule="nonzero"
+          stroke={theme.orbit.paletteInkLight}
+        >
           <path
             strokeLinejoin="round"
             d="M12 5h16V4h6c1.1046 0 2 .8954 2 2v28c0 1.1046-.8954 2-2 2H6c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h6v1z"

@@ -17,7 +17,7 @@ const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 const StyledNavigationBarContent = styled.div`
   display: block;
   width: 100%;
-  margin-right: ${({ theme }) => theme.orbit.spaceXSmall};
+  margin-right: ${({ theme }) => theme.orbit.spaceTwoX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -34,9 +34,9 @@ const StyledNavigationBar = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.orbit.paletteWhite};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowFixed};
-  padding: ${({ theme }) => theme.orbit.spaceSmall};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
+  box-shadow: ${({ theme }) => theme.orbit.elevationFixedBoxShadow};
+  padding: ${({ theme }) => theme.orbit.spaceThreeX};
   box-sizing: border-box;
   z-index: 700;
   transition: ${transition(["transform"], "normal", "ease-in-out")};

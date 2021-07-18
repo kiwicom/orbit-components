@@ -12,9 +12,9 @@ import type { Props } from "./index";
 
 export const StyledModalSection: any = styled.section`
   width: 100%;
-  padding: ${({ theme }) => `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
+  padding: ${({ theme }) => `${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX}`};
   background-color: ${({ theme, suppressed }) =>
-    suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhiteNormal};
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
   box-sizing: border-box;
 
@@ -26,7 +26,7 @@ export const StyledModalSection: any = styled.section`
     border-top-right-radius: ${({ isMobileFullPage }) =>
       !isMobileFullPage && "12px"}; // TODO: create token
     margin-top: ${({ suppressed, theme, closable }) =>
-      suppressed && closable && theme.orbit.spaceLarge};
+      suppressed && closable && theme.orbit.spaceSixX};
   }
 
   &:last-of-type {
@@ -37,7 +37,7 @@ export const StyledModalSection: any = styled.section`
     border-bottom-right-radius: ${({ isMobileFullPage }) =>
       !isMobileFullPage && "12px"}; // TODO: create token
     & ~ ${StyledModalFooter} {
-      margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceMedium};
+      margin-top: ${({ theme, suppressed }) => suppressed && theme.orbit.spaceFourX};
     }
     &:not(:last-child) {
       border-bottom-left-radius: 0;
@@ -46,11 +46,11 @@ export const StyledModalSection: any = styled.section`
   }
 
   ${media.largeMobile(css`
-    padding: ${({ theme }) => theme.orbit.spaceXXLarge};
+    padding: ${({ theme }) => theme.orbit.spaceTenX};
 
     &:first-of-type {
       margin-top: ${({ suppressed, theme, closable }) =>
-        ((suppressed && closable) || suppressed) && theme.orbit.spaceXXLarge};
+        ((suppressed && closable) || suppressed) && theme.orbit.spaceTenX};
       border-top-left-radius: ${({ isMobileFullPage }) =>
         !isMobileFullPage && "9px"}; // TODO: create token
       border-top-right-radius: ${({ isMobileFullPage }) =>

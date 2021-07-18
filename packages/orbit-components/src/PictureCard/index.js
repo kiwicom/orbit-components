@@ -18,7 +18,7 @@ const Shown = styled.div`
   position: absolute;
   opacity: 0;
   z-index: 5;
-  padding: ${({ theme }) => `0 0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
+  padding: ${({ theme }) => `0 0 ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX}`};
   ${({ contentHeight }) => (contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`)};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
 `;
@@ -43,7 +43,7 @@ const StyledLabel = styled.div`
   z-index: 2;
   position: absolute;
   top: 0;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -127,7 +127,7 @@ const StyledPictureCardContent = styled.div`
   z-index: 2;
   display: flex;
   flex-grow: 1;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   bottom: 0;
 `;
@@ -156,7 +156,7 @@ const StyledPictureCard = styled(
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   overflow: hidden;
 
-  box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowAction};
+  box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.elevationActionBoxShadow};
   transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
 
   ${StyledLazyImage} {
@@ -170,7 +170,7 @@ const StyledPictureCard = styled(
       &:hover,
       &:focus {
         outline: none;
-        box-shadow: ${shadows && theme.orbit.boxShadowActionActive};
+        box-shadow: ${shadows && theme.orbit.elevationActionActiveBoxShadow};
 
         ${StyledOverlayHover} {
           opacity: 1;

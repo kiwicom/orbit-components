@@ -1,4 +1,5 @@
 // @noflow
+/* eslint-disable orbit-components/no-deprecated-token */
 import styled from "styled-components";
 
 const getToken = name => ({ theme }) => {

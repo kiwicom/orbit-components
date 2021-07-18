@@ -16,8 +16,8 @@ const StyledListChoiceIcon = styled.div`
   display: flex;
   align-self: flex-start;
   flex: 0 0 auto;
-  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
-  height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
+  margin-${right}: ${({ theme }) => theme.orbit.spaceThreeX};
+  height: ${({ theme }) => theme.orbit.lineHeightNormal};
 
   svg {
     align-self: center;
@@ -38,9 +38,9 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  padding: ${({ theme }) => `${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
+  padding: ${({ theme }) => `${theme.orbit.spaceThreeX} ${theme.orbit.spaceFourX}`};
   border-bottom: 1px solid ${({ theme }) => theme.orbit.paletteCloudNormal};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   transition: background-color 0.15s ease-in-out;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 
@@ -76,7 +76,7 @@ const StyledListChoiceContent = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  padding-${right}: ${({ theme }) => theme.orbit.spaceThreeX};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

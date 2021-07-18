@@ -14,7 +14,7 @@ const getSizeToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.WIDTH]: {
       [SIZES.SMALL]: "16px",
-      [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
+      [SIZES.MEDIUM]: theme.orbit.iconMediumSize,
     },
     [TOKENS.HEIGHT]: {
       [SIZES.SMALL]: "9px",
@@ -28,7 +28,7 @@ const StyledCountryFlag = styled.div`
   position: relative;
   height: ${getSizeToken(TOKENS.HEIGHT)};
   width: ${getSizeToken(TOKENS.WIDTH)};
-  background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
+  background-color: transparent;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
   overflow: hidden;
   flex-shrink: 0;

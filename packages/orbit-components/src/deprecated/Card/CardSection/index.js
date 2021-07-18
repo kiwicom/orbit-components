@@ -23,14 +23,14 @@ StyledCardSectionIconRight.defaultProps = {
 
 const StyledCardSectionContent = styled.div`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  font-size: ${({ theme }) => theme.orbit.fontSizeNormal};
+  line-height: ${({ theme }) => theme.orbit.lineHeightNormal};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
   border-top: ${({ theme, expanded }) =>
     expanded
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  padding-top: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium}`};
+  padding-top: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceFourX}`};
   overflow: hidden;
 `;
 
@@ -40,7 +40,7 @@ StyledCardSectionContent.defaultProps = {
 };
 
 const StyledCardSectionHeader = styled.div`
-  margin-bottom: ${({ theme, expanded }) => expanded && theme.orbit.spaceMedium};
+  margin-bottom: ${({ theme, expanded }) => expanded && theme.orbit.spaceFourX};
   display: flex;
   flex-direction: row;
   cursor: pointer;
@@ -55,13 +55,13 @@ StyledCardSectionHeader.defaultProps = {
 
 export const StyledCardSection: any = styled.div`
   width: 100%;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   box-sizing: border-box;
   position: relative;
-  background: ${({ theme }) => theme.orbit.backgroundCard};
+  background: ${({ theme }) => theme.orbit.elevationFlatBackground};
 
   ${media.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
   `)}
 `;
 

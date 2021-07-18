@@ -11,34 +11,34 @@ import Header from "../../components/Header";
 import type { As } from "../../../Heading";
 
 const SpacingMobile = css`
-  ${({ theme }) => String(parseInt(theme.orbit.spaceMedium, 10) + 1)}px;
+  ${({ theme }) => String(parseInt(theme.orbit.spaceFourX, 10) + 1)}px;
 `;
 
 const SpacingDesktop = css`
-  ${({ theme }) => String(parseInt(theme.orbit.spaceLarge, 10) + 1)}px;
+  ${({ theme }) => String(parseInt(theme.orbit.spaceSixX, 10) + 1)}px;
 `;
 
 const StyledCardSectionHeader = styled.div`
   transition: ${transition(["margin"], "fast", "linear")};
   cursor: ${({ expandable }) => expandable && "pointer"};
   position: relative;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   margin: -${SpacingMobile};
   margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   min-height: ${({ expandable }) => expandable && getSize(ICON_SIZES.MEDIUM)};
 
   ${mq.largeMobile(css`
     margin: -${SpacingDesktop};
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
     margin-bottom: ${({ expanded, isContent }) => expanded && isContent && 0};
   `)}
 
   &:hover {
-    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteNormalSecondary};
   }
 
   &:focus {
-    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
+    background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteNormalSecondary};
     outline: none;
   }
 `;

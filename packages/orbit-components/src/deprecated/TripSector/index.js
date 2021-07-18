@@ -39,7 +39,7 @@ const StyledTripSector = styled.div`
       bottom: 0;
       left: 0;
       width: 16px;
-      background: ${({ theme }) => theme.orbit.paletteWhite};
+      background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
     }
   }
 `;

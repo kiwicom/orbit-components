@@ -26,7 +26,7 @@ const StyledDialog = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  padding: ${({ theme }) => theme.orbit.spaceFourX};
   z-index: ${({ theme }) => theme.orbit.zIndexModalOverlay};
   box-sizing: border-box;
   outline: none;
@@ -57,11 +57,11 @@ const StyledDialogContent = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: ${({ theme }) =>
-    `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+    `${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX}`};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   border-radius: 12px;
   bottom: ${({ shown }) => (shown ? "0" : "-100%")};
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowOverlay};
+  box-shadow: ${({ theme }) => theme.orbit.elevationOverlayBoxShadow};
   text-align: center;
   ${StyledText} {
     text-align: center;
@@ -69,7 +69,7 @@ const StyledDialogContent = styled.div`
   ${mq.largeMobile(css`
     min-width: ${({ theme }) => theme.orbit.modalWidthSmall};
     border-radius: 9px;
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
+    padding: ${({ theme }) => theme.orbit.spaceSixX};
     text-align: ${left};
     ${StyledText} {
       text-align: ${left};

@@ -33,7 +33,7 @@ const StyledBadgeListItem = styled.li`
     flex-direction: row;
     width: 100%;
     & + & {
-      margin-top: ${theme.orbit.spaceXXSmall};
+      margin-top: ${theme.orbit.spaceOneX};
     }
   `};
 `;
@@ -49,14 +49,14 @@ const StyledVerticalBadge = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-${right}: ${theme.orbit.spaceXSmall};
+    margin-${right}: ${theme.orbit.spaceTwoX};
     flex-shrink: 0;
-    height: ${theme.orbit.heightIconMedium};
-    width: ${theme.orbit.widthIconMedium};
+    height: ${theme.orbit.iconMediumSize};
+    width: ${theme.orbit.iconMediumSize};
     border-radius: ${theme.orbit.borderRadiusCircle};
     svg {
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.iconExtraSmallSize};
+      width: ${theme.orbit.iconExtraSmallSize};
     }
   `};
 `;
@@ -72,8 +72,8 @@ const StyledVerticalBadgeContent = styled.div`
     align-items: center;
     &,
     ${StyledText} {
-      font-size: ${theme.orbit.fontSizeTextSmall};
-      line-height: ${theme.orbit.lineHeightTextSmall};
+      font-size: ${theme.orbit.fontSizeSmall};
+      line-height: ${theme.orbit.lineHeightSmall};
     }
 
     ${StyledTooltipChildren} ${StyledText} {
