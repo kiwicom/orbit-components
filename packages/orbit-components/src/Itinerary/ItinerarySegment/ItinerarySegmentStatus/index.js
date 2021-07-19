@@ -5,6 +5,8 @@ import styled, { css } from "styled-components";
 import { left } from "../../../utils/rtl";
 import Alert from "../../../icons/Alert";
 import Warning from "../../../icons/AlertCircle";
+import Info from "../../../icons/InformationCircle";
+import Check from "../../../icons/CheckCircle";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
 import defaultTheme from "../../../defaultTheme";
@@ -18,11 +20,15 @@ const resolveColor = (status: Statuses, isHeader?: boolean) => ({ theme }: Theme
   const border = {
     [STATUSES.WARNING]: theme.orbit.colorTextWarning,
     [STATUSES.CRITICAL]: theme.orbit.colorTextCritical,
+    [STATUSES.INFO]: theme.orbit.colorTextInfo,
+    [STATUSES.SUCCESS]: theme.orbit.colorTextSuccess,
   };
 
   const header = {
-    [STATUSES.WARNING]: theme.orbit.paletteOrangeLightHover,
-    [STATUSES.CRITICAL]: theme.orbit.paletteRedLightHover,
+    [STATUSES.WARNING]: theme.orbit.paletteOrangeLight,
+    [STATUSES.INFO]: theme.orbit.paletteBlueLight,
+    [STATUSES.CRITICAL]: theme.orbit.paletteRedLight,
+    [STATUSES.SUCCESS]: theme.orbit.paletteGreenLight,
   };
 
   if (isHeader) return header[status];
@@ -75,13 +81,25 @@ StyledChildrenWrapper.defaultProps = {
 // calculatedOffset + paddings
 const StyledStatusText = styled.div`
   z-index: 2;
-  margin-${left}: ${({ offset, theme }) =>
-  offset ? offset + parseInt(theme.orbit.spaceXSmall, 10) * 2 : "76"}px;
+  margin-${left}: ${({ theme }) => theme.orbit.spaceSmall};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStatusText.defaultProps = {
   theme: defaultTheme,
+};
+
+const StatusIcon = ({ type }: {| type: Statuses |}) => {
+  switch (type) {
+    case "info":
+      return <Info size="small" color={type} />;
+    case "critical":
+      return <Alert size="small" color={type} />;
+    case "success":
+      return <Check size="small" color={type} />;
+    default:
+      return <Warning size="small" color={type} />;
+  }
 };
 
 const ItineraryPartStatus = ({ type, label, children, offset }: Props): React.Node => {
@@ -90,12 +108,8 @@ const ItineraryPartStatus = ({ type, label, children, offset }: Props): React.No
       <StyledStatusHeader type={type}>
         {/* TODO: replace icons with octagon */}
         <StyledStatusText offset={offset}>
-          <Stack inline spacing="small" align="center">
-            {type === "critical" ? (
-              <Alert size="small" color="critical" />
-            ) : (
-              <Warning size="small" color="warning" />
-            )}
+          <Stack inline spacing="XSmall" align="center">
+            <StatusIcon type={type} />
             {label && <Text type={type}>{label}</Text>}
           </Stack>
         </StyledStatusText>

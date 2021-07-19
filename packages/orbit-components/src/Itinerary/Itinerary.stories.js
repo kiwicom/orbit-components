@@ -34,7 +34,7 @@ const CollapsedContent = (): React.Node => {
   );
 };
 
-export const Part = (): React.Node => {
+export const Segment = (): React.Node => {
   return (
     <Itinerary>
       <ItinerarySegment>
@@ -60,7 +60,7 @@ export const Part = (): React.Node => {
 
 export const Status = (): React.Node => {
   const label = text("label", "Canceled");
-  const type = select("type", ["critical", "warning"], "critical");
+  const type = select("type", ["critical", "warning", "info", "success"], "critical");
 
   return (
     <Itinerary>
@@ -158,5 +158,5 @@ export const Default = (): React.Node => {
 export default {
   title: "Itinerary",
   component: Itinerary,
-  includeStories: ["Default", "Status", "Part", "Place", "Detail"],
+  includeStories: ["Default", "Status", "Segment", "Stop", "Detail"],
 };

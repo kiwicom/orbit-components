@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import { left } from "../../../utils/rtl";
 import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
 import themeDefault from "../../../defaultTheme";
@@ -11,28 +12,26 @@ import Slide from "../../../utils/Slide";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 import randomID from "../../../utils/randomID";
 import { usePart } from "../context";
-import { right } from "../../../utils/rtl";
 import { useWidth } from "../../context";
 import ItineraryIcon from "../ItineraryIcon";
 
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+`;
+
+const StyledInnerWrapper = styled.div`
   ${({ theme }) => css`
-    width: 100%;
-    cursor: pointer;
-    position: relative;
-    box-sizing: border-box;
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceSmall};
-    &:hover {
-      transition: padding ${theme.orbit.durationFast} ease-in;
-      background: ${theme.orbit.paletteCloudLight};
-    }
+    padding: 0 ${theme.orbit.spaceSmall};
   `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledWrapper.defaultProps = {
+StyledInnerWrapper.defaultProps = {
   theme: themeDefault,
 };
 
@@ -48,23 +47,31 @@ const StyledDuration = styled.div`
   min-width: ${({ minWidth }) => minWidth}px;
 `;
 
-const StyledChevronWrapper = styled.div`
-  ${({ expanded, theme }) => css`
-    position: ${expanded && "absolute"};
-    top: 0;
-    ${right}: 0;
-    padding: ${theme.orbit.spaceXXSmall} ${theme.orbit.spaceSmall};
-  `};
+const StyledExpandable = styled.div`
+  ${({ offset, theme }) => css`
+    padding: ${theme.orbit.spaceSmall} 0;
+    margin-${left}: ${offset + 16}px;
+    background: ${theme.orbit.paletteCloudLight};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledChevronWrapper.defaultProps = {
+StyledExpandable.defaultProps = {
   theme: themeDefault,
 };
 
-const StyledExpandable = styled.div``;
+const StyledExpandableContent = styled.div`
+  ${({ offset }) => css`
+    margin-${left}: ${offset + 16}px;
+  `}
+`;
 
-const ItineraryPartDetail = ({ duration, summary, children }: Props): React.Node => {
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledExpandableContent.defaultProps = {
+  theme: themeDefault,
+};
+
+const ItinerarySegmentDetail = ({ duration, summary, children }: Props): React.Node => {
   const { expanded, setExpanded, hasStatus } = usePart();
   const { calculatedWidth } = useWidth();
   const [{ height }, ref] = useBoundingRect({ height: 0 });
@@ -73,26 +80,37 @@ const ItineraryPartDetail = ({ duration, summary, children }: Props): React.Node
   const labelID = React.useMemo(() => randomID("labelID"), []);
 
   return (
-    <StyledWrapper expanded={expanded} hasStatus={hasStatus} onClick={() => setExpanded(!expanded)}>
-      <Stack align="center" spacing="small">
-        <StyledDuration minWidth={calculatedWidth || 60}>
-          <Text weight="bold">{duration}</Text>
-        </StyledDuration>
-        <ItineraryIcon isDetails />
-        <Stack justify="center" shrink direction="column" spacing={expanded ? "medium" : "none"}>
-          <StyledSummary>{summary}</StyledSummary>
-          <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
-            <StyledExpandable ref={ref} onClick={() => setExpanded(!expanded)}>
-              {children}
-            </StyledExpandable>
-          </Slide>
-        </Stack>
-        <StyledChevronWrapper expanded={expanded}>
-          {expanded ? <ChevronUp /> : <ChevronDown color="secondary" />}
-        </StyledChevronWrapper>
-      </Stack>
-    </StyledWrapper>
+    <>
+      <StyledWrapper
+        expanded={expanded}
+        hasStatus={hasStatus}
+        onClick={() => setExpanded(!expanded)}
+      >
+        <StyledInnerWrapper>
+          <Stack align="center" spacing="small" spaceAfter="small">
+            <StyledDuration minWidth={calculatedWidth || 60}>
+              <Text weight="bold">{duration}</Text>
+            </StyledDuration>
+            <ItineraryIcon isDetails />
+            <Stack
+              justify="center"
+              shrink
+              direction="column"
+              spacing={expanded ? "medium" : "none"}
+            >
+              <StyledSummary>{summary}</StyledSummary>
+            </Stack>
+            {expanded ? <ChevronUp /> : <ChevronDown />}
+          </Stack>
+        </StyledInnerWrapper>
+        <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+          <StyledExpandable ref={ref} onClick={() => setExpanded(!expanded)}>
+            <StyledExpandableContent offset={calculatedWidth}>{children}</StyledExpandableContent>
+          </StyledExpandable>
+        </Slide>
+      </StyledWrapper>
+    </>
   );
 };
 
-export default ItineraryPartDetail;
+export default ItinerarySegmentDetail;

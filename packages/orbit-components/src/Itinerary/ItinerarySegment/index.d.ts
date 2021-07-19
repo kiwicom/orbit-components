@@ -6,7 +6,7 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-export type Statuses = "warning" | "critical";
+export type Statuses = "warning" | "critical" | "info" | "success";
 
 /** DOCS:
   ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegmentPlace` and `ItinerarySegmentDetail,

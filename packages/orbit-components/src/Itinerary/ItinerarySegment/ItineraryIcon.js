@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { usePart } from "./context";
-import ArrowDown from "../../icons/ArrowDown";
+import AirplaneDown from "../../icons/AirplaneDown";
 import AlertCircle from "../../icons/AlertCircle";
 import Circle from "../../icons/Circle";
 import defaultTheme from "../../defaultTheme";
@@ -27,25 +27,13 @@ const IconStyled = styled.div`
   justify-content: center;
   z-index: 1;
 
-  ${({ index, isHidden, last, count, isNextHidden, isStatus, theme }) => css`
-    ${index === 0 &&
-    isStatus &&
-    css`
-      &:before {
-        top: -27px;
-        border: 1px dashed #ccc;
-        ${lineMixin};
-        height: 100%;
-      }
-    `}
-
+  ${({ index, last, count, isNextHidden, theme }) => css`
     ${index > 0 &&
     count > 0 &&
     css`
       &:before {
         top: -9px;
-        border: 1px ${isHidden || isStatus ? `dashed` : `solid`}
-          ${theme.orbit.paletteCloudNormalHover};
+        border: 1px solid ${theme.orbit.paletteCloudNormalHover};
         ${lineMixin};
       }
     `};
@@ -56,7 +44,7 @@ const IconStyled = styled.div`
       &:after {
         bottom: -7px;
         opacity: ${isNextHidden ? `0.5` : `1`};
-        border: 1px ${isNextHidden ? `dashed` : `solid`} ${theme.orbit.paletteCloudNormalHover};
+        border: 1px solid ${theme.orbit.paletteCloudNormalHover};
         ${lineMixin};
       }
     `};
@@ -70,13 +58,13 @@ IconStyled.defaultProps = {
 
 const Icon = ({ warning, isDetails }) => {
   if (warning) return <AlertCircle size="small" color="warning" />;
-  if (isDetails) return <ArrowDown size="small" />;
+  if (isDetails) return <AirplaneDown size="small" />;
 
   return <Circle size="small" color="secondary" />;
 };
 
 const ItineraryIcon = ({ isDetails, warning }: Props): React.Node => {
-  const { index, last, isNextHidden, isHidden, count, hasStatus } = usePart();
+  const { index, last, isNextHidden, count } = usePart();
 
   return (
     <IconStyled
@@ -84,8 +72,6 @@ const ItineraryIcon = ({ isDetails, warning }: Props): React.Node => {
       last={last}
       isDetails={isDetails}
       isNextHidden={isNextHidden}
-      isHidden={isHidden}
-      isStatus={hasStatus && index === 0}
       count={count}
     >
       <Icon warning={warning} isDetails={isDetails} />

@@ -9,7 +9,7 @@ import * as React from "react";
 import type { Globals } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken";
 
-export type Statuses = "warning" | "critical";
+export type Statuses = "warning" | "critical" | "info" | "success";
 export type Props = {|
   ...Globals,
   ...spaceAfter,

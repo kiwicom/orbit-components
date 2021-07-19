@@ -20,7 +20,7 @@ StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props): React.Node => {
+const ItinerarySegment = ({ status, label, children, spaceAfter, dataTest }: Props): React.Node => {
   const content = React.Children.toArray(children);
 
   const parts = content && content.length > 0 && (
@@ -55,4 +55,4 @@ const ItineraryPart = ({ status, label, children, spaceAfter, dataTest }: Props)
   );
 };
 
-export default ItineraryPart;
+export default ItinerarySegment;

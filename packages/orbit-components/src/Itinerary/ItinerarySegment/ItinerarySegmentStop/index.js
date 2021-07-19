@@ -27,7 +27,7 @@ const StyledDate = styled.div`
   min-width: ${({ minWidth }) => minWidth}px;
 `;
 
-const ItineraryPartPlace = ({
+const ItinerarySegmentStop = ({
   date,
   time,
   city,
@@ -66,6 +66,6 @@ const ItineraryPartPlace = ({
   );
 };
 
-ItineraryPartPlace.displayName = "ItineraryPartPlace";
+ItinerarySegmentStop.displayName = "ItinerarySegmentStop";
 
-export default ItineraryPartPlace;
+export default ItinerarySegmentStop;
