@@ -114,6 +114,7 @@ export const Playground = (): React.Node => {
   const weight = select("Weight", Object.values(WEIGHT_OPTIONS), WEIGHT_OPTIONS.NORMAL);
   const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.LEFT);
   const uppercase = boolean("Uppercase", false);
+  const strikeThrough = boolean("StrikeThrough", false);
   const italic = boolean("Italic", false);
   const children = text("Text", customText);
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
@@ -126,6 +127,7 @@ export const Playground = (): React.Node => {
       type={type}
       as={as}
       size={size}
+      strikeThrough={strikeThrough}
       weight={weight}
       align={align}
       uppercase={uppercase}
