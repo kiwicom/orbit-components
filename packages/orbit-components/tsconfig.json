@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+  },
+  "exclude": [
+    "lib/**/*", // avoids the error when running after lib has already been built
+    "transforms/**/*",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**/*",
+    "**/__typetests__/**/*",
+    "**/__examples__/*.*",
+    "**/examples.*",
+  ],
+}

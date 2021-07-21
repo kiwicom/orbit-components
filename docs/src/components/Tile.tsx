@@ -44,7 +44,7 @@ const StyledWrapper = styled.div<StyledContainerProps>`
     padding: 2rem;
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    box-shadow: ${theme.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     ${

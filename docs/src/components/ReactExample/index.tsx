@@ -21,7 +21,7 @@ interface Props {
 
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    box-shadow: ${theme.boxShadowRaisedSubtle};
     border-radius: 12px;
     overflow: hidden;
   `};

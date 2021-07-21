@@ -1,14 +1,14 @@
-import { ThemeType } from "../../defaultTheme";
+import { ThemeProps } from "../../defaultTheme";
 
-export type LeftToRight = <T1, T2>(left: T1, right: T2) => (theme: ThemeType) => T1 | T2;
+export type LeftToRight = <T1, T2>(left: T1, right: T2) => (theme: ThemeProps) => T1 | T2;
 
-export type RtlSpacing = (value: string) => (theme: ThemeType) => string;
+export type RtlSpacing = (value: string) => (theme: ThemeProps) => string;
 
-export type BorderRadius = (value: string) => (theme: ThemeType) => string;
+export type BorderRadius = (value: string) => (theme: ThemeProps) => string;
 
-export type TextAlign = (value: "left" | "right") => (theme: ThemeType) => string | LeftToRight;
+export type TextAlign = (value: "left" | "right") => (theme: ThemeProps) => string | LeftToRight;
 
-export type Translate3d = (value: string) => (themeProps: ThemeType) => string;
+export type Translate3d = (value: string) => (themeProps: ThemeProps) => string;
 
 export declare const rtlSpacing: RtlSpacing;
 

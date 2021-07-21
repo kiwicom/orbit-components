@@ -14,7 +14,7 @@ import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Card from "../Card";
-import { CarrierLogo } from "../index";
+import CarrierLogo from "../CarrierLogo";
 import CardSection from "../Card/CardSection";
 import InputField from "../InputField";
 import Select from "../Select";

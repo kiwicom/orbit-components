@@ -1,12 +1,7 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
-    "lib": ["esnext", "dom"],
-    "esModuleInterop": true,
-    "jsx": "react",
-    "strict": true,
-    "resolveJsonModule": true,
-    "noImplicitAny": false
   },
   "include": [
     "packages/orbit-components/**/*",

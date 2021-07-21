@@ -14,5 +14,7 @@ export interface Props extends Common.Global {
   readonly desktopRadio?: boolean;
 }
 
-export const PricingTable: React.FunctionComponent<Props>;
-export { PricingTableItem } from "./PricingTableItem/index";
+declare const PricingTable: React.FunctionComponent<Props>;
+
+export default PricingTable;
+export { PricingTableItem } from "./PricingTableItem";

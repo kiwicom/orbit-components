@@ -25,7 +25,6 @@ export interface Props extends Common.Global {
   readonly onlySelectionText?: Common.Translation;
   readonly filter?: boolean;
   readonly onOnlySelection?: (
-    // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
     event: React.SyntheticEvent<HTMLButtonElement>,
     param2: { readonly value: string; readonly label: string },
   ) => void | Promise<void>;
