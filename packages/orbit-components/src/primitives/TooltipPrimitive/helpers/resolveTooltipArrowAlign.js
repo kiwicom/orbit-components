@@ -1,5 +1,6 @@
 // @flow
 import { css } from "styled-components";
+import type { CSSRules } from "styled-components";
 
 import { isHorizontal, isVertical } from "./isPosition";
 import { isAlignCenter, isAlignEnd, isAlignStart } from "./isAlign";
@@ -12,37 +13,40 @@ const resolveTooltipArrowAlign = ({
   align,
   tooltipWidth,
   tooltipHeight,
-}: Props): any | null => {
+  customArrowAlign = 0,
+}: Props): CSSRules | null => {
   if (isVertical(position)) {
     if (isAlignCenter(align)) {
       return css`
-        left: ${Math.floor(tooltipWidth / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
+        left: ${customArrowAlign ||
+        Math.floor(tooltipWidth / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
       `;
     }
     if (isAlignStart(align)) {
       return css`
-        left: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
+        left: ${customArrowAlign || parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
     }
     if (isAlignEnd(align)) {
       return css`
-        right: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
+        right: ${customArrowAlign || parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
     }
   } else if (isHorizontal(position)) {
     if (isAlignCenter(align)) {
       return css`
-        top: ${Math.floor(tooltipHeight / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
+        top: ${customArrowAlign ||
+        Math.floor(tooltipHeight / 2 - parseFloat(TOOLTIP_ARROW_SIZE))}px; // TODO: use token
       `;
     }
     if (isAlignStart(align)) {
       return css`
-        top: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
+        top: ${customArrowAlign || parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
     }
     if (isAlignEnd(align)) {
       return css`
-        bottom: ${parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
+        bottom: ${customArrowAlign || parseFloat(TOOLTIP_PADDING)}px; // TODO: use token
       `;
     }
   }

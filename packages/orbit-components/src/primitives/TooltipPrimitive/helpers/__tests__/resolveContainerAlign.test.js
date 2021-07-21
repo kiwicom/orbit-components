@@ -1,5 +1,6 @@
 // @flow
 import resolveContainerAlign from "../resolveContainerAlign";
+import theme from "../../../../defaultTheme";
 
 const dimensions = {
   windowHeight: 789,
@@ -15,7 +16,7 @@ const dimensions = {
   containerTopPure: 20,
 };
 
-const params = (align, position) => ({ align, position, ...dimensions });
+const params = (align, position) => ({ align, position, ...dimensions, theme });
 
 const resolve = (align, position) => {
   const result = resolveContainerAlign(params(align, position));

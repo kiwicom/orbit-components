@@ -16,6 +16,7 @@ interface Props extends Common.Global, Common.SpaceAfter {
   readonly size?: Size;
   readonly help?: React.ReactNode;
   readonly children: React.ReactNode;
+  readonly onBlurGroup?: Event;
   readonly error?: React.ReactNode;
   readonly onChange?: Event;
   readonly onFocus?: Event;

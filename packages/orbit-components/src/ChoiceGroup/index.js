@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
-import FormFeedback, { StyledFormFeedback } from "../FormFeedback";
+import Feedback, { StyledFormFeedback } from "./components/Feedback";
 import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
 import randomID from "../utils/randomID";
@@ -109,7 +109,7 @@ const ChoiceGroup = ({
           })}
         </Stack>
       )}
-      <FormFeedback error={error} />
+      {error && <Feedback>{error}</Feedback>}
     </StyledChoiceGroup>
   );
 };

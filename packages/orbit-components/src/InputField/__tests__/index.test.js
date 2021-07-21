@@ -62,6 +62,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
+    fireEvent.focus(input);
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
@@ -132,6 +133,7 @@ describe("InputField", () => {
       expect(input).toHaveAttribute("min", "1");
       expect(input).toHaveAttribute("max", "5");
       expect(input).toHaveAttribute("data-state", "error");
+      fireEvent.focus(input);
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
     });

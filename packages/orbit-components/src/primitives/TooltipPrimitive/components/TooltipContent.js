@@ -2,14 +2,15 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import tooltipSize from "../helpers/tooltipSize";
 import useTheme from "../../../hooks/useTheme";
 import resolveContainerPosition from "../helpers/resolveContainerPosition";
 import resolveTooltipArrowAlign from "../helpers/resolveTooltipArrowAlign";
 import resolveTooltipArrowPosition from "../helpers/resolveTooltipArrowPosition";
 import { StyledText } from "../../../Text/index";
 import { Item } from "../../../List/ListItem/index";
-import tooltipSize from "../helpers/tooltipSize";
 import resolveContainerAlign from "../helpers/resolveContainerAlign";
+import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
 import tooltipArrowStyle from "../helpers/tooltipArrowStyle";
 import tooltipPadding from "../helpers/tooltipPadding";
 import defaultTheme from "../../../defaultTheme";
@@ -33,7 +34,7 @@ const StyledTooltipWrapper = styled.div`
   max-width: ${tooltipSize};
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  background-color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  background-color: ${resolveBackgroundColor};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaised};
   padding: ${tooltipPadding};
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
@@ -49,9 +50,9 @@ const StyledTooltipWrapper = styled.div`
 
   // prevent position, IEs don't have initial YAY
   top: auto;
-  right: auto;
   bottom: auto;
   left: auto;
+  right: auto;
 
   // tooltip positions
   ${resolveContainerPosition};
@@ -106,6 +107,8 @@ const TooltipContent = ({
   shown,
   size,
   tooltipId,
+  error,
+  help,
   children,
   onClose,
   onCloseMobile,
@@ -118,20 +121,24 @@ const TooltipContent = ({
   const theme = useTheme();
   const tooltip = React.useRef(null);
   const content = React.useRef(null);
+
   const [positions, aligns] = React.useMemo(
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
   );
+
   const dimensions = useDimensions({ containerRef, tooltip, content }, children, parent);
   const position = React.useMemo(() => calculateTooltipPosition(positions, dimensions), [
     dimensions,
     positions,
   ]);
+
   const align = React.useMemo(() => calculateTooltipAlign(position, aligns, dimensions), [
     aligns,
     dimensions,
     position,
   ]);
+
   const handleInnerClick = React.useCallback(
     ev => {
       if (tooltip.current) {
@@ -144,6 +151,7 @@ const TooltipContent = ({
     },
     [onClose, onCloseMobile],
   );
+
   return (
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
       <StyledTooltipWrapper
@@ -152,6 +160,8 @@ const TooltipContent = ({
         align={align}
         position={position}
         ref={tooltip}
+        error={error}
+        help={help}
         containerTop={dimensions.containerTop}
         containerLeft={dimensions.containerLeft}
         containerHeight={dimensions.containerHeight}

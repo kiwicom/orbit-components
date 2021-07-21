@@ -1,0 +1,15 @@
+// @flow
+import type { CSSRules } from "styled-components";
+
+import type { Theme } from "../../../defaultTheme";
+import type { Dimensions as PositionRaw } from "../../../utils/boundingClientRect";
+
+export type ResolveTooltipArrowPosition = ({|
+  theme: Theme,
+  position: string,
+  inlineLabel: boolean,
+  contentBounding: PositionRaw,
+  iconBounding?: PositionRaw,
+|}) => CSSRules;
+
+declare export default ResolveTooltipArrowPosition;

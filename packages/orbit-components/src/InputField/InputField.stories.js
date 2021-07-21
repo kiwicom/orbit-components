@@ -406,35 +406,149 @@ WithServiceLogoPrefix.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
-  const label = text("Label", "Label");
-  const help = text("Help", "Help message");
-
-  return <InputField label={label} help={help} />;
-};
-
-WithHelp.story = {
-  name: "With help",
-
-  parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
 export const WithError = (): React.Node => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Error message (explain how to solve it)");
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
+  const name = text("Name", "input");
+  const label = text("Label", "");
+  const inlineLabel = boolean("inline label", true);
+  const value = text("Value", "");
+  const placeholder = text("Placeholder", "Placeholder");
+  const Prefix = getIcon(getIcons("Prefix", "Search"));
+  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+  const help = text("Help", undefined);
+  const error = text("Error", "Please fill out as you have on your passport");
+  const disabled = boolean("Disabled", false);
+  const maxValue = number("maxValue", undefined);
+  const minValue = number("minValue", undefined);
+  const required = boolean("required", false);
+  const maxLength = number("maxLength", undefined);
+  const minLength = number("minLength", undefined);
+  const readOnly = boolean("readOnly", false);
+  const autoComplete = text("autoComplete", "off");
+  const dataTest = text("dataTest", "test");
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const id = text("id", "ID");
 
-  return <InputField label={label} error={error} />;
+  return (
+    <InputField
+      size={size}
+      type={type}
+      name={name}
+      label={label}
+      inlineLabel={inlineLabel}
+      value={value}
+      dataTest={dataTest}
+      placeholder={placeholder}
+      required={required}
+      prefix={Prefix && <Prefix />}
+      suffix={
+        Suffix && (
+          <ButtonLink
+            iconLeft={<Suffix />}
+            compact
+            size={size}
+            onClick={action("clicked")}
+            disabled={disabled}
+          />
+        )
+      }
+      help={help}
+      error={error}
+      disabled={disabled}
+      maxValue={maxValue}
+      minValue={minValue}
+      maxLength={maxLength}
+      minLength={minLength}
+      readOnly={readOnly}
+      autoComplete={autoComplete}
+      onChange={action("change")}
+      onFocus={action("focus")}
+      onBlur={action("blur")}
+      spaceAfter={spaceAfter}
+      id={id}
+    />
+  );
 };
 
 WithError.story = {
   name: "With error",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Some description about this type of InputField in general.",
+  },
+};
+
+export const WithHelp = (): React.Node => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
+  const name = text("Name", "input");
+  const label = text("Label", "Label");
+  const inlineLabel = boolean("inline label", true);
+  const value = text("Value", "");
+  const placeholder = text("Placeholder", "Placeholder");
+  const Prefix = getIcon(getIcons("Prefix", "Search"));
+  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+  const help = text("Help", "Please fill out as you have on your passport");
+  const error = text("Error", undefined);
+  const disabled = boolean("Disabled", false);
+  const maxValue = number("maxValue", undefined);
+  const minValue = number("minValue", undefined);
+  const required = boolean("required", false);
+  const maxLength = number("maxLength", undefined);
+  const minLength = number("minLength", undefined);
+  const readOnly = boolean("readOnly", false);
+  const autoComplete = text("autoComplete", "off");
+  const dataTest = text("dataTest", "test");
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const id = text("id", "ID");
+
+  return (
+    <InputField
+      size={size}
+      type={type}
+      name={name}
+      label={label}
+      inlineLabel={inlineLabel}
+      value={value}
+      dataTest={dataTest}
+      placeholder={placeholder}
+      required={required}
+      prefix={Prefix && <Prefix />}
+      suffix={
+        Suffix && (
+          <ButtonLink
+            iconLeft={<Suffix />}
+            compact
+            size={size}
+            onClick={action("clicked")}
+            disabled={disabled}
+          />
+        )
+      }
+      help={help}
+      error={error}
+      disabled={disabled}
+      maxValue={maxValue}
+      minValue={minValue}
+      maxLength={maxLength}
+      minLength={minLength}
+      readOnly={readOnly}
+      autoComplete={autoComplete}
+      onChange={action("change")}
+      onFocus={action("focus")}
+      onBlur={action("blur")}
+      spaceAfter={spaceAfter}
+      id={id}
+    />
+  );
+};
+
+WithHelp.story = {
+  name: "With help",
+
+  parameters: {
+    info: "Some description about this type of InputField in general.",
   },
 };
 
@@ -458,7 +572,6 @@ export const Playground = (): React.Node => {
   const minLength = number("minLength", undefined);
   const readOnly = boolean("readOnly", false);
   const autoComplete = text("autoComplete", "off");
-  const autoFocus = boolean("autoFocus", true);
   const dataTest = text("dataTest", "test");
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
   const id = text("id", "ID");
@@ -498,7 +611,6 @@ export const Playground = (): React.Node => {
       minLength={minLength}
       readOnly={readOnly}
       autoComplete={autoComplete}
-      autoFocus={autoFocus}
       onChange={action("change")}
       onFocus={action("focus")}
       onBlur={action("blur")}
@@ -520,16 +632,26 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
-  <RenderInRtl>
-    <InputField
-      placeholder="Placeholder"
-      label="My label"
-      prefix="$"
-      suffix={<ButtonLink iconLeft={<Icons.Visibility />} />}
-    />
-  </RenderInRtl>
-);
+export const Rtl = (): React.Node => {
+  const help = text("Help", "Please fill out as you have on your passport");
+  const error = text("Error", undefined);
+  const inlineLabel = boolean("inline label", false);
+  const label = text("Label", null);
+
+  return (
+    <RenderInRtl>
+      <InputField
+        label={label}
+        inlineLabel={inlineLabel}
+        help={help}
+        error={error}
+        placeholder="Placeholder"
+        prefix="$"
+        suffix={<ButtonLink compact iconLeft={<Icons.Visibility />} />}
+      />
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

@@ -2,14 +2,22 @@
 import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, RefType } from "../common/common.js.flow";
 
 export type Props = {|
+  className?: string,
   children: React.Node,
   filled?: boolean,
   disabled?: boolean,
   required?: boolean,
   id?: string,
+  error?: boolean,
+  help?: boolean,
+  inlineLabel?: boolean,
+  iconRef?: RefType,
+  labelRef?: RefType,
+  onMouseEnter?: () => void | Promise<any>,
+  onMouseLeave?: () => void | Promise<any>,
   ...Globals,
 |};
 

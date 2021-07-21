@@ -7,6 +7,7 @@ const tooltipSize = ({ size }: Props): string => {
     [SIZE_OPTIONS.SMALL]: "240px",
     [SIZE_OPTIONS.MEDIUM]: "380px",
   };
+
   return sizes[size];
 };
 

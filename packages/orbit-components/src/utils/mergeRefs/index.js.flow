@@ -1,0 +1,7 @@
+// @flow
+// eslint-disable-next-line flowtype/require-exact-type
+type Ref<T> = { current: null | T } | ((null | T) => mixed);
+
+export type MergeRefs<T> = (refs: Ref<T>[]) => (value: T) => T;
+
+declare export default MergeRefs<any>;

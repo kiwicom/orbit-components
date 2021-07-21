@@ -3,6 +3,7 @@ import tooltipArrowStyle from "../tooltipArrowStyle";
 import defaultTheme from "../../../../defaultTheme";
 
 const params = position => ({ position, theme: defaultTheme });
+
 const resultWithColor = (width, color) =>
   `border-width:${width};border-color:${color};`.replace(
     "__color__",

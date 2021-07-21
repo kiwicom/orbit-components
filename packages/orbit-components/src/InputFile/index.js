@@ -6,14 +6,16 @@ import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import FormLabel from "../FormLabel";
-import FormFeedback from "../FormFeedback";
+import TooltipForm from "../TooltipForm";
 import Attachment from "../icons/Attachment";
 import CloseCircle from "../icons/CloseCircle";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
+import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from "./index";
 
@@ -107,82 +109,111 @@ StyledFileInput.defaultProps = {
 const InputFile: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
   Props,
   HTMLInputElement,
->(
-  (
-    {
-      placeholder = "No file selected",
-      buttonLabel = "Select file",
-      onRemoveFile,
-      dataTest,
-      spaceAfter,
-      name,
-      error,
-      required,
-      help,
-      onChange,
-      onFocus,
-      onBlur,
-      allowedFileTypes,
-      tabIndex,
-      label,
-      fileName,
-    },
-    ref,
-  ) => {
-    return (
-      <Field spaceAfter={spaceAfter}>
-        <Input
-          data-test={dataTest}
-          data-state={getFieldDataState(Boolean(error))}
-          type="file"
-          name={name}
-          error={error}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          accept={allowedFileTypes}
-          aria-required={required}
-          ref={ref}
-          tabIndex={tabIndex}
-        />
-        {label && (
-          <FormLabel filled={Boolean(fileName)} required={required}>
-            {label}
-          </FormLabel>
+>((props, ref) => {
+  const {
+    placeholder = "No file selected",
+    buttonLabel = "Select file",
+    required,
+    onRemoveFile,
+    dataTest,
+    spaceAfter,
+    help,
+    error,
+    onFocus,
+    onBlur,
+    name,
+    label,
+    onChange,
+    allowedFileTypes,
+    tabIndex,
+    fileName,
+    insideInputGroup,
+  } = props;
+
+  const {
+    tooltipShown,
+    tooltipShownHover,
+    setTooltipShownHover,
+    labelRef,
+    iconRef,
+    handleFocus,
+    handleBlur,
+  } = useErrorTooltip({ onFocus, onBlur });
+
+  const inputRef = React.useRef(null);
+
+  return (
+    <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
+      <Input
+        data-test={dataTest}
+        aria-required={required}
+        data-state={
+          insideInputGroup && typeof error === "undefined"
+            ? undefined
+            : getFieldDataState(!!props.error)
+        }
+        type="file"
+        name={name}
+        error={error}
+        onChange={onChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        accept={allowedFileTypes}
+        tabIndex={tabIndex}
+      />
+      {label && (
+        <FormLabel
+          filled={!!fileName}
+          error={!!error}
+          help={!!help}
+          labelRef={labelRef}
+          iconRef={iconRef}
+          onMouseEnter={() => setTooltipShownHover(true)}
+          onMouseLeave={() => setTooltipShownHover(false)}
+        >
+          {label}
+        </FormLabel>
+      )}
+      <FakeInput error={error}>
+        <Button
+          type="secondary"
+          size="small"
+          iconLeft={<Attachment />}
+          asComponent="div"
+          role="button"
+        >
+          {buttonLabel}
+        </Button>
+        <StyledFileInput fileName={fileName} error={error} ref={mergeRefs([inputRef, ref])}>
+          {fileName || placeholder}
+        </StyledFileInput>
+        {fileName && (
+          <ButtonLink
+            type="primary"
+            compact
+            iconLeft={<CloseCircle ariaLabel="remove" color="secondary" />}
+            onClick={ev => {
+              ev.preventDefault();
+              if (onRemoveFile) {
+                onRemoveFile();
+              }
+            }}
+          />
         )}
-        <FakeInput error={error}>
-          {/* <button> doesn't trigger the input so we're setting the tag to <div> */}
-          <Button
-            type="secondary"
-            role="button"
-            size="small"
-            iconLeft={<Attachment />}
-            asComponent="div"
-          >
-            {buttonLabel}
-          </Button>
-          <StyledFileInput fileName={fileName} error={error}>
-            {fileName || placeholder}
-          </StyledFileInput>
-          {fileName && (
-            <ButtonLink
-              type="primary"
-              compact
-              iconLeft={<CloseCircle ariaLabel="remove" color="secondary" />}
-              onClick={ev => {
-                ev.preventDefault();
-                if (onRemoveFile) {
-                  onRemoveFile();
-                }
-              }}
-            />
-          )}
-        </FakeInput>
-        <FormFeedback error={error} help={help} />
-      </Field>
-    );
-  },
-);
+      </FakeInput>
+      {!insideInputGroup && (
+        <TooltipForm
+          help={help}
+          error={error}
+          iconRef={iconRef}
+          labelRef={labelRef}
+          onClose={handleBlur}
+          tooltipShown={tooltipShown || tooltipShownHover}
+        />
+      )}
+    </Field>
+  );
+});
 
 InputFile.displayName = "InputFile";
 

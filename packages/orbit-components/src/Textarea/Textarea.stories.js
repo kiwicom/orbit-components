@@ -146,11 +146,22 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
-  <RenderInRtl>
-    <Textarea placeholder="My placeholder" value="Content of the Textarea" />
-  </RenderInRtl>
-);
+export const Rtl = (): React.Node => {
+  const label = text("Label", "Label");
+  const help = text("Help", undefined);
+  const error = text("Error", "Something went wrong.");
+  return (
+    <RenderInRtl>
+      <Textarea
+        label={label}
+        help={help}
+        error={error}
+        placeholder="My placeholder"
+        value="Content of the Textarea"
+      />
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

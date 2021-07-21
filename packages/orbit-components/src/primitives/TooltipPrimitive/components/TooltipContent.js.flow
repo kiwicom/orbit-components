@@ -10,6 +10,8 @@ export type Props = {|
   tooltipId: ?string,
   children: React.Node,
   parent: ?React.Node,
+  error?: boolean,
+  help?: boolean,
   onClose: () => void,
   onCloseMobile: () => void,
   onEnter: () => void,

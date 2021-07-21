@@ -49,19 +49,17 @@ const getPossibleAligns = ({
 });
 
 const calculateTooltipAlign: CalculateTooltipAlign = (position, aligns, dimensions) => {
-  if (!position) {
-    return null;
-  }
+  if (!position) return null;
 
   const direction = getPositionDirection(position);
+
   if (direction) {
     const possibleAligns = getPossibleAligns(dimensions);
     const align = aligns.find(a => possibleAligns[direction][a]);
-    if (typeof align === "string") {
-      return align;
-    }
+    if (typeof align === "string") return align;
     return null;
   }
+
   return null;
 };
 

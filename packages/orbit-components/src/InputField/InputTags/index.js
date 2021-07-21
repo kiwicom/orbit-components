@@ -18,6 +18,7 @@ const StyledInputTags = styled.div`
   z-index: 2;
   min-width: 50px;
   overflow: hidden;
+  order: -1;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
