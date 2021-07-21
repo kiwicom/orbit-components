@@ -10,7 +10,7 @@ import ChevronRight from "../../../icons/ChevronRight";
 import ChevronDown from "../../../icons/ChevronDown";
 import { rtlSpacing } from "../../../utils/rtl";
 
-import type { Props, IconRightProps } from "./index";
+import type { Props, IconRightProps } from ".";
 
 const StyledTileHeader = styled.div`
   display: block;

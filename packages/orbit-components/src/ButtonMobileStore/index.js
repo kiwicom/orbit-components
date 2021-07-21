@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, HEIGHT, TYPE_VARIANT } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledButtonMobileStore = styled(({ theme, type, ...props }) => (
   <a {...props}>{props.children}</a>

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Tooltip from "../index";
+import Tooltip from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => {
   return () => {

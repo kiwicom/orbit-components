@@ -2,7 +2,7 @@
 import type { CSSRules } from "styled-components";
 
 import type { Devices } from "../../mediaQuery/consts";
-import type { Props, SmallMobile, BasicProps } from "../index";
+import type { Props, SmallMobile, BasicProps } from "..";
 
 export type GetViewportIEGridStyles = (
   mediaQuery: BasicProps,

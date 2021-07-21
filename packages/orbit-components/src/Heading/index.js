@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { GetHeadingToken, Props } from "./index";
+import type { GetHeadingToken, Props } from ".";
 
 export const getHeadingToken: GetHeadingToken = name => ({ theme, type }) => {
   const tokens = {

@@ -14,7 +14,7 @@ import randomID from "../utils/randomID";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getToken = name => ({ theme, size }) => {
   const tokens = {

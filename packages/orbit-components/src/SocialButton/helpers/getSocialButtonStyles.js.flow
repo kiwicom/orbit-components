@@ -1,5 +1,5 @@
 // @flow
-import type { Type } from "../index";
+import type { Type } from "..";
 import type { ThemeProps } from "../../defaultTheme";
 import type { Background, BoxShadow, Foreground } from "../../primitives/ButtonPrimitive";
 

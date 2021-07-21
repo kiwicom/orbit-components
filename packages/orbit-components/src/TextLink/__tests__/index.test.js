@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import TextLink from "../index";
+import TextLink from "..";
 import ChevronRight from "../../icons/ChevronRight";
 import defaultTheme from "../../defaultTheme";
 

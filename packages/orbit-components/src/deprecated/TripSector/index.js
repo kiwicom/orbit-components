@@ -6,7 +6,7 @@ import { StyledTripSegment, StyledTripSegmentMilestone } from "../TripSegment";
 import defaultTheme from "../../defaultTheme";
 import { left, right } from "../../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledTripSector = styled.div`
   display: flex;

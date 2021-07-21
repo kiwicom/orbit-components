@@ -9,7 +9,7 @@ import { StyledCard as DeprecatedStyledCard } from "../../deprecated/Card";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledColumn = styled.div`
   ${({ hideOn }) => !!hideOn && getViewportHideStyles(hideOn)};

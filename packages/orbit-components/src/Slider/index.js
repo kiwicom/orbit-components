@@ -3,7 +3,7 @@ import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
 
-import type { Tokens } from "../../../orbit-design-tokens/lib/index";
+import type { Tokens } from "../../../orbit-design-tokens/lib";
 import transition from "../utils/transition";
 import Text from "../Text";
 import Heading from "../Heading";
@@ -19,7 +19,7 @@ import mq from "../utils/mediaQuery";
 import type { ThemeProps } from "../defaultTheme";
 import boundingClientRect from "../utils/boundingClientRect";
 
-import type { State, SliderCallback, Props, Value } from "./index";
+import type { State, SliderCallback, Props, Value } from ".";
 
 const StyledSlider = styled.div`
   position: relative;

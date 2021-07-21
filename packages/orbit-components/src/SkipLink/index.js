@@ -5,7 +5,7 @@ import styled from "styled-components";
 import KEY_CODE_MAP from "../common/keyMaps";
 import defaultTheme from "../defaultTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledNavigation = styled.nav``;
 

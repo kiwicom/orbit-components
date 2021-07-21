@@ -1,4 +1,4 @@
-import { Props as Media } from "../../ThemeProvider/QueryContext/index";
+import { Props as Media } from "../../ThemeProvider/QueryContext";
 
 declare const UseMediaQuery: () => Media;
 

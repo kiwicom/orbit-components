@@ -4,7 +4,7 @@ import { screen, render, waitForElementToBeRemoved } from "@testing-library/reac
 import userEvent from "@testing-library/user-event";
 
 import Tooltip from "../../Tooltip";
-import Popover from "../index";
+import Popover from "..";
 import Button from "../../Button";
 import Stack from "../../Stack";
 

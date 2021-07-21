@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import useTheme from "../../hooks/useTheme";
 import { TYPES } from "../consts";
-import type { Props } from "../index";
+import type { Props } from "..";
 import { resolveFillColor, resolveAccentColor, resolveTextColor } from "./helpers";
 
 export const StyledPath: any = styled.path`

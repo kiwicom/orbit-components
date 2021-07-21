@@ -5,7 +5,7 @@ import { text, number, boolean } from "@storybook/addon-knobs";
 
 import StatelessStepper from "./StepperStateless";
 
-import Stepper from "./index";
+import Stepper from ".";
 
 export default {
   title: "Stepper",

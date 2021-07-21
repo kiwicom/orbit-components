@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Inner = styled.div`
   width: 100%;

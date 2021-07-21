@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledSeparator = styled.hr`
   width: 100%;

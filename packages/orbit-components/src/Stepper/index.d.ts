@@ -32,4 +32,4 @@ export interface Props extends SharedProps {
 
 declare const Stepper: React.FunctionComponent<Props>;
 export { Stepper, Stepper as default };
-export { StepperStateless } from "./StepperStateless/index";
+export { StepperStateless } from "./StepperStateless";

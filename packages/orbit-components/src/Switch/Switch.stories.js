@@ -4,9 +4,9 @@ import { action } from "@storybook/addon-actions";
 import { select, text, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import * as Icons from "../icons/index";
+import * as Icons from "../icons";
 
-import Switch from "./index";
+import Switch from ".";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

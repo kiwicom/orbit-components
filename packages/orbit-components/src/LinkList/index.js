@@ -10,7 +10,7 @@ import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledLinkList = styled.ul`
   display: flex;

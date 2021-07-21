@@ -8,7 +8,7 @@ import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
 import SeatLegend from "./components/SeatLegend";
 
-import Seat from "./index";
+import Seat from ".";
 
 export const Default = (): React.Node => <Seat type="default" />;
 

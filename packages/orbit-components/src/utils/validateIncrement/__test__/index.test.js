@@ -1,6 +1,6 @@
 // @flow
 
-import validateIncrement from "../index";
+import validateIncrement from "..";
 
 describe("ValidateIncrement", () => {
   it("Should be -9", () => {

@@ -4,7 +4,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
 import theme from "../../defaultTheme";
-import NotificationBadge from "../index";
+import NotificationBadge from "..";
 import Sightseeing from "../../icons/Sightseeing";
 
 describe("NotificationBadge", () => {

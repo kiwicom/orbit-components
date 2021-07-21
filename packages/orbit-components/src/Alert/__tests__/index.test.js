@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Alert from "../index";
+import Alert from "..";
 import defaultTheme from "../../defaultTheme";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 

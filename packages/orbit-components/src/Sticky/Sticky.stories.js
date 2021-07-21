@@ -7,7 +7,7 @@ import Card from "../Card";
 import CardHeader from "../deprecated/Card/CardHeader";
 import CardSection from "../deprecated/Card/CardSection";
 
-import FloatingCard from "./index";
+import FloatingCard from ".";
 
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];

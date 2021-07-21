@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { Value, AriaLabel } from "../../index";
+import type { Value, AriaLabel } from "../..";
 
 type Callback<A> = (event: A) => void;
 

@@ -22,7 +22,7 @@ import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
 import useLockScrolling from "../hooks/useLockScrolling";
 
-import type { Instance, Props } from "./index";
+import type { Instance, Props } from ".";
 
 const getSizeToken: any = () => ({ size, theme }) => {
   const tokens = {

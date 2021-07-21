@@ -1,6 +1,6 @@
 // @flow
 import type { GetCommonPropsReturn } from "../../primitives/ButtonPrimitive/common/getCommonProps";
-import type { Props } from "../index";
+import type { Props } from "..";
 import type { ThemeProps } from "../../defaultTheme";
 
 export type GetButtonLinkCommonProps = ({| ...Props, ...ThemeProps |}) => GetCommonPropsReturn;

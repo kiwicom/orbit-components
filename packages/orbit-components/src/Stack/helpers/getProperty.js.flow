@@ -1,5 +1,5 @@
 // @flow
-import type { Direction, Props, Spacing, SmallMobile } from "../index";
+import type { Direction, Props, Spacing, SmallMobile } from "..";
 import type { Devices } from "../../utils/mediaQuery/consts";
 import type { ThemeProps } from "../../defaultTheme";
 

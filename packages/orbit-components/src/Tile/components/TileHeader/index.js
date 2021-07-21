@@ -3,9 +3,9 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
-import { rtlSpacing } from "../../../utils/rtl/index";
-import Stack from "../../../Stack/index";
-import Heading from "../../../Heading/index";
+import { rtlSpacing } from "../../../utils/rtl";
+import Stack from "../../../Stack";
+import Heading from "../../../Heading";
 import ChevronDown from "../../../icons/ChevronDown";
 import NewWindow from "../../../icons/NewWindow";
 import ChevronRight from "../../../icons/ChevronRight";

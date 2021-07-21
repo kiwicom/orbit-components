@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import InputGroup from "../index";
+import InputGroup from "..";
 import InputField from "../../InputField";
 import defaultTheme from "../../defaultTheme";
 

@@ -11,7 +11,7 @@ import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledChild = styled.div`
   flex: ${({ flex }) => flex};

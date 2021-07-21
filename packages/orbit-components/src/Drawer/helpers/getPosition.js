@@ -2,7 +2,7 @@
 import { css } from "styled-components";
 
 import POSITIONS from "../consts";
-import { left, right } from "../../utils/rtl/index";
+import { left, right } from "../../utils/rtl";
 import type { GetPosition } from "./getPosition";
 
 const getPosition: GetPosition = ({ position, theme }) => css`

@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import type { Globals } from "../../common/common.js.flow";
-import type { spaceAfter } from "../../common/getSpacingToken/index";
+import type { spaceAfter } from "../../common/getSpacingToken";
 
 export type Props = {|
   +size?: "extraSmall" | "small" | "medium" | "large" | "display",

@@ -7,7 +7,7 @@ import TileHeader, { StyledIconRight } from "./TileHeader";
 import TileExpandable from "./TileExpandable";
 import KEY_CODE_MAP from "../../common/keyMaps";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 export const StyledTile: any = styled(({ theme, icon, title, external, ...props }) => {
   const Component = props.href ? "a" : "div";

@@ -1,7 +1,7 @@
 // @flow
 
 import type { ThemeProps } from "../../../defaultTheme";
-import type { Type } from "../index";
+import type { Type } from "..";
 import type { Background, BoxShadow, Foreground } from "../../../primitives/ButtonPrimitive";
 
 export type GetAlertButtonStyles = ({|

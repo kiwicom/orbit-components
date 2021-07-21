@@ -2,7 +2,7 @@
 import * as React from "react";
 import { css } from "styled-components";
 
-import getSpacingToken from "../../../common/getSpacingToken/index";
+import getSpacingToken from "../../../common/getSpacingToken";
 import getViewportIEGridStyles from "./getViewportIEGridStyles";
 import getDisplay from "./getDisplay";
 import type { GetViewportGridStyles } from "./getViewportGridStyles";

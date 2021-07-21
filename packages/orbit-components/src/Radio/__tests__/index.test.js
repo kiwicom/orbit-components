@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Radio from "../index";
+import Radio from "..";
 
 describe(`Radio`, () => {
   it("should have expected DOM output", () => {

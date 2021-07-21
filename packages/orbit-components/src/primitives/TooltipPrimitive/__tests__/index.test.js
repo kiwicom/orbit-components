@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
 
-import Tooltip from "../index";
+import Tooltip from "..";
 import Airplane from "../../../icons/Airplane";
 
 jest.mock("../../../utils/randomID", () => name => `${name}50000-id-50000`);

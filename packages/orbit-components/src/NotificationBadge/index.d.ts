@@ -4,7 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import { Type } from "../Badge/index";
+import { Type } from "../Badge";
 
 declare module "@kiwicom/orbit-components/lib/NotificationBadge";
 

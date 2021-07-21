@@ -10,7 +10,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import TimelineStepDesktop from "./components/TimelineStepDesktop";
 import TimelineStepMobile from "./components/TimelineStepMobile";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const TypeIcon = ({ type }) => {
   if (type === "success") return <CheckCircle color="success" />;

@@ -7,7 +7,7 @@ import { action } from "@storybook/addon-actions";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SIZES } from "./consts";
 
-import Tag from "./index";
+import Tag from ".";
 
 export default {
   title: "Tag",

@@ -1,5 +1,5 @@
 // @flow
-import type { Transition } from "./index";
+import type { Transition } from ".";
 
 const DURATIONS = {
   SLOW: "slow",

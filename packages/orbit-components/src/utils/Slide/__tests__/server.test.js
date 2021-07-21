@@ -6,7 +6,7 @@ import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 
-import Slide from "../index";
+import Slide from "..";
 
 describe("slide util", () => {
   describe("server-side", () => {

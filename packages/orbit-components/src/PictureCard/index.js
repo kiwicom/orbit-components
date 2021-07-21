@@ -12,7 +12,7 @@ import { left } from "../utils/rtl";
 import randomID from "../utils/randomID";
 import handleKeyDown from "../utils/handleKeyDown";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Shown = styled.div`
   position: absolute;

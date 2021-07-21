@@ -13,7 +13,7 @@ import Text from "../../Text";
 import randomID from "../../utils/randomID";
 import handleKeyDown from "../../utils/handleKeyDown";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 type SmallHeadingType = {|
   children: React.Node,

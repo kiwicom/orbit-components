@@ -10,7 +10,7 @@ import Stack from "../Stack";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Collapse from "./index";
+import Collapse from ".";
 
 export default {
   title: "Collapse",

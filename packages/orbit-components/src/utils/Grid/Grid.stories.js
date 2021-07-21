@@ -5,7 +5,7 @@ import { text, boolean, number, object, select } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
-import Grid from "./index";
+import Grid from ".";
 
 const CustomDiv = styled.div`
   background: rgba(0, 169, 145, 0.2);

@@ -5,7 +5,7 @@ import * as React from "react";
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Breadcrumbs from "../index";
+import Breadcrumbs from "..";
 import BreadcrumbsItem from "../BreadcrumbsItem";
 
 // jsdom doesn't support @media queries, so for <Hide> the computed value of

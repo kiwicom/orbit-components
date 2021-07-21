@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import IllustrationPrimitive from "../index";
+import IllustrationPrimitive from "..";
 import { SIZE_OPTIONS } from "../consts";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 import defaultTheme from "../../../defaultTheme";

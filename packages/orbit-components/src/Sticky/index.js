@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../utils/scroll";
 import defaultTheme from "../defaultTheme";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 const StyledSticky = styled.div``;
 

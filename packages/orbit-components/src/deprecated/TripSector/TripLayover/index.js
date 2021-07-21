@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import { rtlSpacing } from "../../../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledTripLayover = styled.div`
   margin: ${({ theme }) =>

@@ -10,7 +10,7 @@ import { SIZE_OPTIONS } from "../primitives/ButtonPrimitive/common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import ButtonLink from "./index";
+import ButtonLink from ".";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

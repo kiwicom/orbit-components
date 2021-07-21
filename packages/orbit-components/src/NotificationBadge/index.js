@@ -6,7 +6,7 @@ import Badge from "../Badge";
 import { StyledBadge } from "../primitives/BadgePrimitive";
 import defaultTheme from "../defaultTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledNotificationBadge = styled.div`
   ${StyledBadge} {

@@ -12,7 +12,7 @@ import {
 import getWidth from "./getWidth";
 import getDisplay from "./getDisplay";
 import getBasis from "./getBasis";
-import getSpacingToken from "../../common/getSpacingToken/index";
+import getSpacingToken from "../../common/getSpacingToken";
 import type { GetViewportFlexStyles } from "./getViewportFlexStyles";
 
 const getViewportFlexStyles: GetViewportFlexStyles = viewport => props => {

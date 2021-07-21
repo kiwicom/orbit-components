@@ -4,9 +4,9 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS } from "../Badge/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import * as Icons from "../icons/index";
+import * as Icons from "../icons";
 
-import NotificationBadge from "./index";
+import NotificationBadge from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

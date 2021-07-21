@@ -6,7 +6,7 @@ import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Timeline from "./index";
+import Timeline from ".";
 
 const dataTest = text("dataTest", "test");
 

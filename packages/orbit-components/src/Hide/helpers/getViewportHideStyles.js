@@ -1,7 +1,7 @@
 // @flow
 import { css } from "styled-components";
 
-import mediaQueries from "../../utils/mediaQuery/index";
+import mediaQueries from "../../utils/mediaQuery";
 import { DEVICES } from "../../utils/mediaQuery/consts";
 import type { GetViewportHideStyles } from "./getViewportHideStyles";
 

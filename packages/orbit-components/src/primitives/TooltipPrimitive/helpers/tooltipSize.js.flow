@@ -1,6 +1,6 @@
 // @flow
 
-import type { Size } from "../index";
+import type { Size } from "..";
 
 export type Props = {|
   ...Size,

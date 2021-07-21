@@ -9,7 +9,7 @@ import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 import useTranslate from "../hooks/useTranslate";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledRatingStars = styled.div`
   display: flex;

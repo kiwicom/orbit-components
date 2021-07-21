@@ -9,7 +9,7 @@ import getButtonLinkStyles from "./helpers/getButtonLinkStyles";
 import getButtonLinkIconForeground from "./helpers/getButtonLinkIconForeground";
 import getButtonLinkCommonProps from "./helpers/getButtonLinkCommonProps";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const ButtonLink: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,

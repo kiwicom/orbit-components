@@ -6,7 +6,7 @@ import randomID from "../utils/randomID";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledArrow = styled.svg`
   vertical-align: middle;

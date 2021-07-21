@@ -8,7 +8,7 @@ import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 
-import Illustration from "./index";
+import Illustration from ".";
 
 export default {
   title: "Illustration",

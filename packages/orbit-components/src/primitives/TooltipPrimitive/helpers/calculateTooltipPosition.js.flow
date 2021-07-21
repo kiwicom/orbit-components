@@ -1,5 +1,5 @@
 // @flow
-import type { Dimensions, Positions } from "../index";
+import type { Dimensions, Positions } from "..";
 
 export type CalculateTooltipPosition = (
   positions: Positions[],

@@ -14,7 +14,7 @@ import Heading from "../Heading";
 import Button from "../Button";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Tooltip from "./index";
+import Tooltip from ".";
 
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];

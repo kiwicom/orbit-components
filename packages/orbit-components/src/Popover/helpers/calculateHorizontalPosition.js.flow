@@ -1,5 +1,5 @@
 // @flow
-import type { AlignsCore, DimensionsCore } from "../index";
+import type { AlignsCore, DimensionsCore } from "..";
 
 export type CalculateHorizontalPosition = (
   desiredAnchor: AlignsCore[],

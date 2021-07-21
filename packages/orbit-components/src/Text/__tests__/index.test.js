@@ -2,7 +2,7 @@
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
 
-import Text from "../index";
+import Text from "..";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 

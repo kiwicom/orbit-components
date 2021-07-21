@@ -4,7 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import Illustration from "../Illustration/index";
+import Illustration from "../Illustration";
 
 declare module "@kiwicom/orbit-components/lib/CallOutBanner";
 

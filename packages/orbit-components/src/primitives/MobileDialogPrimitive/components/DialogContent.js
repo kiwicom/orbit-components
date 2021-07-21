@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StyledText } from "../../../Text/index";
-import { Item } from "../../../List/ListItem/index";
+import { StyledText } from "../../../Text";
+import { Item } from "../../../List/ListItem";
 import defaultTheme from "../../../defaultTheme";
 import Button from "../../../Button";
 import Translate from "../../../Translate";

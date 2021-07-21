@@ -2,7 +2,7 @@
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
 
-import StopoverArrow from "../index";
+import StopoverArrow from "..";
 import STOPS from "../consts";
 
 describe("StopoverArrow", () => {

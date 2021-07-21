@@ -1,6 +1,6 @@
 // @flow
 import type { Theme } from "../../defaultTheme";
-import type { Type } from "../index";
+import type { Type } from "..";
 
 type TokenName =
   | "backgroundButton"

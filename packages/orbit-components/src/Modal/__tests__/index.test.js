@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Modal from "../index";
+import Modal from "..";
 import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
 import ModalSection from "../ModalSection";

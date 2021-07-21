@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import Sticky from "../index";
+import Sticky from "..";
 
 describe("Sticky", () => {
   it("it should have expected DOM output", () => {

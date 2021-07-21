@@ -7,7 +7,7 @@ import useTheme from "../../../hooks/useTheme";
 import { resolveAccentColor } from "../helpers";
 import { TYPES } from "../../consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props): React.Node => {
   const theme = useTheme();

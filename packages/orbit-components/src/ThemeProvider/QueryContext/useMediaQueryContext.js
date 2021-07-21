@@ -1,9 +1,9 @@
 // @flow
 import * as React from "react";
 
-import { getBreakpointWidth } from "../../utils/mediaQuery/index";
-import useTheme from "../../hooks/useTheme/index";
-import type { UseMediaQuery } from "../../hooks/useMediaQuery/index";
+import { getBreakpointWidth } from "../../utils/mediaQuery";
+import useTheme from "../../hooks/useTheme";
+import type { UseMediaQuery } from "../../hooks/useMediaQuery";
 
 const createBreakpoints = theme => ({
   isDesktop: getBreakpointWidth("desktop", theme),

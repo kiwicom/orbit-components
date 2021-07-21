@@ -11,7 +11,7 @@ import defaultTheme from "../defaultTheme";
 import randomID from "../utils/randomID";
 import useBoundingRect from "../hooks/useBoundingRect";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const AnimatedIcon = styled(ChevronDown)`
   transition: transform ${({ theme }) => theme.orbit.durationFast} ease-in-out;

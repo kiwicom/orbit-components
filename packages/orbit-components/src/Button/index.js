@@ -9,7 +9,7 @@ import useTheme from "../hooks/useTheme";
 import getButtonStyles from "./helpers/getButtonStyles";
 import getButtonIconForeground from "./helpers/getButtonIconForeground";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Button: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,

@@ -1,6 +1,6 @@
 // @flow
 
-import type { Size, HeightProps } from "../index";
+import type { Size, HeightProps } from "..";
 import type { Theme } from "../../../defaultTheme";
 
 export type GetSizeToken = (size: Size, theme: Theme) => HeightProps;

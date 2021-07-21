@@ -4,7 +4,7 @@ import { text, boolean } from "@storybook/addon-knobs";
 
 import Button from "../../Button";
 
-import TooltipPrimitive from "./index";
+import TooltipPrimitive from ".";
 
 export default {
   title: "MobileDialogPrimtive",

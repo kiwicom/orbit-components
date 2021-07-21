@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import NavigationBar from "../index";
+import NavigationBar from "..";
 
 describe("NavigationBar", () => {
   it("should have expected DOM output", () => {

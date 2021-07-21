@@ -3,7 +3,7 @@ import * as React from "react";
 
 import randomID from "../../utils/randomID";
 import IllustrationWrapper from "./IllustrationWrapper";
-import type { Props } from "../index";
+import type { Props } from "..";
 
 const SmartPassV4 = ({ primary, secondary, ...props }: Props): React.Node => {
   const randomIDLinear = React.useMemo(() => randomID("linear1"), []);

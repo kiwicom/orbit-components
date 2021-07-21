@@ -9,7 +9,7 @@ import Clock from "../../../icons/Clock";
 import Stack from "../../../Stack";
 import Badge from "../../../Badge";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledTripDate = styled.div`
   display: flex;

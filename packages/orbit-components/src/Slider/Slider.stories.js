@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Slider from "./index";
+import Slider from ".";
 
 export default {
   title: "Slider",

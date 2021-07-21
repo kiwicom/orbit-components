@@ -4,7 +4,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Card, { CardSection } from "../index";
+import Card, { CardSection } from "..";
 import Button from "../../Button";
 import { Airplane } from "../../icons";
 

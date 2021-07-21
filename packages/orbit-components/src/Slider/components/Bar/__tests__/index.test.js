@@ -3,7 +3,7 @@
 import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
 
-import Bar, { calculateBarPosition } from "../index";
+import Bar, { calculateBarPosition } from "..";
 
 describe("Slider/Bar", () => {
   it("should have exptected DOM output", () => {

@@ -4,8 +4,8 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import CallOutBanner from "../index";
-import Illustration from "../../Illustration/index";
+import CallOutBanner from "..";
+import Illustration from "../../Illustration";
 
 describe("CallOutBanner", () => {
   it("flat", () => {

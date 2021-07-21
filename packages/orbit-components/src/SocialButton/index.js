@@ -10,7 +10,7 @@ import getSocialButtonIconForeground from "./helpers/getSocialButtonIconForegrou
 import getSocialButtonIcon from "./helpers/getSocialButtonIcon";
 import { TYPE_OPTIONS } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const SocialButton: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,

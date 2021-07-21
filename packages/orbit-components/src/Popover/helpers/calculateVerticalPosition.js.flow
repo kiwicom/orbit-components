@@ -1,5 +1,5 @@
 // @flow
-import type { PositionsCore, DimensionsCore } from "../index";
+import type { PositionsCore, DimensionsCore } from "..";
 
 export type CalculateVerticalPosition = (
   desiredPositions: PositionsCore[],

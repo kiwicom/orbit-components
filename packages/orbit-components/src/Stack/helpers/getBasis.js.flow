@@ -1,6 +1,6 @@
 // @flow
 import type { ThemeProps } from "../../defaultTheme";
-import type { Basis } from "../index";
+import type { Basis } from "..";
 
 export type GetBasis = (basis: Basis) => ThemeProps => ?string;
 

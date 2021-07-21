@@ -9,7 +9,7 @@ import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Tooltip from "../Tooltip";
 
-import Checkbox from "./index";
+import Checkbox from ".";
 
 export default {
   title: "CheckBox",

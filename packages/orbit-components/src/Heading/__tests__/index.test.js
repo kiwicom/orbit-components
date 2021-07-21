@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Heading from "../index";
+import Heading from "..";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "../consts";
 
 describe("Heading", () => {

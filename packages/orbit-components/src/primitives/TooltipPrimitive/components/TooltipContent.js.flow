@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import type { Globals } from "../../../common/common.js.flow";
-import type { Aligns, Positions, Sizes } from "../index";
+import type { Aligns, Positions, Sizes } from "..";
 
 export type Props = {|
   shown: boolean,

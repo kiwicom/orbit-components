@@ -6,7 +6,7 @@ import Dictionary from "../Dictionary";
 import QueryContext from "./QueryContext";
 import useMediaQueryContext from "./QueryContext/useMediaQueryContext";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
   const media = useMediaQueryContext();

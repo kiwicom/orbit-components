@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 declare module "@kiwicom/orbit-components/lib/Button";
 

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Loading from "../index";
+import Loading from "..";
 import TYPE_OPTIONS from "../consts";
 
 describe("Loading", () => {

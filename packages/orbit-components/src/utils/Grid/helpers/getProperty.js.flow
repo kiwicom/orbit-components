@@ -1,5 +1,5 @@
 // @flow
-import type { Props, SmallMobile } from "../index";
+import type { Props, SmallMobile } from "..";
 import type { Devices } from "../../mediaQuery/consts";
 
 export type GetProperty = (

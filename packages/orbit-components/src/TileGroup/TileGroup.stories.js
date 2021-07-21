@@ -12,7 +12,7 @@ import Heading from "../Heading";
 import CountryFlag from "../CountryFlag";
 import Tile from "../Tile";
 
-import TileGroup from "./index";
+import TileGroup from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

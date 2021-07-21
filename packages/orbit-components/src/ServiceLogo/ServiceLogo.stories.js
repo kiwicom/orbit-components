@@ -5,7 +5,7 @@ import { select, boolean, text } from "@storybook/addon-knobs";
 
 import { NAME_OPTIONS, SIZE_OPTIONS } from "./consts";
 
-import ServiceLogo from "./index";
+import ServiceLogo from ".";
 
 export default {
   title: "ServiceLogo",

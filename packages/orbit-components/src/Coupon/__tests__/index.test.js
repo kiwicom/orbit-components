@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Coupon from "../index";
+import Coupon from "..";
 
 describe("Coupon", () => {
   it("should have expected DOM output", () => {

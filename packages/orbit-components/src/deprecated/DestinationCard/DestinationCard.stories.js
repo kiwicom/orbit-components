@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
-import DestinationCard from "./index";
+import DestinationCard from ".";
 
 export default {
   title: "DestinationCard",

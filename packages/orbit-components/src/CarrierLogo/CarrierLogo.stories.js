@@ -6,7 +6,7 @@ import { object, select, text } from "@storybook/addon-knobs";
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import CarrierLogo from "./index";
+import CarrierLogo from ".";
 
 const carriersLabel = "Carriers";
 

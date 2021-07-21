@@ -3,7 +3,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import RatingStars from "../index";
+import RatingStars from "..";
 import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
 
 describe("RatingStars", () => {

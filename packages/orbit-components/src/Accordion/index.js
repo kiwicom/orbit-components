@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledAccordion: any = styled.div`
   width: 100%;

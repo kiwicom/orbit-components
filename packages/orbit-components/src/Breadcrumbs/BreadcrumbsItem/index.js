@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import ChevronRight from "../../icons/ChevronRight";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledBreadcrumbsItem = styled.li`
   display: flex;

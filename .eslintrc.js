@@ -16,6 +16,7 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
+    "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -247,6 +248,12 @@ module.exports = {
       files: ["packages/eslint-plugin-orbit-components/src/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      },
+    },
+    {
+      files: "**/__examples__/**/*.js",
+      rules: {
+        "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
       },
     },
     {

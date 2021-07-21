@@ -7,7 +7,7 @@ import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import media from "../utils/mediaQuery";
 import { normalize } from "./helpers";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledInlineInner = styled.div`
   display: flex;

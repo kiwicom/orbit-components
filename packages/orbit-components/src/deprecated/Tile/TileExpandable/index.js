@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import Slide from "../../../utils/Slide";
 import defaultTheme from "../../../defaultTheme";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 const StyledTileExpandable = styled.div`
   border-top: ${({ theme, expanded }) =>

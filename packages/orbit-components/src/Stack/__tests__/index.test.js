@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Stack from "../index";
+import Stack from "..";
 import theme from "../../defaultTheme";
 import InputField from "../../InputField";
 import Button from "../../Button";

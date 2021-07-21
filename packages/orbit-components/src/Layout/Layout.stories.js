@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Card, { CardSection } from "../Card";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Layout, { LayoutColumn } from "./index";
+import Layout, { LayoutColumn } from ".";
 
 const CustomDiv = styled.div`
   height: 400px;

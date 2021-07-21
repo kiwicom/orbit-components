@@ -8,7 +8,7 @@ import Heading from "../Heading";
 import Stack from "../Stack";
 import Text from "../Text";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledCallOutBanner = styled.div`
   display: flex;

@@ -10,7 +10,7 @@ import TYPE_OPTIONS from "./consts";
 import Text from "../Text";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import BadgeList, { BadgeListItem } from "./index";
+import BadgeList, { BadgeListItem } from ".";
 
 export default {
   title: "BadgeList",

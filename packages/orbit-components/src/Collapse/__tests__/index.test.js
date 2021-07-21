@@ -4,7 +4,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Collapse from "../index";
+import Collapse from "..";
 
 const toggleButtons = [
   [0, "label"],

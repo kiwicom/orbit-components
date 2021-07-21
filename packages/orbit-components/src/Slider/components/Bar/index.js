@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
-import type { CalculateBarPosition, Props } from "./index";
+import type { CalculateBarPosition, Props } from ".";
 
 const StyledBar = styled.div`
   display: block;

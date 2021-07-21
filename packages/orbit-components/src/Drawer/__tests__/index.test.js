@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Drawer from "../index";
+import Drawer from "..";
 
 jest.useFakeTimers("modern");
 

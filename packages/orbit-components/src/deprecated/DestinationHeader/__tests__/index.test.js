@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import DestinationHeader from "../index";
+import DestinationHeader from "..";
 
 describe("DestinationHeader", () => {
   it("should have expected DOM output", () => {

@@ -6,7 +6,7 @@ import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {

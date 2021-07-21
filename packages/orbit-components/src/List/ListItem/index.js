@@ -10,7 +10,7 @@ import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
 
-import type { GetLineHeightToken, Props } from "./index";
+import type { GetLineHeightToken, Props } from ".";
 
 export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
   const lineHeightTokens = {

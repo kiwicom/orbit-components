@@ -1,5 +1,5 @@
 // @flow
-import type { Props } from "../index";
+import type { Props } from "..";
 
 export type GetDisplay = () => Props => string;
 

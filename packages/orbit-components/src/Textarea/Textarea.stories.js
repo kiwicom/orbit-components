@@ -8,7 +8,7 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import Textarea from "./index";
+import Textarea from ".";
 
 export default {
   title: "Textarea",

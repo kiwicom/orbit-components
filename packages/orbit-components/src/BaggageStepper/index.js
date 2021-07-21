@@ -6,7 +6,7 @@ import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node => {
   const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);

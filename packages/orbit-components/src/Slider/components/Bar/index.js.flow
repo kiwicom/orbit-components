@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import type { Value } from "../../index";
+import type { Value } from "../..";
 
 export type Props = {|
   value: Value,

@@ -8,7 +8,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import Button from "../../Button";
 import Badge from "../../Badge";
 import PricingTableItem from "../PricingTableItem";
-import PricingTable from "../index";
+import PricingTable from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => jest.fn());
 const useMediaQueryMock: JestMockFn<[], $Shape<$Call<typeof useMediaQuery>>> = useMediaQuery;

@@ -7,7 +7,7 @@ import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import SocialButton from "./index";
+import SocialButton from ".";
 
 export default {
   title: "SocialButton",

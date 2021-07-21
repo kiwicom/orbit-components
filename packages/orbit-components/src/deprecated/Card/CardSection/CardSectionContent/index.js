@@ -7,7 +7,7 @@ import CardSectionContext from "../CardSectionContext";
 import Slide, { StyledSlide } from "../../../../utils/Slide";
 import media from "../../../../utils/mediaQuery";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 const hasPaddingTop = ({ expandable, expanded, visible }) => expanded || visible || !expandable;
 

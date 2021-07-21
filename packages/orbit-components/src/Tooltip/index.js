@@ -6,7 +6,7 @@ import TooltipPrimitive from "../primitives/TooltipPrimitive";
 import useMediaQuery from "../hooks/useMediaQuery";
 import MobileDialog from "../primitives/MobileDialogPrimitive";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Tooltip = ({
   children,

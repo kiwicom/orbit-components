@@ -10,7 +10,7 @@ import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
 import handleKeyDown from "../utils/handleKeyDown";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledListChoiceIcon = styled.div`
   display: flex;

@@ -10,7 +10,7 @@ import getAlertButtonStyles from "./helpers/getAlertButtonStyles";
 import getAlertButtonIconForeground from "./helpers/getAlertButtonIconForeground";
 import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const AlertButton: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
   Props,

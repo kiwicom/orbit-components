@@ -4,7 +4,7 @@ import * as React from "react";
 import { pureTranslate } from "../Translate";
 import DictionaryContext from "./DictionaryContext";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Dictionary = ({ values, children }: Props): React.Node => (
   <DictionaryContext.Provider value={values}>{children}</DictionaryContext.Provider>

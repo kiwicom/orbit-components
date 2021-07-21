@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import Loading from "../../../Loading";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledHistogram = styled.div`
   display: flex;

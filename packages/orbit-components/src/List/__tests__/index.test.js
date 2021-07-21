@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import List from "../index";
+import List from "..";
 import ListItem from "../ListItem";
 import Check from "../../icons/Check";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";

@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Textarea from "../index";
+import Textarea from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {

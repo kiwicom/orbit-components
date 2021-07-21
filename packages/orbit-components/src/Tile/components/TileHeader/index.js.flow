@@ -2,7 +2,7 @@
 import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
-import type { TileOnClick } from "../../index";
+import type { TileOnClick } from "../..";
 
 export type Props = {|
   icon?: React.Node,

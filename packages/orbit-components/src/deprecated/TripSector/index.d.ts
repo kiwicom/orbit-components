@@ -12,5 +12,5 @@ interface Props extends Common.Global {
 }
 
 export declare const TripSector: React.FunctionComponent<Props>;
-export * from "./TripDate/index";
-export * from "./TripLayover/index";
+export * from "./TripDate";
+export * from "./TripLayover";

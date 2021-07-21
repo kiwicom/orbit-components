@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import type { Sizes } from "../index";
+import type { Sizes } from "..";
 
 export type Props = {|
   children: React.Node,

@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import transition from "../../../utils/transition";
-import { StyledIconRight } from "../TileHeader/index";
+import { StyledIconRight } from "../TileHeader";
 import defaultTheme from "../../../defaultTheme";
 
 import type { Props } from ".";

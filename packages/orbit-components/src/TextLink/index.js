@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
-import type { Props, GetLinkStyleProps } from "./index";
+import type { Props, GetLinkStyleProps } from ".";
 
 const getColor = ({ theme, type }) => {
   const tokens = {

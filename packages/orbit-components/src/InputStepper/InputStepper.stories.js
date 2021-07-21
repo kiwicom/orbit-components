@@ -8,7 +8,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import InputStepperStateless from "./InputStepperStateless";
 
-import InputStepper from "./index";
+import InputStepper from ".";
 
 export default {
   title: "InputStepper",

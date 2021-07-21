@@ -10,7 +10,7 @@ import Stack from "../Stack";
 import Tooltip from "../Tooltip";
 import Airplane from "../icons/Airplane";
 
-import Radio from "./index";
+import Radio from ".";
 
 export default {
   title: "Radio",

@@ -6,7 +6,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import defaultTheme from "../../defaultTheme";
 import { StyledTag } from "../../Tag";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledInputTags = styled.div`
   position: relative;

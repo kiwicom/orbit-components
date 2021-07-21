@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ClickOutside from "../index";
+import ClickOutside from "..";
 
 describe("ClickOutside", () => {
   it("should trigger when clicked outside", () => {

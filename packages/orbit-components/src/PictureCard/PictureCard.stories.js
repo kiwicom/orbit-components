@@ -7,7 +7,7 @@ import { action } from "@storybook/addon-actions";
 import Button from "../Button";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import PictureCard from "./index";
+import PictureCard from ".";
 
 const image = object("image", {
   original: "385x320",

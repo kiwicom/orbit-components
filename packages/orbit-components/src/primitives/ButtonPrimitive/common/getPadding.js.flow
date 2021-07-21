@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import type { Theme } from "../../../defaultTheme";
-import type { Size } from "../index";
+import type { Size } from "..";
 
 export type GetPadding = (
   onlyIcon: boolean,

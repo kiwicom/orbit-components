@@ -3,7 +3,7 @@ import resolveFocusColor from "./resolveFocusColor";
 import resolveAccentColor from "./resolveAccentColor";
 import { TYPES } from "../../consts";
 
-import type { Params } from "./index";
+import type { Params } from ".";
 
 const resolveFillColor = ({ type, theme, selected, focus }: Params): string | (Params => any) => {
   if (focus) {

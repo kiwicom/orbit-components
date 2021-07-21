@@ -4,7 +4,7 @@ import * as React from "react";
 import whiteListProps from "./helpers/whiteListProps";
 import type { CreateIcon } from "./createIcon";
 
-import OrbitIcon from "./index";
+import OrbitIcon from ".";
 
 const createIcon: CreateIcon = (def, viewBox, displayName) => {
   const icon = props => (

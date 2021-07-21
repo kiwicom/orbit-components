@@ -10,7 +10,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import Header from "./components/Header";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledCard: any = styled.div`
   width: 100%;

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import FormFeedback from "../index";
+import FormFeedback from "..";
 
 describe("FormFeedback", () => {
   it("should assign data-test", () => {

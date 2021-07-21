@@ -5,7 +5,7 @@ import { text, select, object } from "@storybook/addon-knobs";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { WIDTH_AND_HEIGHT } from "./consts";
 
-import Box from "./index";
+import Box from ".";
 
 const DEFAULT_COLOR = "blueDark";
 

@@ -4,7 +4,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import DestinationHeader from "./index";
+import DestinationHeader from ".";
 
 export default {
   title: "DestinationHeader",

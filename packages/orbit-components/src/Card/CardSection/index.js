@@ -9,7 +9,7 @@ import SectionContent from "./components/SectionContent";
 import randomID from "../../utils/randomID";
 import { ELEMENT_OPTIONS } from "../../Heading/consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const CardSection = ({
   title,

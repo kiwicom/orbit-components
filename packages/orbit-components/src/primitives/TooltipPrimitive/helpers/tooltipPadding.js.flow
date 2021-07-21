@@ -1,6 +1,6 @@
 // @flow
 import type { ThemeProps } from "../../../defaultTheme";
-import type { Dimensions } from "../index";
+import type { Dimensions } from "..";
 
 export type Props = {|
   ...Dimensions,

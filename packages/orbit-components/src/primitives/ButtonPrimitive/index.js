@@ -14,7 +14,7 @@ import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const iconContainerColor = (color: ?string, important = true) => css`
   ${StyledButtonPrimitiveIconContainer} {

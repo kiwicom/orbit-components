@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 
-import Slide from "../../../utils/Slide/index";
-import randomID from "../../../utils/randomID/index";
+import Slide from "../../../utils/Slide";
+import randomID from "../../../utils/randomID";
 import TileContent from "../TileContent";
 import TileWrapper from "../TileWrapper";
 import TileHeader from "../TileHeader";

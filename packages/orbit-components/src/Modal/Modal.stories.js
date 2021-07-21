@@ -14,7 +14,7 @@ import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Card from "../Card";
-import { CarrierLogo } from "../index";
+import { CarrierLogo } from "..";
 import CardSection from "../Card/CardSection";
 import InputField from "../InputField";
 import Select from "../Select";
@@ -27,7 +27,7 @@ import Radio from "../Radio";
 import Tooltip from "../Tooltip";
 import Tile from "../Tile";
 
-import Modal, { ModalHeader, ModalSection, ModalFooter } from "./index";
+import Modal, { ModalHeader, ModalSection, ModalFooter } from ".";
 
 export default {
   title: "Modal",

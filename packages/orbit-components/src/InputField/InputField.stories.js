@@ -14,7 +14,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Tag from "../Tag";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import InputField from "./index";
+import InputField from ".";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

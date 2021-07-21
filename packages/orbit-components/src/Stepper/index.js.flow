@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
-import type { StepperStatelessType } from "./StepperStateless/index";
+import type { StepperStatelessType } from "./StepperStateless";
 
 export type SharedProps = {|
   ...Globals,

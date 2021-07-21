@@ -49,7 +49,7 @@ import FlightReturn from "../icons/FlightReturn";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import ChoiceGroup from "../ChoiceGroup";
 
-import Stack from "./index";
+import Stack from ".";
 
 export default {
   title: "Stack",

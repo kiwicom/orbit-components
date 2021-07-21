@@ -2,7 +2,7 @@
 import useDictionary from "../hooks/useDictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
 
-import type { Props, PureTranslate } from "./index";
+import type { Props, PureTranslate } from ".";
 
 export const pureTranslate: PureTranslate = (translations, key, values = {}) => {
   const translation = translations[key] || DEFAULT_DICTIONARY[key];

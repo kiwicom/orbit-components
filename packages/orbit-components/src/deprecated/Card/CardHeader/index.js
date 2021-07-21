@@ -8,7 +8,7 @@ import Text from "../../../Text";
 import { rtlSpacing } from "../../../utils/rtl";
 import media from "../../../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledCardHeader: any = styled.div`
   position: relative;

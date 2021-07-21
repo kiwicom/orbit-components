@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Seat from "../index";
+import Seat from "..";
 import { SIZE_OPTIONS, TYPES } from "../consts";
 
 const tokens = {

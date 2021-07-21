@@ -5,7 +5,7 @@ import BadgePrimitive from "../primitives/BadgePrimitive";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import useTheme from "../hooks/useTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getTypeToken = ({ name, theme, type }) => {
   const tokens = {

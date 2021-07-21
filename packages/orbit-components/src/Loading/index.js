@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import TYPE_OPTIONS from "./consts";
 import { left, right } from "../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getHeight = ({ type }) => {
   const tokens = {

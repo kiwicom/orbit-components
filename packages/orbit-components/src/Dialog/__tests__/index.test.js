@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Dialog from "../index";
+import Dialog from "..";
 import Button from "../../Button";
 
 describe("Dialog", () => {

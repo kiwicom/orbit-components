@@ -6,7 +6,7 @@ import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
-import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { spaceAfter } from "../common/getSpacingToken";
 import type { ThemeProps } from "../defaultTheme";
 
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";

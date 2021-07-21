@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import TYPE_OPTIONS from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <div {...props} />)`
   color: ${({ theme, type }) =>

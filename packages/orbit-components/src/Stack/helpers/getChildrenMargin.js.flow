@@ -2,7 +2,7 @@
 import type { InterpolationBase } from "styled-components";
 
 import type { Devices } from "../../utils/mediaQuery/consts";
-import type { Props, SmallMobile } from "../index";
+import type { Props, SmallMobile } from "..";
 import type { ThemeProps } from "../../defaultTheme";
 
 export type GetChildrenMargin = ({|

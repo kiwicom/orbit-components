@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { Translations } from "../Dictionary/index";
+import type { Translations } from "../Dictionary";
 
 export type Key = string;
 

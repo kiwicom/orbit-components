@@ -11,7 +11,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const Field = styled.label`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

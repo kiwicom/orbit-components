@@ -11,7 +11,7 @@ import FilterWrapper from "./components/FilterWrapper";
 import randomID from "../utils/randomID";
 import useTheme from "../hooks/useTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getHeadingSize = size => {
   const SIZES = {

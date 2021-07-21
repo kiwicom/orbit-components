@@ -6,7 +6,7 @@ import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Badge from "./index";
+import Badge from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

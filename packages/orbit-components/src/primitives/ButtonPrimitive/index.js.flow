@@ -6,7 +6,7 @@ import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
 import type { Globals, Component } from "../../common/common.js.flow";
-import type { spaceAfter } from "../../common/getSpacingToken/index";
+import type { spaceAfter } from "../../common/getSpacingToken";
 
 /*
   Common properties used across all Button components. The very base.

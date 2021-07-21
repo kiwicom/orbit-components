@@ -9,7 +9,7 @@ import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getBackground = ({ theme, $type }) => {
   const tokens = {

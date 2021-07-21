@@ -17,7 +17,7 @@ import * as Icons from "../icons";
 import List, { ListItem } from "../List";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
 
-import Card from "./index";
+import Card from ".";
 
 export default {
   title: "Card",

@@ -1,7 +1,7 @@
 // @flow
 import type { CSSRules } from "styled-components";
 
-import type { Position } from "../index";
+import type { Position } from "..";
 import type { Theme } from "../../defaultTheme";
 
 export type GetTransitionAnimation = ({|

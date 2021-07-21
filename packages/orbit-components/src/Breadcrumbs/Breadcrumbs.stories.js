@@ -7,7 +7,7 @@ import { select, text, boolean } from "@storybook/addon-knobs";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Breadcrumbs, { BreadcrumbsItem } from "./index";
+import Breadcrumbs, { BreadcrumbsItem } from ".";
 
 export default {
   title: "Breadcrumbs",

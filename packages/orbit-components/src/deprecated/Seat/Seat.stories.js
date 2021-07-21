@@ -6,7 +6,7 @@ import { select, text } from "@storybook/addon-knobs";
 import { SIZE_OPTIONS } from "./consts";
 import Stack from "../../Stack";
 
-import Seat from "./index";
+import Seat from ".";
 
 export default {
   title: "Seat",

@@ -14,7 +14,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getTypeToken = ({ theme, type }) => {
   const typeTokens = {

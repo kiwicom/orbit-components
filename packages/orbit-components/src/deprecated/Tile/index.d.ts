@@ -21,5 +21,5 @@ interface Props extends Common.Global {
 }
 
 export const Tile: React.FunctionComponent<Props>;
-export * from "./TileExpandable/index";
-export * from "./TileHeader/index";
+export * from "./TileExpandable";
+export * from "./TileHeader";

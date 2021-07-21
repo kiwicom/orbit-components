@@ -8,7 +8,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import { getLineHeightToken } from "./ListItem";
 import ListContext from "./ListContext";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getSizeToken = ({ theme, size }) => {
   const sizeTokens = {

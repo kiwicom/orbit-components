@@ -9,7 +9,7 @@ import CarrierLogo from "../../CarrierLogo";
 import InformationCircle from "../../icons/InformationCircle";
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
-import TripSegment from "./index";
+import TripSegment from ".";
 
 export default {
   title: "Deprecated TripSegment",

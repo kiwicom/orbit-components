@@ -3,14 +3,14 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import CardSectionContext from "../CardSectionContext";
-import { getSize } from "../../../../Icon/index";
+import { getSize } from "../../../../Icon";
 import { ICON_SIZES } from "../../../../Icon/consts";
 import defaultTheme from "../../../../defaultTheme";
 import ChevronDown from "../../../../icons/ChevronDown";
-import { left } from "../../../../utils/rtl/index";
+import { left } from "../../../../utils/rtl";
 import media from "../../../../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;

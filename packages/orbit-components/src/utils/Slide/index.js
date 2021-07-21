@@ -5,7 +5,7 @@ import styled from "styled-components";
 import transition from "../transition";
 import defaultTheme from "../../defaultTheme";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;

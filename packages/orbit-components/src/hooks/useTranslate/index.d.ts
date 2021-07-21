@@ -1,4 +1,4 @@
-import Values from "../../Translate/index";
+import Values from "../../Translate";
 
 type TranslateFunction = (key: string, values?: typeof Values) => string;
 

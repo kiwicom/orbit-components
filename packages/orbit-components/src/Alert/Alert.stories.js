@@ -14,7 +14,7 @@ import Stack from "../Stack";
 import Heading from "../Heading";
 import CountryFlag from "../CountryFlag";
 
-import Alert, { AlertButton } from "./index";
+import Alert, { AlertButton } from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

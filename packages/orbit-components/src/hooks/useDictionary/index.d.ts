@@ -1,4 +1,4 @@
-import Translations from "../../Dictionary/index";
+import Translations from "../../Dictionary";
 
 declare const useDictionary: () => typeof Translations;
 

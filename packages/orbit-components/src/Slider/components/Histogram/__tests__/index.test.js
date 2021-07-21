@@ -3,7 +3,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Histogram from "../index";
+import Histogram from "..";
 
 describe("Histogram", () => {
   it("should have four columns", () => {

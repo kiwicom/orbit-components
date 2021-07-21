@@ -3,7 +3,7 @@ import type { CSSRules } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 import type { Devices } from "../../mediaQuery/consts";
-import type { Props, SmallMobile } from "../index";
+import type { Props, SmallMobile } from "..";
 
 export type GetViewportGridStyles = ({|
   viewport: Devices,

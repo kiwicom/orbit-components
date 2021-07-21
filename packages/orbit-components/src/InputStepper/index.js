@@ -9,7 +9,7 @@ import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const InputStepper: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
   Props,

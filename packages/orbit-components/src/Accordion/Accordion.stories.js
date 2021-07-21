@@ -7,7 +7,7 @@ import Stack from "../Stack";
 import AccordionSection from "./AccordionSection";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-import Accordion from "./index";
+import Accordion from ".";
 
 const Footer = () => {
   const { isTablet, isMediumMobile } = useMediaQuery();

@@ -8,7 +8,7 @@ import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import ButtonGroup from "./index";
+import ButtonGroup from ".";
 
 export default {
   title: "ButtonGroup",

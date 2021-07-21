@@ -12,7 +12,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getToken = name => ({ theme, hasError, disabled, checked }) => {
   const resolveBorderColor = () => {

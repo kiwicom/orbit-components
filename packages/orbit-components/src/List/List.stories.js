@@ -11,7 +11,7 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TextLink from "../TextLink";
 
-import List, { ListItem } from "./index";
+import List, { ListItem } from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

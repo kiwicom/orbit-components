@@ -6,7 +6,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "./consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Heading from "./index";
+import Heading from ".";
 
 export default {
   title: "Heading",

@@ -1,5 +1,5 @@
 // @flow
-import type { BoundingClientRect } from "./index";
+import type { BoundingClientRect } from ".";
 
 const boundingClientRect: BoundingClientRect = ref => {
   if (

@@ -1,6 +1,6 @@
 // @flow
 
-import validateDecrement from "../index";
+import validateDecrement from "..";
 
 describe("ValidateDecrement", () => {
   it("Should be 0", () => {

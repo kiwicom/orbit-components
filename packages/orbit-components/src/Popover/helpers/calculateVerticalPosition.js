@@ -1,5 +1,5 @@
 // @flow
-import type { PositionsCore } from "../index";
+import type { PositionsCore } from "..";
 import { POSITIONS } from "../consts";
 import type { CalculateVerticalPosition } from "./calculateVerticalPosition";
 

@@ -7,7 +7,7 @@ import media from "../utils/mediaQuery";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import normalize from "./normalize";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledBox = styled(({ className, asComponent: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>

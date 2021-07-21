@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { SharedProps } from "../index";
+import type { SharedProps } from "..";
 
 export type StateLessProps = {|
   ...SharedProps,

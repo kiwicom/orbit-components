@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import FormLabel from "../index";
+import FormLabel from "..";
 
 describe("FormLabel", () => {
   it("should have expected DOM output", () => {

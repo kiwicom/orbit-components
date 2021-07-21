@@ -5,7 +5,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 import { NAME_OPTIONS } from "./consts";
 
-import FeatureIcon from "./index";
+import FeatureIcon from ".";
 
 export default {
   title: "FeatureIcon",

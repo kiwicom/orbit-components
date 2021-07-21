@@ -2,7 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 import * as React from "react";
 
-import { Props as IllustrationProps } from "../../Illustration/index";
+import { Props as IllustrationProps } from "../../Illustration";
 import * as Common from "../../common/common";
 
 declare module "@kiwicom/orbit-components/lib/Modal/ModalHeader";

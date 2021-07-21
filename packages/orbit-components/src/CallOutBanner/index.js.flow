@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import type { Translation, Globals } from "../common/common.js.flow";
-import Illustration from "../Illustration/index";
+import Illustration from "../Illustration";
 
 export type Props = {|
   tabIndex?: string | number,

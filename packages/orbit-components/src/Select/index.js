@@ -14,7 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getSelectSize = ({ theme, size }) => {
   const tokens = {

@@ -1,7 +1,7 @@
 // @flow
 import { useEffect, useState } from "react";
 
-import boundingClientRect from "../../../utils/boundingClientRect/index";
+import boundingClientRect from "../../../utils/boundingClientRect";
 import type { UseDimensions } from "./useDimensions";
 
 const useDimensions: UseDimensions = ({ containerRef, tooltip, content }, children, parent) => {

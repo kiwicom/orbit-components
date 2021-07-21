@@ -8,7 +8,7 @@ import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
 import Translate from "../Translate";
 
-import type { Props, MappedOptions } from "./index";
+import type { Props, MappedOptions } from ".";
 
 const StyledNavigation = styled.div`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */

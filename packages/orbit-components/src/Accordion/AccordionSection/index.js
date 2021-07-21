@@ -11,7 +11,7 @@ import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const AccordionSection = ({
   children,

@@ -9,7 +9,7 @@ import randomID from "../../utils/randomID";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledTooltipChildren: any = styled.span`
   ${({ block }) =>

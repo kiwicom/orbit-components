@@ -8,9 +8,9 @@ import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
-import media from "../utils/mediaQuery/index";
+import media from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
   if (disabled) return theme.orbit.paletteInkLighter;

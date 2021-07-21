@@ -4,7 +4,7 @@ import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import useMediaQuery from "../../hooks/useMediaQuery";
-import Pagination from "../index";
+import Pagination from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => jest.fn());
 

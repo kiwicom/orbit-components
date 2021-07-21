@@ -3,7 +3,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import BadgePrimitive from "../index";
+import BadgePrimitive from "..";
 import Sightseeing from "../../../icons/Sightseeing";
 
 describe("BadgePrimitive", () => {

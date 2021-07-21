@@ -7,7 +7,7 @@ import Grid from "../utils/Grid";
 import { LAYOUT_SETTINGS } from "./consts";
 import mq from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getChildrenProps = (type, key) => {
   if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {

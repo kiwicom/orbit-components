@@ -12,7 +12,7 @@ import QuestionCircle from "../icons/QuestionCircle";
 import AccountCircle from "../icons/AccountCircle";
 import TextLink from "../TextLink";
 
-import NavigationBar from "./index";
+import NavigationBar from ".";
 
 export default {
   title: "NavigationBar",

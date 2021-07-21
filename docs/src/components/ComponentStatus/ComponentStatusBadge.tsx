@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "@kiwicom/orbit-components";
 
-import { Statuses } from "./index";
+import { Statuses } from ".";
 
 interface ComponentStatusBadgeProps {
   status: Statuses;

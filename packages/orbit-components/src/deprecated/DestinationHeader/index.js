@@ -13,7 +13,7 @@ import LazyImage from "../../LazyImage";
 import mq from "../../utils/mediaQuery";
 import useTranslate from "../../hooks/useTranslate";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledDestinationHeader = styled.div`
   width: 100%;

@@ -14,7 +14,7 @@ import { right } from "../../utils/rtl";
 import CLOSE_BUTTON_DATA_TEST from "./consts";
 import useTranslate from "../../hooks/useTranslate";
 
-import type { Props, State } from "./index";
+import type { Props, State } from ".";
 
 const getBorder = ({ theme }) =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;

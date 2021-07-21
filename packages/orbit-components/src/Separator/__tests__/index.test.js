@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
 import theme from "../../defaultTheme";
-import Separator from "../index";
+import Separator from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Separator", () => {

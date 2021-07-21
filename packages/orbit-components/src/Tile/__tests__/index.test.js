@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 import KEY_CODE_MAP from "../../common/keyMaps";
 import theme from "../../defaultTheme";
-import Tile from "../index";
+import Tile from "..";
 import Airplane from "../../icons/Airplane";
 
 describe("Tile", () => {

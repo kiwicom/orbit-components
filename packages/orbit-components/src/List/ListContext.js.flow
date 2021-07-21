@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { Size, Type } from "./index";
+import type { Size, Type } from ".";
 
 type ListContextProps = {|
   +size: ?Size,

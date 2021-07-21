@@ -3,7 +3,7 @@
 // @flow
 import * as React from "react";
 
-import type { HeightProps, Size } from "../index";
+import type { HeightProps, Size } from "..";
 import type { ThemeProps } from "../../../defaultTheme";
 
 export type GetCommonPropsReturn = {|

@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import { StyledTableCell } from "../TableCell/index";
+import { StyledTableCell } from "../TableCell";
 
 import type { Props } from ".";
 

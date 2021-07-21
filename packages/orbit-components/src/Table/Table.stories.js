@@ -6,7 +6,7 @@ import { ALIGN_OPTIONS, ALIGN_V_OPTIONS, WHITE_SPACE } from "./TableCell/consts"
 import TYPE_OPTIONS from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from "./index";
+import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from ".";
 
 export default {
   title: "Table",

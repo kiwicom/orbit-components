@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
-import type { Props as BadgeListItemProps } from "./BadgeListItem/index";
+import type { Props as BadgeListItemProps } from "./BadgeListItem";
 
 export type Props = {|
   +children: React.Node,

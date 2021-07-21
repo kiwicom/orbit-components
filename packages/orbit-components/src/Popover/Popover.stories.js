@@ -18,7 +18,7 @@ import Sticky from "../Sticky";
 import Card from "../Card";
 import Loading from "../Loading";
 
-import Popover from "./index";
+import Popover from ".";
 
 const Content = styled.div`
   height: 2000px;

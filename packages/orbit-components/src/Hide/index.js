@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import getViewportHideStyles from "./helpers/getViewportHideStyles";
 import getDisplay from "./helpers/getDisplay";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledHide = styled(({ on, block, theme, ...props }) => <div {...props} />)`
   ${({ on }) => getViewportHideStyles(on, getDisplay)};

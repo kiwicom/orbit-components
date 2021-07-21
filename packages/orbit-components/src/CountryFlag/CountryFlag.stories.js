@@ -5,7 +5,7 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { CODES, SIZES } from "./consts";
 
-import CountryFlag from "./index";
+import CountryFlag from ".";
 
 export default {
   title: "CountryFlag",

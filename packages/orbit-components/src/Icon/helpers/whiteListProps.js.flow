@@ -1,6 +1,6 @@
 // @flow
 import type { Globals } from "../../common/common.js.flow";
-import type { Size, Color } from "../index";
+import type { Size, Color } from "..";
 
 type Return = {|
   ...Globals,

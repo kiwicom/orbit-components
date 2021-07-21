@@ -13,7 +13,7 @@ import ActiveButton from "./components/ActiveButton";
 import Translate from "../Translate";
 import useTranslate from "../hooks/useTranslate";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {

@@ -11,7 +11,7 @@ import Text from "../Text";
 import Box from "../Box";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import TextLink from "./index";
+import TextLink from ".";
 
 const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
 

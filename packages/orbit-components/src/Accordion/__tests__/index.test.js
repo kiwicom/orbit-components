@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Accordion, { AccordionSection } from "../index";
+import Accordion, { AccordionSection } from "..";
 
 describe(`Accordion`, () => {
   const expandedSection = "0X1";

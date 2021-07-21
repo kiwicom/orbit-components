@@ -25,7 +25,7 @@ import {
 import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getSize = ({ size }) => {
   const height = {

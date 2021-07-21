@@ -19,8 +19,8 @@ interface Props extends SharedProps {
 
 declare const Table: React.FunctionComponent<Props>;
 export { Table, Table as default };
-export { TableBody } from "./TableBody/index";
-export { TableCell } from "./TableCell/index";
-export { TableHead } from "./TableHead/index";
-export { TableRow } from "./TableRow/index";
-export { TableFooter } from "./TableFooter/index";
+export { TableBody } from "./TableBody";
+export { TableCell } from "./TableCell";
+export { TableHead } from "./TableHead";
+export { TableRow } from "./TableRow";
+export { TableFooter } from "./TableFooter";

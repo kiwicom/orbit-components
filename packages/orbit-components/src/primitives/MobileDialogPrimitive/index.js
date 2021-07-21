@@ -7,7 +7,7 @@ import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";
 import DialogContent from "./components/DialogContent";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const MobileDialog = ({
   children,

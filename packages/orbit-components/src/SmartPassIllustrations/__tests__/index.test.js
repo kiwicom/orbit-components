@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import * as SmartPassIllustrations from "../index";
+import * as SmartPassIllustrations from "..";
 
 describe("SmartPassIllustration", () => {
   it.each(Object.entries(SmartPassIllustrations))(

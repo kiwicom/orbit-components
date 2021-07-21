@@ -13,7 +13,7 @@ import {
   isDefined,
 } from "../utils/layout";
 
-import type { MediaQueryObject, Elevation } from "./index";
+import type { MediaQueryObject, Elevation } from ".";
 
 const firstToUpper = string => string.charAt(0).toUpperCase() + string.slice(1);
 

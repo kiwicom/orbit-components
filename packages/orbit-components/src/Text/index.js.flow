@@ -5,7 +5,7 @@
 import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
-import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { spaceAfter } from "../common/getSpacingToken";
 import type { Globals } from "../common/common.js.flow";
 
 type Align = "left" | "center" | "right";

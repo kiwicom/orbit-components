@@ -36,6 +36,6 @@ declare const Modal: React.ForwardRefExoticComponent<
 >;
 
 export { Modal, Modal as default };
-export { ModalHeader } from "./ModalHeader/index";
-export { ModalSection } from "./ModalSection/index";
-export { ModalFooter } from "./ModalFooter/index";
+export { ModalHeader } from "./ModalHeader";
+export { ModalSection } from "./ModalSection";
+export { ModalFooter } from "./ModalFooter";

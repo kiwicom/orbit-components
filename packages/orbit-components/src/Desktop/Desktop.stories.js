@@ -3,7 +3,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Desktop from "./index";
+import Desktop from ".";
 
 const Component = styled.div`
   height: 150px;

@@ -18,5 +18,5 @@ export const DeprecatedCard: React.FunctionComponent<Props>;
 declare const StyledCard: React.ComponentType<Props>;
 export { StyledCard };
 
-export * from "./CardHeader/index";
-export * from "./CardSection/index";
+export * from "./CardHeader";
+export * from "./CardSection";

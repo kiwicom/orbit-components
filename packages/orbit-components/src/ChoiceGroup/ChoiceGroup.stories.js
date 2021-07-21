@@ -8,7 +8,7 @@ import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
 import Checkbox from "../Checkbox";
 
-import ChoiceGroup from "./index";
+import ChoiceGroup from ".";
 
 export default {
   title: "ChoiceGroup",

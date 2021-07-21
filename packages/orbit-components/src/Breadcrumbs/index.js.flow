@@ -6,7 +6,7 @@ import * as React from "react";
 
 import type { Globals, Translation } from "../common/common.js.flow";
 import typeof BreadcrumbsItemType from "./BreadcrumbsItem";
-import type { spaceAfter } from "../common/getSpacingToken/index";
+import type { spaceAfter } from "../common/getSpacingToken";
 
 export type Props = {|
   ...Globals,

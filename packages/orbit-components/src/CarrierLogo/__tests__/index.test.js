@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import CarrierLogo from "../index";
+import CarrierLogo from "..";
 import { SIZE_OPTIONS } from "../consts";
 
 describe("CarrierLogo", () => {

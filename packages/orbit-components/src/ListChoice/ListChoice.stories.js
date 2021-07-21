@@ -7,7 +7,7 @@ import { text, boolean, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import ListChoice from "./index";
+import ListChoice from ".";
 
 const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

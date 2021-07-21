@@ -8,7 +8,7 @@ import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 
-import AirportIllustration from "./index";
+import AirportIllustration from ".";
 
 export default {
   title: "AirportIllustration",

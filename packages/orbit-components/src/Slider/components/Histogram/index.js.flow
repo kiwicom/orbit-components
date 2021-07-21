@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import type { Value } from "../../index";
+import type { Value } from "../..";
 import type { Translation } from "../../../common/common.js.flow";
 
 export type Data = number[];

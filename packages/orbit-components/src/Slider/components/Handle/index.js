@@ -6,7 +6,7 @@ import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
-import type { Props, CalculateLeftPosition, IsFirst } from "./index";
+import type { Props, CalculateLeftPosition, IsFirst } from ".";
 
 export const calculateLeftPosition: CalculateLeftPosition = (
   valueNow,

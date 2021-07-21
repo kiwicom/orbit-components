@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import FeatureIcon from "../index";
+import FeatureIcon from "..";
 import { NAME_OPTIONS } from "../consts";
 
 const name = NAME_OPTIONS.TICKETSAVER;

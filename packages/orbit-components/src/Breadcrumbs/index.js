@@ -11,7 +11,7 @@ import { right } from "../utils/rtl";
 import TextLink from "../TextLink";
 import Hide from "../Hide";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledBreadcrumbs = styled.nav`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

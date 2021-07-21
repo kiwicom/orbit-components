@@ -5,10 +5,10 @@ import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
-import Illustration from "../Illustration/index";
+import Illustration from "../Illustration";
 import { NAMES } from "../Illustration/consts";
 
-import Dialog from "./index";
+import Dialog from ".";
 
 export default {
   title: "Dialog",

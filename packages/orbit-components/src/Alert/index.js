@@ -20,7 +20,7 @@ import useTranslate from "../hooks/useTranslate";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 type IconProps = {|
   icon: any,

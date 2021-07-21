@@ -13,7 +13,7 @@ import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getModalHeading = (type, token) => ({ theme }) => {
   return getHeadingToken(token)({ theme, type });

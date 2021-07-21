@@ -18,7 +18,7 @@ import TripSector, { TripDate } from "../TripSector";
 import TripSegment from "../TripSegment";
 import List, { ListItem } from "../../List";
 
-import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from "./index";
+import Card, { CardHeader, CardSection, CardSectionHeader, CardSectionContent } from ".";
 
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];

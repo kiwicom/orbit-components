@@ -1,6 +1,6 @@
 // @flow
 import { ALIGNS } from "../consts";
-import type { AlignsCore } from "../index";
+import type { AlignsCore } from "..";
 import type { CalculateHorizontalPosition } from "./calculateHorizontalPosition";
 
 const isInside = (p: AlignsCore, canBe) => {

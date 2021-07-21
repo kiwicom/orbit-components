@@ -5,7 +5,7 @@ import * as React from "react";
 import useTheme from "../../hooks/useTheme";
 import { TYPES, SIZE_OPTIONS } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getSize = ({ size }) => {
   const tokens = {

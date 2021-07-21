@@ -4,7 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
-import { SharedProps, Event } from "../index";
+import { SharedProps, Event } from "..";
 
 declare module "@kiwicom/orbit-components/lib/StepperStateless";
 

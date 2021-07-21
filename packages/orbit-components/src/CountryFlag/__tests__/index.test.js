@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen, cleanup } from "@testing-library/react";
 
-import CountryFlag from "../index";
+import CountryFlag from "..";
 
 describe("CountryFlag", () => {
   it("should have expected DOM output", () => {

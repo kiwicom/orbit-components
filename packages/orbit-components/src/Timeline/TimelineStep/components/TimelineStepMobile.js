@@ -11,7 +11,7 @@ import Stack from "../../../Stack";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import StyledText from "../primitives/StyledText";
-import type { Props as StepProps, Type } from "../index";
+import type { Props as StepProps, Type } from "..";
 
 const StyledIndent = styled.div`
   padding-left: ${({ theme }) => theme.orbit.spaceXSmall};

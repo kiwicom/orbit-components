@@ -4,7 +4,7 @@ import type { Theme, ThemeProps } from "../defaultTheme";
 import { getAlign, getJustify, formatCSS } from "../utils/layout";
 import { TOKENS } from "../utils/layout/consts";
 
-import type { SpacingToken, Align, Justify } from "./index";
+import type { SpacingToken, Align, Justify } from ".";
 
 type Prop = "align" | "justify" | "spacing";
 

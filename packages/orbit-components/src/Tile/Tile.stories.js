@@ -14,7 +14,7 @@ import Badge from "../Badge";
 import Heading from "../Heading";
 import CountryFlag from "../CountryFlag";
 
-import Tile from "./index";
+import Tile from ".";
 
 const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];

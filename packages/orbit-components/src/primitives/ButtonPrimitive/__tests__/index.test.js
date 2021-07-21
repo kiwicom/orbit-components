@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ButtonPrimitive from "../index";
+import ButtonPrimitive from "..";
 import { Airplane, ChevronDown } from "../../../icons";
 
 describe("ButtonPrimitive", () => {

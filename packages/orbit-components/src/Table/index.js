@@ -8,7 +8,7 @@ import { StyledTableBody } from "./TableBody";
 import TYPE_OPTIONS from "./consts";
 import defaultTheme from "../defaultTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledTableOuter = styled.div`
   max-width: 100%;

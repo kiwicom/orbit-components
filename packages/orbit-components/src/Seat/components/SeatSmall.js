@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { TYPES } from "../consts";
-import type { Props } from "../index";
+import type { Props } from "..";
 import useTheme from "../../hooks/useTheme";
 import { resolveFillColor, resolveTextColor, resolveAccentColor } from "./helpers";
 

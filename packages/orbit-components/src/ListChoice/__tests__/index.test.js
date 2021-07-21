@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ListChoice from "../index";
+import ListChoice from "..";
 import Accommodation from "../../icons/Accommodation";
 
 describe("ListChoice", () => {

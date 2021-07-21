@@ -9,7 +9,7 @@ import { SIZES, STATES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {

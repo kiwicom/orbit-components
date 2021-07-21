@@ -2,7 +2,7 @@
 
 import type { ThemeProps } from "../../defaultTheme";
 
-import type { RtlSpacing, BorderRadius, TextAlign, Translate3d } from "./index";
+import type { RtlSpacing, BorderRadius, TextAlign, Translate3d } from ".";
 
 const leftToRight = (left, right) => ({ theme }) => (theme.rtl ? right : left);
 

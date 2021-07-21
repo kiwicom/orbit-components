@@ -8,7 +8,7 @@ import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledModalSection: any = styled.section`
   width: 100%;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import { rtlSpacing } from "../../utils/rtl";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel }) => (
   <div className={className} data-test={dataTest} aria-label={ariaLabel}>

@@ -6,7 +6,7 @@ import Text from "../Text";
 import List, { ListItem } from "../List";
 import { SIZES } from "../List/consts";
 
-import Coupon from "./index";
+import Coupon from ".";
 
 export default {
   title: "Coupon",

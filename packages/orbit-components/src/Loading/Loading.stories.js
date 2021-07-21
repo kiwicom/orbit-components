@@ -10,7 +10,7 @@ import Illustration from "../Illustration";
 import Button from "../Button";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Loading from "./index";
+import Loading from ".";
 
 export default {
   title: "Loading",

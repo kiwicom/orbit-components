@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledTruncate = styled.div`
   ${({ maxWidth }) => `

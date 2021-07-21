@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 import defaultTheme from "../../defaultTheme";
 import { TYPE_AS } from "../consts";
-import Table from "../index";
+import Table from "..";
 import TableHead from "../TableHead";
 import TableRow from "../TableRow";
 import TableBody from "../TableBody";

@@ -3,7 +3,7 @@ import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { Size } from "../index";
+import type { Size } from "..";
 import type { Theme } from "../../defaultTheme";
 
 export type Props = {|

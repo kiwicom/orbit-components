@@ -8,7 +8,7 @@ import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const WrapperStyled = styled.div`
   position: relative;

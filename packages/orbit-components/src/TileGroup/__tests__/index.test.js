@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import TileGroup from "../index";
+import TileGroup from "..";
 import Tile from "../../Tile";
 
 describe("Tile clickable", () => {

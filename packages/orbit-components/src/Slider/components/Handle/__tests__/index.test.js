@@ -1,6 +1,6 @@
 // @flow
 
-import { calculateLeftPosition, isFirst } from "../index";
+import { calculateLeftPosition, isFirst } from "..";
 
 describe("Handle in Slider: calculateLeftPosition", () => {
   it("simple Slider without Histogram", () => {

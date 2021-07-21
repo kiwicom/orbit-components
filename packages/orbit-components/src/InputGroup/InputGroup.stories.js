@@ -11,7 +11,7 @@ import CountryFlag from "../CountryFlag";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import InputGroup from "./index";
+import InputGroup from ".";
 
 export default {
   title: "InputGroup",

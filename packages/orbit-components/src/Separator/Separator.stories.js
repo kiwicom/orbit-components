@@ -4,7 +4,7 @@ import { select } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import Separator from "./index";
+import Separator from ".";
 
 export default {
   title: "Separator",

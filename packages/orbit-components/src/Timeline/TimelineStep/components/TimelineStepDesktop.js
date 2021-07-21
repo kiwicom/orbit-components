@@ -10,7 +10,7 @@ import CustomBadge from "./CustomBadge";
 import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
-import type { Props as StepProps, Type } from "../index";
+import type { Props as StepProps, Type } from "..";
 
 const StyledDescription = styled.div`
   max-width: 250px;

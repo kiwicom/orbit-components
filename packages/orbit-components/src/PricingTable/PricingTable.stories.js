@@ -13,7 +13,7 @@ import FeatureIcon from "../FeatureIcon";
 import Layout, { LayoutColumn } from "../Layout";
 import Card, { CardSection } from "../Card";
 
-import PricingTable, { PricingTableItem } from "./index";
+import PricingTable, { PricingTableItem } from ".";
 
 const content = (
   <List>

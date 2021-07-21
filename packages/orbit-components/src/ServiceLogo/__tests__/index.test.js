@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 import defaultTheme from "../../defaultTheme";
 import { NAME_OPTIONS, SIZE_OPTIONS, baseURL } from "../consts";
-import ServiceLogo from "../index";
+import ServiceLogo from "..";
 
 const name = NAME_OPTIONS.AIRHELP;
 const size = SIZE_OPTIONS.LARGE;

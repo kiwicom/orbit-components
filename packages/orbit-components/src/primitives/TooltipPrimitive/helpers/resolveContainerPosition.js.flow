@@ -1,7 +1,7 @@
 // @flow
 import type { CSSRules } from "styled-components";
 
-import type { Dimensions, Position } from "../index";
+import type { Dimensions, Position } from "..";
 import type { ThemeProps } from "../../../defaultTheme";
 
 export type Props = {|

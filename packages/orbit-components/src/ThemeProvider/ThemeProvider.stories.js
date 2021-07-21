@@ -10,7 +10,7 @@ import languages from "../data/dictionary";
 import Badge from "../Badge";
 import Tooltip from "../Tooltip";
 
-import ThemeProvider from "./index";
+import ThemeProvider from ".";
 
 const ButtonWithTranslation = () => {
   const translate = useTranslate();

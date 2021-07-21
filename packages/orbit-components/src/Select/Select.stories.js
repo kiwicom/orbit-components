@@ -10,7 +10,7 @@ import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
-import Select from "./index";
+import Select from ".";
 
 const objectOptions = [
   { value: 0, label: "Zero-th item" },

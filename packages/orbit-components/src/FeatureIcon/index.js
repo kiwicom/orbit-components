@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { baseURL } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const baseSize = 52;
 

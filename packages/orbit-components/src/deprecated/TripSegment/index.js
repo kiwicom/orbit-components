@@ -19,7 +19,7 @@ import Slide from "../../utils/Slide";
 import Truncate from "../../Truncate";
 import randomID from "../../utils/randomID";
 
-import type { Props, State, ExpandedType } from "./index";
+import type { Props, State, ExpandedType } from ".";
 
 export const StyledTripSegmentMilestone: any = styled.div`
   display: flex;

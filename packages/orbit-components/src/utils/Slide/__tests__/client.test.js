@@ -2,7 +2,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
-import Slide from "../index";
+import Slide from "..";
 
 describe(`slide util`, () => {
   it("should has a11y", () => {

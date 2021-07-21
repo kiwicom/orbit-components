@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import randomID from "../../utils/randomID";
-import type { Props } from "../index";
+import type { Props } from "..";
 import IllustrationWrapper from "./IllustrationWrapper";
 
 const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props): React.Node => {

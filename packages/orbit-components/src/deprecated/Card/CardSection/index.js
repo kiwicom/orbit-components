@@ -9,7 +9,7 @@ import ChevronDown from "../../../icons/ChevronDown";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const StyledCardSectionIconRight = styled(ChevronDown)`
   align-self: center;

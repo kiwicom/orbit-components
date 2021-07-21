@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 
-import IllustrationPrimitive from "./index";
+import IllustrationPrimitive from ".";
 
 const List = styled.div`
   display: flex;

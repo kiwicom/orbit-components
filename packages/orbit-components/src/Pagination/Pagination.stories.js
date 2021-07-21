@@ -6,7 +6,7 @@ import { number, text, boolean, select } from "@storybook/addon-knobs";
 
 import { SIZES } from "./consts";
 
-import Pagination from "./index";
+import Pagination from ".";
 
 export default {
   title: "Pagination",

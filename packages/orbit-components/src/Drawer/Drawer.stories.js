@@ -19,7 +19,7 @@ import Tile from "../Tile";
 import Collapse from "../Collapse";
 import LinkList from "../LinkList";
 
-import Drawer from "./index";
+import Drawer from ".";
 
 export default {
   title: "Drawer",

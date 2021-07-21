@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 
 import Button from "../../Button";
 import Airplane from "../../icons/Airplane";
-import ButtonGroup from "../index";
+import ButtonGroup from "..";
 
 const children = "button";
 

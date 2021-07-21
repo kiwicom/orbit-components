@@ -5,7 +5,7 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 
-import type { Props } from "./index";
+import type { Props } from ".";
 
 const getHeight = (theme, size) => {
   const tokens = {

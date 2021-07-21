@@ -3,7 +3,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean } from "@storybook/addon-knobs";
 
-import BaggageStepper from "./index";
+import BaggageStepper from ".";
 
 export default {
   title: "BaggageStepper",

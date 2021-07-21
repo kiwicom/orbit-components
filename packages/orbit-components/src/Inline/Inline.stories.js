@@ -5,7 +5,7 @@ import { text, select } from "@storybook/addon-knobs";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { ALIGNS as ALIGN, JUSTIFY, SPACINGS as SPACING } from "../utils/layout/consts";
 
-import Inline from "./index";
+import Inline from ".";
 
 const PlaceHolder = ({ height = 50 }) => {
   return <div style={{ width: "50px", height: `${height}px`, background: "grey" }} />;

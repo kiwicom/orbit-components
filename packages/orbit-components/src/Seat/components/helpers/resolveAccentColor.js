@@ -1,7 +1,7 @@
 // @flow
 import { TYPES } from "../../consts";
 
-import type { Params } from "./index";
+import type { Params } from ".";
 
 const resolveAccentColor = ({ type, theme, selected }: Params): string => {
   if (type === TYPES.LEGROOM)

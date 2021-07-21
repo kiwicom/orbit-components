@@ -5,7 +5,7 @@ import { select, number } from "@storybook/addon-knobs";
 import Box from "../Box";
 import Text from "../Text";
 
-import HorizontalScroll from "./index";
+import HorizontalScroll from ".";
 
 export default {
   title: "HorizontalScroll",
