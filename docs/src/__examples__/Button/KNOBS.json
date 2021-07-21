@@ -1,0 +1,14 @@
+[
+  { "name": "children", "type": "textfield", "defaultValue": "Click me" },
+  {
+    "name": "dataTest",
+    "type": "textfield",
+    "defaultValue": "test"
+  },
+  {
+    "name": "href",
+    "type": "textfield",
+    "defaultValue": ""
+  },
+  { "name": "external", "type": "checkbox", "defaultValue": "false" }
+]

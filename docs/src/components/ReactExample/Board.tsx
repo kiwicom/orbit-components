@@ -19,11 +19,21 @@ interface Props {
   exampleId?: string;
   code: string;
   origin?: string;
+  isPlaygroundOpened: boolean;
+  onOpenPlayground: () => void;
   isEditorOpened: boolean;
   onOpenEditor: () => void;
 }
 
-const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props) => {
+const Board = ({
+  exampleId,
+  code,
+  isEditorOpened,
+  isPlaygroundOpened,
+  onOpenPlayground,
+  onOpenEditor,
+  origin,
+}: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
 
   return (
@@ -37,6 +47,14 @@ const Board = ({ exampleId, code, isEditorOpened, onOpenEditor, origin }: Props)
             iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
           >
             Code editor
+          </ButtonLink>
+          <ButtonLink
+            onClick={onOpenPlayground}
+            type="secondary"
+            ariaExpanded={isPlaygroundOpened}
+            iconRight={isPlaygroundOpened ? <ChevronUp /> : <ChevronDown />}
+          >
+            Playground
           </ButtonLink>
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">

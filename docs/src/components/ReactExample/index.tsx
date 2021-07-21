@@ -5,10 +5,11 @@ import { Text } from "@kiwicom/orbit-components";
 import { Editor } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 
+import Playground from "./Playground";
 import Frame from "./Frame";
 import Board from "./Board";
 import ViewportsRuler from "./ViewportsRuler";
-import { copyImports } from "./helpers";
+import { copyImports, transform } from "./helpers";
 
 export type BgType = "white" | "dark" | "grid";
 
@@ -37,22 +38,29 @@ const StyledWrapperFrame = styled.div<{ width: number }>`
 const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }: Props) => {
   const [code, setCode] = React.useState("");
   const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
   const [origin, setOrigin] = React.useState("");
   const [width, setPreviewWidth] = React.useState(0);
 
-  const { allFile } = useStaticQuery(
+  const { allExample } = useStaticQuery(
     graphql`
       query ExamplesQuery {
-        allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
+        allExample {
           nodes {
             id
+            example
+            example_id
+            scope {
+              name
+              path
+              default
+            }
             fields {
-              example
-              example_id
-              scope {
+              knobs {
+                component
                 name
-                path
-                default
+                defaultValue
+                type
               }
             }
           }
@@ -64,18 +72,28 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
   React.useEffect(() => {
     const key = exampleId.toLowerCase();
     if (code) window.localStorage.setItem(key, code);
+    if (window.localStorage.getItem(key)) {
+      setCode(window.localStorage.getItem(key) || "");
+    }
     setOrigin(window.location.origin);
 
     return () => window.localStorage.removeItem(key);
   }, [setCode, code, exampleId, setOrigin]);
 
-  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
+  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+
+  const handleKnobChange = React.useCallback(
+    knob => {
+      setCode(transform(example.example, knob));
+    },
+    [example, setCode],
+  );
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
-  const imports = copyImports(example.fields.scope);
-  const codeWithImports = [imports, example.fields.example].join("\n");
+  const imports = copyImports(example.scope);
+  const codeWithImports = [imports, code].join("\n");
 
   return (
     <StyledWrapper>
@@ -93,7 +111,15 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
       <Board
         exampleId={exampleId}
         isEditorOpened={isEditorOpened}
-        onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+        isPlaygroundOpened={isPlaygroundOpened}
+        onOpenEditor={() => {
+          setPlaygroundOpened(false);
+          setOpenEditor(!isEditorOpened);
+        }}
+        onOpenPlayground={() => {
+          setOpenEditor(false);
+          setPlaygroundOpened(!isPlaygroundOpened);
+        }}
         code={codeWithImports}
         origin={origin}
       />
@@ -101,10 +127,15 @@ const ReactExample = ({ exampleId, background = "white", minHeight, maxHeight }:
         <Editor
           style={{ margin: 0, borderRadius: "0 0 12px 12px" }}
           theme={dracula}
-          onChange={str => setCode(str)}
+          onChange={str => {
+            setCode(str);
+          }}
           language="jsx"
-          code={example.fields.example}
+          code={code || example.example}
         />
+      )}
+      {isPlaygroundOpened && (
+        <Playground knobs={example.fields.knobs} onChange={handleKnobChange} />
       )}
     </StyledWrapper>
   );

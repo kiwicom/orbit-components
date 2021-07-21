@@ -124,6 +124,9 @@ module.exports = {
     },
     {
       resolve: require.resolve("./plugins/sandbox"),
+      options: {
+        path: path.join(__dirname, "src/__examples__"),
+      },
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-meta-redirect",
