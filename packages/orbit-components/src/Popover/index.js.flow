@@ -1,33 +1,11 @@
 // @flow
 import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import type { Globals } from "../common/common.js.flow";
 
-export type PositionsCore = "top" | "bottom";
-export type AlignsCore = "start" | "end" | "center";
-
-export type DimensionsCore = {|
-  containerTop: number,
-  containerPureTop: number,
-  containerLeft: number,
-  containerHeight: number,
-  containerWidth: number,
-  popoverHeight: number,
-  popoverWidth: number,
-  contentHeight: number,
-  windowHeight: number,
-  windowWidth: number,
-  windowScrollTop: number,
-  documentHeight: number,
-|};
-
 export type Position = {|
-  position: PositionsCore,
   overlapped: boolean,
-|};
-
-export type Anchor = {|
-  anchor: AlignsCore,
 |};
 
 export type Offset = {|
@@ -39,8 +17,7 @@ export type Props = {|
   ...Globals,
   +children: React.Node,
   +content: React.Node,
-  +preferredPosition?: PositionsCore,
-  +preferredAlign?: AlignsCore,
+  +placement?: Placement,
   +opened?: boolean,
   +width?: string,
   +noPadding?: boolean,

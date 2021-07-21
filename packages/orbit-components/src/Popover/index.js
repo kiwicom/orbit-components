@@ -1,51 +1,76 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import Portal from "../Portal";
-import PopoverContentWrapper from "./components/ContentWrapper";
-import type { Props } from "./index.js.flow";
-import useTheme from "../hooks/useTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
-import { POSITIONS, ALIGNS } from "./consts";
+import useTheme from "../hooks/useTheme";
+import { PLACEMENTS } from "./consts";
+import PopoverContent from "./components/ContentWrapper";
+import mq from "../utils/mediaQuery";
+import Portal from "../Portal";
+import defaultTheme from "../defaultTheme";
 import handleKeyDown from "../utils/handleKeyDown";
+
+import type { Props } from ".";
 
 const StyledPopoverChild = styled.div`
   position: relative;
 `;
 
+const StyledPopoverContent = styled.div`
+  ${({ theme }) => css`
+    overflow: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    background-color: ${theme.orbit.paletteWhite};
+  `}
+
+  ${mq.largeMobile(css`
+    border-radius: 3px;
+  `)}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledPopoverContent.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Popover = ({
   children,
-  offset = { top: 0, left: 0 },
-  content,
-  preferredPosition = POSITIONS.BOTTOM,
-  preferredAlign = ALIGNS.START,
-  dataTest,
+  renderInPortal = true,
   opened,
-  width,
-  noPadding,
-  overlapped,
+  content,
   onClose,
   onOpen,
+  offset,
+  placement = PLACEMENTS.BOTTOM_START,
   fixed,
+  noPadding,
+  width,
   actions,
-  renderInPortal = true,
+  overlapped,
+  dataTest,
 }: Props): React.Node => {
+  const ref: {| current: React.ElementRef<*> |} = React.useRef(null);
+
   const theme = useTheme();
+
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
   ]);
+
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,
     transitionLength,
   );
+
   const [
     render,
     setRender,
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, transitionLength);
-  const container: {| current: React.ElementRef<*> |} = React.useRef(null);
 
   const resolveCallback = React.useCallback(
     state => {
@@ -58,7 +83,7 @@ const Popover = ({
   const handleOut = React.useCallback(
     ev => {
       // If open prop is present ignore custom handler
-      if (container.current && !container.current.contains(ev.target)) {
+      if (ref && !ref.current.contains(ev.target)) {
         if (typeof opened === "undefined") {
           setShown(false);
           clearShownTimeout();
@@ -124,31 +149,26 @@ const Popover = ({
   ]);
 
   const popover = (
-    <PopoverContentWrapper
+    <PopoverContent
       shown={shown}
-      offset={{ top: 0, left: 0, ...offset }}
-      width={width}
-      containerRef={container}
-      preferredPosition={preferredPosition}
-      preferredAlign={preferredAlign}
-      onClose={handleOut}
       dataTest={dataTest}
-      noPadding={noPadding}
       overlapped={overlapped}
       fixed={fixed}
+      noPadding={noPadding}
       actions={actions}
+      width={width}
+      offset={offset}
+      referenceElement={ref.current}
+      onClose={handleOut}
+      placement={placement}
     >
       {content}
-    </PopoverContentWrapper>
+    </PopoverContent>
   );
 
   return (
     <>
-      <StyledPopoverChild
-        onClick={handleClick}
-        onKeyDown={handleKeyDown(handleClick)}
-        ref={container}
-      >
+      <StyledPopoverChild ref={ref} onClick={handleClick} onKeyDown={handleKeyDown(handleClick)}>
         {children}
       </StyledPopoverChild>
       {render && (renderInPortal ? <Portal renderInto="popovers">{popover}</Portal> : popover)}

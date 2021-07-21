@@ -1,24 +1,24 @@
 // @flow
 import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import type { Globals, Translation } from "../../common/common.js.flow";
-import type { PositionsCore, AlignsCore, Offset } from "../index.js.flow";
+import type { Offset } from "../index.js.flow";
 
 export type Props = {|
-  ...Globals,
   +children: React.Node,
-  +offset: Offset,
   +closeText?: Translation,
-  +preferredPosition: PositionsCore,
-  +preferredAlign: AlignsCore,
-  +containerRef: React.ElementRef<*>,
+  +referenceElement: HTMLElement | null,
+  +placement: Placement,
   +width?: string,
   +noPadding?: boolean,
   +overlapped?: boolean,
   +shown: boolean,
   +fixed?: boolean,
   +actions?: React.Node,
+  +offset?: Offset,
   +onClose: (ev: SyntheticEvent<HTMLElement>) => void,
+  ...Globals,
 |};
 
 declare export default React.ComponentType<Props>;

@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 
 import Tooltip from "../Tooltip";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { POSITIONS, ALIGNS } from "./consts";
+import { PLACEMENTS } from "./consts";
 import Stack from "../Stack";
 import Button from "../Button";
 import Stepper from "../Stepper";
@@ -78,6 +78,7 @@ const longContent = (
 
 const PopoverState = () => {
   const [render, setRender] = React.useState(false);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -90,8 +91,7 @@ const PopoverState = () => {
   return (
     <Stack justify="start">
       <Popover
-        preferredAlign="start"
-        preferredPosition="bottom"
+        placement={placement}
         content={
           render ? (
             <div>
@@ -161,11 +161,12 @@ Default.story = {
   },
 };
 
-export const PreferredAlign = (): React.Node => {
-  const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
+export const Placement = (): React.Node => {
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.TOP_START);
+
   return (
     <Stack justify="center">
-      <Popover content={content} preferredAlign={preferredAlign}>
+      <Popover content={content} placement={placement}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
@@ -174,39 +175,7 @@ export const PreferredAlign = (): React.Node => {
   );
 };
 
-PreferredAlign.story = {
-  parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-export const PreferredPosition = (): React.Node => {
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.TOP);
-  return (
-    <Popover
-      noPadding
-      content={
-        <div>
-          <ListChoice
-            title="Choice Title"
-            description="Further description"
-            selectable
-            icon={<Icons.Accommodation />}
-            onClick={action("onClick")}
-          />
-        </div>
-      }
-      preferredPosition={preferredPosition}
-    >
-      <Button type="secondary" iconRight={<ChevronDown />}>
-        Open popover
-      </Button>
-    </Popover>
-  );
-};
-
-PreferredPosition.story = {
+Placement.story = {
   parameters: {
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
@@ -245,7 +214,7 @@ export const WithListChoice = (): React.Node => {
           />
         </div>
       }
-      preferredPosition="top"
+      placement="top"
     >
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
@@ -318,7 +287,7 @@ export const MultiplePopovers = (): React.Node => {
         actions={actions}
         onOpen={action("open")}
         onClose={action("close")}
-        preferredAlign="center"
+        placement="bottom-start"
       >
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
@@ -437,8 +406,7 @@ ScrollingContent.story = {
 
 export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
-  const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
   const width = text("width", "350px");
   const noPadding = boolean("noPadding", false);
   const overlapped = boolean("overlapped", false);
@@ -452,8 +420,7 @@ export const Playground = (): React.Node => {
         dataTest={dataTest}
         offset={offset}
         content={content}
-        preferredPosition={preferredPosition}
-        preferredAlign={preferredAlign}
+        placement={placement}
         noPadding={noPadding}
         opened={opened}
         actions={
@@ -485,12 +452,12 @@ Playground.story = {
 
 export const Rtl = (): React.Node => {
   const dataTest = text("dataTest", "test");
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
 
   return (
     <RenderInRtl>
       <Stack flex>
-        <Popover dataTest={dataTest} content={content} preferredPosition={preferredPosition}>
+        <Popover dataTest={dataTest} content={content} placement={placement}>
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>
@@ -510,17 +477,12 @@ Rtl.story = {
 };
 
 export const RtlReverse = (): React.Node => {
-  const preferredPosition = select("preferredPosition", Object.values(POSITIONS), POSITIONS.BOTTOM);
-  const preferredAlign = select("preferredAlign", Object.values(ALIGNS), ALIGNS.START);
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
 
   return (
     <RenderInRtl>
       <Stack justify="end">
-        <Popover
-          content={content}
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-        >
+        <Popover content={content} placement={placement}>
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>
