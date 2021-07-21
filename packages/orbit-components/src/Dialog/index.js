@@ -118,9 +118,10 @@ const Dialog = ({
   onClose,
   renderInPortal = true,
   illustration,
+  lockScrolling = true,
 }: Props): React.Node => {
   const wrapperRef = React.useRef<HTMLElement | null>(null);
-  useLockScrolling(wrapperRef);
+  useLockScrolling(wrapperRef, lockScrolling);
   const ref = React.useRef(null);
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [

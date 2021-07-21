@@ -27,6 +27,7 @@ export interface Props extends Common.Global {
   readonly fixed?: boolean;
   readonly actions?: React.ReactNode;
   readonly offset?: Offset;
+  readonly lockScrolling?: boolean;
   readonly onOpen?: Common.Callback;
   readonly renderInPortal?: boolean;
   readonly onClose?: Common.Callback;

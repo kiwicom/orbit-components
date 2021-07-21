@@ -48,6 +48,7 @@ export type Props = {|
   +fixed?: boolean,
   +actions?: React.Node,
   +offset?: Offset,
+  +lockScrolling?: boolean,
   +renderInPortal?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,

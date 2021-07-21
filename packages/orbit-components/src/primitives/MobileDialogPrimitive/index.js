@@ -19,6 +19,7 @@ const MobileDialog = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
+  lockScrolling,
 }: Props): void | React.Node | React.Node => {
   const [
     render,
@@ -60,6 +61,7 @@ const MobileDialog = ({
     <DialogContent
       dataTest={dataTest}
       shown={shown}
+      lockScrolling={lockScrolling}
       dialogId={mobileDialogID}
       onClose={handleOutMobile}
     >

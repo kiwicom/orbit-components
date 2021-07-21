@@ -51,6 +51,7 @@ export type Props = {|
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
   +block?: boolean,
+  +lockScrolling?: boolean,
 |};
 
 declare export default React.ComponentType<Props>;

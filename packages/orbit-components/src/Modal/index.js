@@ -349,6 +349,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       hasCloseButton = true,
       disableAnimation = false,
       dataTest,
+      lockScrolling = true,
     }: Props,
     ref,
   ) => {
@@ -386,7 +387,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       [scrollingElementRef],
     );
 
-    useLockScrolling(scrollingElement);
+    useLockScrolling(scrollingElement, lockScrolling);
 
     const modalContentRef = React.useCallback(
       node => {

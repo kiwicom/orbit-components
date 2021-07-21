@@ -18,23 +18,24 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Popover component.
 
-| Name              | Type                    | Default             | Description                                                                                                  |
-| :---------------- | :---------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------- |
-| actions           | `React.Node`            |                     | Actions to display in the Popover [See Functional specs](#functional-specs).                                 |
-| **content**       | `React.Node`            |                     | The content to display in the Popover.                                                                       |
-| **children**      | `React.Node`            |                     | The reference element where the Popover will appear.                                                         |
-| dataTest          | `string`                |                     | Optional prop for testing purposes.                                                                          |
-| offset            | [`offset`](#offset)     | `{left: 0, top: 0}` | Optional prop to set position offset                                                                         |
-| fixed             | `boolean`               |                     | Changes position to fixed from absolute, good for use in sticky components.                                  |
-| noPadding         | `boolean`               | `true`              | Adds or removes padding around popover's content.                                                            |
-| opened            | `boolean`               |                     | Prop for programmatically controlling Popover inner state. If `opened` is present open triggers are ignored. |
-| preferredAlign    | [`enum`](#enum)         | `"start"`           | The preferred position to choose [See Functional specs](#functional-specs).                                  |
-| preferredPosition | [`enum`](#enum)         | `"bottom"`          | The preferred align to choose [See Functional specs](#functional-specs).                                     |
-| overlapped        | `boolean`               | `false`             | If `true`, the content of Popover will overlap the trigger children.                                         |
-| renderInPortal    | `boolean`               | `true`              | Optional prop, set it to `false` if you're rendering Popover inside a custom portal, defaults to `true`      |
-| width             | `string`                |                     | Width of popover, if not set the with is set to `auto`.                                                      |
-| onClose           | `() => void \| Promise` |                     | Function for handling onClose.                                                                               |
-| onOpen            | `() => void \| Promise` |                     | Function for handling onOpen.                                                                                |
+| Name              | Type                    | Default             | Description                                                                                                                                    |
+| :---------------- | :---------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| actions           | `React.Node`            |                     | Actions to display in the Popover [See Functional specs](#functional-specs).                                                                   |
+| **content**       | `React.Node`            |                     | The content to display in the Popover.                                                                                                         |
+| **children**      | `React.Node`            |                     | The reference element where the Popover will appear.                                                                                           |
+| dataTest          | `string`                |                     | Optional prop for testing purposes.                                                                                                            |
+| offset            | [`offset`](#offset)     | `{left: 0, top: 0}` | Optional prop to set position offset                                                                                                           |
+| fixed             | `boolean`               |                     | Changes position to fixed from absolute, good for use in sticky components.                                                                    |
+| noPadding         | `boolean`               | `true`              | Adds or removes padding around popover's content.                                                                                              |
+| opened            | `boolean`               |                     | Prop for programmatically controlling Popover inner state. If `opened` is present open triggers are ignored.                                   |
+| preferredAlign    | [`enum`](#enum)         | `"start"`           | The preferred position to choose [See Functional specs](#functional-specs).                                                                    |
+| preferredPosition | [`enum`](#enum)         | `"bottom"`          | The preferred align to choose [See Functional specs](#functional-specs).                                                                       |
+| overlapped        | `boolean`               | `false`             | If `true`, the content of Popover will overlap the trigger children.                                                                           |
+| lockScrolling     | `boolean`               | `true`              | Whether to prevent scrolling of the rest of the page while Popover is open on mobile. This is on by default to provide better user experience. |
+| renderInPortal    | `boolean`               | `true`              | Optional prop, set it to `false` if you're rendering Popover inside a custom portal, defaults to `true`                                        |
+| width             | `string`                |                     | Width of popover, if not set the with is set to `auto`.                                                                                        |
+| onClose           | `() => void \| Promise` |                     | Function for handling onClose.                                                                                                                 |
+| onOpen            | `() => void \| Promise` |                     | Function for handling onOpen.                                                                                                                  |
 
 ## enum
 

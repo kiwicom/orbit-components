@@ -179,6 +179,7 @@ const PopoverContentWrapper = ({
   overlapped,
   shown,
   fixed,
+  lockScrolling = true,
   actions,
 }: Props): React.Node => {
   const { isInsideModal } = React.useContext(ModalContext);
@@ -186,7 +187,7 @@ const PopoverContentWrapper = ({
   const popover: {| current: React.ElementRef<*> |} = React.useRef(null);
   const content: {| current: React.ElementRef<*> |} = React.useRef(null);
   const scrollingElementRef = React.useRef<HTMLElement | null>(null);
-  useLockScrolling(scrollingElementRef, !isLargeMobile);
+  useLockScrolling(scrollingElementRef, lockScrolling && !isLargeMobile);
   const intervalRef = React.useRef(null);
   const position = calculatePopoverPosition(preferredPosition, preferredAlign);
   const scrollableParent = React.useMemo(() => getScrollableParent(containerRef.current), [

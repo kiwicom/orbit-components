@@ -7,6 +7,7 @@ export type Props = {|
   enabled?: boolean,
   tabIndex?: string | number,
   children?: React.Node,
+  lockScrolling?: boolean,
   renderInPortal?: boolean,
   content: React.Node,
   stopPropagation?: boolean,

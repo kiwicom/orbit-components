@@ -100,10 +100,17 @@ StyledDialogOverlay.defaultProps = {
   theme: defaultTheme,
 };
 
-const DialogContent = ({ dataTest, shown, dialogId, children, onClose }: Props): React.Node => {
+const DialogContent = ({
+  dataTest,
+  shown,
+  lockScrolling = true,
+  dialogId,
+  children,
+  onClose,
+}: Props): React.Node => {
   const overlay = React.useRef(null);
   const dialog = React.useRef<HTMLElement | null>(null);
-  useLockScrolling(dialog);
+  useLockScrolling(dialog, lockScrolling);
   const handleClickOutside = React.useCallback(
     ev => {
       ev.stopPropagation();

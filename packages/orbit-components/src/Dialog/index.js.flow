@@ -10,6 +10,7 @@ export type Props = {|
   +illustration?: React.Node,
   +primaryAction: React.Node,
   +secondaryAction?: React.Node,
+  +lockScrolling?: boolean,
   +onClose?: () => void | Promise<any>,
   ...Globals,
 |};

@@ -28,6 +28,7 @@ const Popover = ({
   onClose,
   onOpen,
   fixed,
+  lockScrolling,
   actions,
   renderInPortal = true,
 }: Props): React.Node => {
@@ -136,6 +137,7 @@ const Popover = ({
       noPadding={noPadding}
       overlapped={overlapped}
       fixed={fixed}
+      lockScrolling={lockScrolling}
       actions={actions}
     >
       {content}

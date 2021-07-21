@@ -12,6 +12,7 @@ type Size = "extraSmall" | "small" | "normal" | "large" | "extraLarge";
 export interface Props extends Common.Global {
   readonly size?: Size;
   readonly children: React.ReactNode;
+  readonly lockScrolling?: boolean;
   readonly scrollingElementRef?: React.Ref<HTMLElement>;
   readonly autoFocus?: boolean;
   readonly onClose?: Common.Event<
