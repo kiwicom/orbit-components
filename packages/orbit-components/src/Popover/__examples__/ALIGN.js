@@ -16,7 +16,7 @@ export default {
           Start
         </Heading>
         <Popover
-          preferredAlign="start"
+          placement="bottom-start"
           content={
             <Stack spacing="small">
               <ButtonLink
@@ -46,7 +46,7 @@ export default {
           Center
         </Heading>
         <Popover
-          preferredAlign="center"
+          placement="bottom"
           content={
             <Stack spacing="small">
               <ButtonLink
@@ -76,7 +76,7 @@ export default {
           End
         </Heading>
         <Popover
-          preferredAlign="end"
+          placement="bottom-end"
           content={
             <Stack spacing="small">
               <ButtonLink

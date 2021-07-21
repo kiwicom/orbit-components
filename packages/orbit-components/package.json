@@ -74,7 +74,9 @@
   "dependencies": {
     "@adeira/js": "^1.3.0",
     "@kiwicom/orbit-design-tokens": "^0.13.8",
-    "body-scroll-lock": "^4.0.0-beta.0"
+    "@popperjs/core": "^2.9.2",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "react-popper": "^2.2.5"
   },
   "devDependencies": {
     "react-window": "^1.8.6"

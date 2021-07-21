@@ -26,7 +26,7 @@ describe("Popover", () => {
 
     render(
       <Popover
-        preferredPosition={position}
+        placement={position}
         dataTest={dataTest}
         content={content}
         onOpen={onOpen}

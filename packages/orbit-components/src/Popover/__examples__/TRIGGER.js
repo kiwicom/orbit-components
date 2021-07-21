@@ -30,7 +30,7 @@ export default {
           </ButtonLink>
         </Stack>
       }
-      preferredPosition="bottom"
+      placement="bottom"
     >
       <Button iconRight={<Icons.ChevronDown />} type="secondary">
         Learn more
