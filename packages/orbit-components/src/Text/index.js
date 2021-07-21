@@ -69,6 +69,7 @@ export const StyledText: any = styled(
   line-height: ${getLineHeightToken};
   text-align: ${({ align }) => textAlign(align)};
   text-transform: ${({ uppercase }) => uppercase && `uppercase`};
+  text-decoration: ${({ strikeThrough }) => strikeThrough && `line-through`};
   font-style: ${({ italic }) => italic && `italic`};
   margin: 0;
   margin-bottom: ${getSpacingToken};
@@ -90,8 +91,9 @@ const Text = ({
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
   as = ELEMENT_OPTIONS.P,
-  uppercase = false,
-  italic = false,
+  uppercase,
+  italic,
+  strikeThrough,
   dataTest,
   spaceAfter,
   children,
@@ -102,6 +104,7 @@ const Text = ({
       id={id}
       type={type}
       size={size}
+      strikeThrough={strikeThrough}
       weight={weight}
       align={align}
       element={as}

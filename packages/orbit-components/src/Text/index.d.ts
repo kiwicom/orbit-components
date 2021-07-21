@@ -27,6 +27,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly align?: Align;
   readonly italic?: boolean;
   readonly uppercase?: boolean;
+  readonly strikeThrough?: boolean;
   readonly as?: As;
   readonly children: React.ReactNode;
   readonly id?: string;

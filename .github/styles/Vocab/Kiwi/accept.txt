@@ -53,3 +53,4 @@ unformatted
 Toman
 viewport
 Vueling
+grayscale

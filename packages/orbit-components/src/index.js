@@ -90,6 +90,12 @@ export { default as InputFile } from "./InputFile";
 export { default as InputGroup } from "./InputGroup";
 export { default as InputStepper } from "./InputStepper";
 export { default as InputStepperStateless } from "./InputStepper/InputStepperStateless";
+export {
+  default as Itinerary,
+  ItinerarySegment,
+  ItinerarySegmentStop,
+  ItinerarySegmentDetail,
+} from "./Itinerary";
 export { default as List } from "./List";
 export { default as ListChoice } from "./ListChoice";
 export { default as ListItem } from "./List/ListItem";

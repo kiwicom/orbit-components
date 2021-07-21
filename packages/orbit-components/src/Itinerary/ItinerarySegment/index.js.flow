@@ -1,0 +1,25 @@
+// @flow
+
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/itinerary/itinerarypart
+*/
+
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken";
+
+export type Statuses = "warning" | "critical" | "info" | "success";
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  +status?: Statuses,
+  +label?: React.Node,
+  +children: React.Node,
+|};
+
+export type PartLinedContentProps = {|
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;
