@@ -34,7 +34,7 @@
     "copy-to-clipboard": "^3.3.1",
     "dedent": "^0.7.0",
     "downshift": "^6.0.10",
-    "gatsby": "^2.32.3",
+    "gatsby": "^3.9.1",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-lodash": "^4.7.1",
     "gatsby-plugin-manifest": "^3.4.0",
