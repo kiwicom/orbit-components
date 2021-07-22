@@ -56,7 +56,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@emotion/core": "^11.0.0",
     "@kiwicom/browserslist-config": "^1.0.0",
-    "@lerna/project": "^3.21.0",
+    "@lerna/project": "^4.0.0",
     "@octokit/rest": "^18.0.14",
     "@storybook/addon-actions": "^6.2.3",
     "@storybook/addon-backgrounds": "^6.1.10",
